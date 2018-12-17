@@ -1,0 +1,9 @@
+﻿<Window x:Class="SnackMachineDDD.UI.Common.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="DDD in Practice" Height="550" Width="725"
+        Icon="{StaticResource imgApplicationIcon}">
+    <Grid>
+        
+    </Grid>
+</Window>
