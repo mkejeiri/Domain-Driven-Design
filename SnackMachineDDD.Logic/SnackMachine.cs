@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using static SnackMachineDDD.logic.Money;
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -12,24 +13,52 @@ using static SnackMachineDDD.logic.Money;
 namespace SnackMachineDDD.logic
 {
     //Nhibernate require all non-private members to be marked as virtual!
-    public class SnackMachine : Entity
+    public class SnackMachine : AggregateRoot
     {
+      
+
+        public virtual SnackPile  GetSnackPile(int position)
+        {
+            return Slots.Single(x => x.Position == position).SnackPile ;
+        }
+
+        public SnackMachine()
+        {
+            MoneyInside = None;
+            MoneyInTransaction = None;
+            Slots = new List<Slot>
+            {
+                new Slot(this, 1),
+                new Slot(this, 2),
+                new Slot(this,3),
+            };
+        }
+
         //amount of money inside the machine
-        public virtual Money MoneyInside { get; protected set; } = None;
+        public virtual Money MoneyInside { get; protected set; }
         //amount of money in transaction
-        public virtual Money MoneyInTransaction { get; protected set; } = None;
+        public virtual Money MoneyInTransaction { get; protected set; }
         public virtual decimal Amount { get; set; }
+
+        /*************************************************************************************************************
+         * NHibernate requires collections that are part of the mapping to be either of ICollection or IList types.
+         **************************************************************************************************************/
+        protected virtual IList<Slot> Slots { get; set; }
 
         //public virtual void InsertMoney(Money money) => MoneyInTransaction += money;
         public virtual void ReturnMoney() => MoneyInTransaction = None;
 
-        public virtual void BuySnack()
+        public virtual void BuySnack(int position)
         {
-            MoneyInside += MoneyInTransaction;
+            //Slots.Single(x => x.Position == position).Quantity--;
+            var slot = GetSlot(position);
+            slot.SnackPile = slot.SnackPile.SubtractOne();
+
+        MoneyInside += MoneyInTransaction;
             MoneyInTransaction = None;
         }
 
-       
+
         public virtual void InsertMoney(Money money)
         {
             Money[] coinsAndNotes = {
@@ -41,15 +70,25 @@ namespace SnackMachineDDD.logic
                 TwentyDollar
             };
 
-            if (!coinsAndNotes.Contains( money)) throw  new InvalidOperationException();
+            if (!coinsAndNotes.Contains(money)) throw new InvalidOperationException();
             MoneyInTransaction += money;
         }
 
-        public virtual void BuySnack(int position)
+        //public virtual void LoadSnacks(int position, Snack snack, int quantity, decimal price)
+        public virtual void LoadSnacks(int position,SnackPile snackPile)
         {
-            throw new NotImplementedException();
+            Slot slot = GetSlot(position);
+            //slot.Snack = snack;
+            //slot.Quantity = quantity;
+            //slot.Price = price;
+            slot.SnackPile = snackPile;
+            slot.Position = position;
         }
 
+        private Slot GetSlot(int position)
+        {
+            return Slots.Single(x => x.Position == position);
+        }
 
         public virtual string CanBuySnack(int position)
         {
@@ -60,6 +99,7 @@ namespace SnackMachineDDD.logic
         {
             throw new NotImplementedException();
         }
-    }
 
+
+    }
 }
