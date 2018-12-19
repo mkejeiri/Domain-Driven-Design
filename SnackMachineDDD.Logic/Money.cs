@@ -84,6 +84,17 @@ namespace SnackMachineDDD.logic
             return minus;
         }
 
+        public static Money operator *(Money money, int multiplier)
+        {
+            return new Money(money.OneCentCount * multiplier,
+                money.TenCentCount * multiplier,
+                money.QuarterCount * multiplier,
+                money.OneDollarCount * multiplier,
+                money.FiveDollarCount * multiplier,
+                money.TwentyDollarCount * multiplier
+                );
+        }
+
         protected override bool EqualsCore(Money other)
         {
             return (OneCentCount == other.OneCentCount) &&
@@ -110,5 +121,29 @@ namespace SnackMachineDDD.logic
 
         public override string ToString() 
             => (Amount < 1) ?  "¢" + (Amount * 100).ToString("0") :  "$" + Amount.ToString("0.00");
+
+        //transform an amount into Money object from the highest bill to  the lower cent!
+        public Money Allocate(decimal amount)
+        {
+            int twentyDollarCount = Math.Min((int)(amount / 20), TwentyDollarCount);
+            amount -= twentyDollarCount * 20;
+
+            int fiveDollarCount = Math.Min((int)(amount / 5), FiveDollarCount);
+            amount -= fiveDollarCount * 5;
+
+            int oneDollarCount = Math.Min((int)(amount), OneDollarCount);
+            amount -= oneDollarCount;
+
+
+            int quarterCount = Math.Min((int)(amount / .25m), QuarterCount);
+            amount -= quarterCount * .25m;
+
+            int tenCentCount = Math.Min((int)(amount / .1m), TenCentCount);
+            amount -= tenCentCount * .1m;
+
+            int oneCentCount = Math.Min((int)(amount / .01m), OneCentCount);
+            amount -= oneCentCount * .01m;
+            return new Money(oneCentCount, tenCentCount, quarterCount, oneDollarCount, fiveDollarCount, twentyDollarCount);
+        }
     }
 }

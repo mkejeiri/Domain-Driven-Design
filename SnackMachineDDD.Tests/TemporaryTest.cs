@@ -1,8 +1,6 @@
 ﻿using NHibernate;
-using System.Configuration;
 using SnackMachineDDD.logic;
 using Xunit;
-using SnackMachineDDD.logic;
 
 namespace SnackMachineDDD.Tests
 {

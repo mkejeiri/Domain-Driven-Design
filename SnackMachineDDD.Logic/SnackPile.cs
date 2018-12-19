@@ -2,16 +2,25 @@
 using System;
 
 namespace SnackMachineDDD.logic
-{
+{ 
+    /***********************************************************************************************************************************************
+     - All responsibilities of the slot entity had been transfered to the SnackPile value object (light weight). 
+       The Slot acts just as a host for that value object, nothing more. 
+     - To adhere to the immutability rule of value objects. Instead of making the quantity property in the SnackPile ValueObject mutable, 
+       a separate method that creates a new instance of that value object had been introduce.     
+     ************************************************************************************************************************************************/
+
     public sealed class SnackPile:ValueObject<SnackPile>
     {
         private SnackPile(){}
         public SnackPile(Snack snack, int quantity, decimal price):this()
         {
-            //TODO:Unit test for invanriants
+            //TODO:Unit test for the invanriants
             //Invariants
-            if (Quantity<0 || Price< 0) throw  new InvalidOperationException();
-            if (price%0.01m>0) throw new InvalidOperationException();
+            if (quantity < 0 ) throw new InvalidOperationException();
+            if (price < 0) throw new InvalidOperationException();
+            //don't allow prices that include less than one cent : machine cannot handle such physical money
+            if (price % 0.01m > 0) throw new InvalidOperationException();
 
             Snack = snack;
             Quantity = quantity;

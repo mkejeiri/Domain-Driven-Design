@@ -25,7 +25,9 @@ namespace SnackMachineDDD.UI
         private readonly SnackMachine _snackMachine;
         public override string Caption => "Snack Machine";
         public string MoneyInTransaction => _snackMachine.MoneyInTransaction.ToString();
-        public Money MoneyInside => _snackMachine.MoneyInside + _snackMachine.MoneyInTransaction;
+        //No need to sum both, we already loaded the money into SnackMachine
+        //public Money MoneyInside => _snackMachine.MoneyInside + _snackMachine.MoneyInTransaction;
+        public Money MoneyInside => _snackMachine.MoneyInside;
         public Command InsertCentCommand { get; private set; }
         public Command InsertTenCentCommand { get; private set; }
         public Command InsertQuarterCommand { get; private set; }
