@@ -1,6 +1,7 @@
 ﻿using System;
+using SnackMachineDDD.logic.Common;
 
-namespace SnackMachineDDD.logic 
+namespace SnackMachineDDD.logic.SharedKernel 
 {
     public class Money : ValueObject<Money>
     {

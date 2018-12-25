@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using SnackMachineDDD.logic.Common;
+using SnackMachineDDD.logic.SharedKernel;
 
-namespace SnackMachineDDD.logic
+namespace SnackMachineDDD.logic.SnackMachine
 {
     public class SnackMachineRepository: Repository<SnackMachine>
     {

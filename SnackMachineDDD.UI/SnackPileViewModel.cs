@@ -2,6 +2,7 @@ using System;
 using System.Windows;
 using System.Windows.Media;
 using SnackMachineDDD.logic;
+using SnackMachineDDD.logic.SnackMachine;
 
 namespace SnackMachineDDD.UI
 {

@@ -3,9 +3,11 @@ using System.Linq;
 using FluentAssertions;
 using FluentNHibernate.Visitors;
 using SnackMachineDDD.logic;
+using SnackMachineDDD.logic.SharedKernel;
+using SnackMachineDDD.logic.SnackMachine;
 using Xunit;
-using static SnackMachineDDD.logic.Money;
-using static SnackMachineDDD.logic.Snack;
+using static SnackMachineDDD.logic.SharedKernel.Money;
+using static SnackMachineDDD.logic.SnackMachine.Snack;
 
 namespace SnackMachineDDD.Tests
 {

@@ -2,12 +2,12 @@
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using FluentNHibernate.Conventions;
-using FluentNHibernate.Conventions.Instances;
 using FluentNHibernate.Conventions.AcceptanceCriteria;
 using FluentNHibernate.Conventions.Helpers;
+using FluentNHibernate.Conventions.Instances;
 using NHibernate;
 
-namespace SnackMachineDDD.logic
+namespace SnackMachineDDD.logic.Utils
 {
     public static class SessionFactory
     {

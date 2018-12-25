@@ -1,6 +1,6 @@
-﻿using System;
+﻿using SnackMachineDDD.logic.Common;
 
-namespace SnackMachineDDD.logic
+namespace SnackMachineDDD.logic.SnackMachine
 {
     /***********************************************************************************************************************************************
      - All responsibilities of the slot entity had been transfered to the SnackPile value object (light weight). 

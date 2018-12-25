@@ -1,4 +1,4 @@
-﻿namespace SnackMachineDDD.logic
+﻿namespace SnackMachineDDD.logic.Common
 {
     public abstract class ValueObject<T>
     where T: ValueObject<T>

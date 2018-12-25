@@ -2,6 +2,7 @@
 using FluentAssertions;
 using FluentAssertions.Common;
 using SnackMachineDDD.logic;
+using SnackMachineDDD.logic.SharedKernel;
 using Xunit;
 
 namespace SnackMachineDDD.Tests

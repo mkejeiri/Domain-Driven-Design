@@ -5,7 +5,7 @@
  of the application. We can enable decoupling between the UI and the utility classes 
  by gathering all initialization logic in a special class, and then use it in the composition root
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-namespace SnackMachineDDD.logic
+namespace SnackMachineDDD.logic.Utils
 {
     public static class Initer
     {

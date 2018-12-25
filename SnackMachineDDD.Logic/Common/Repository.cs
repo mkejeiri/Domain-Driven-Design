@@ -1,5 +1,7 @@
 ﻿using NHibernate;
-namespace SnackMachineDDD.logic
+using SnackMachineDDD.logic.Utils;
+
+namespace SnackMachineDDD.logic.Common
 {
    public abstract class Repository<T> 
                where T: AggregateRoot

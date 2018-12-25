@@ -1,5 +1,6 @@
 ﻿using System;
 using NHibernate.Proxy;
+
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
   We should isolate our domain model from the persistence logic as much as possible, 
   it's not always feasible when using an ORM, we still need to adapt the domain layer and some persistence logic leaks 
@@ -8,7 +9,7 @@ using NHibernate.Proxy;
   we didn't have to change any of the existing tests that validate our domain classes. 
   So it is possible to maintain the same high degree of isolation even in larger projects.
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-namespace SnackMachineDDD.logic
+namespace SnackMachineDDD.logic.Common
 {
 
     //This uses for struct and valueObject, use a strong type as param, here YAGNI

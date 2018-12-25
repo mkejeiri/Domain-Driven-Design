@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using static SnackMachineDDD.logic.Money;
+using SnackMachineDDD.logic.Common;
+using SnackMachineDDD.logic.SharedKernel;
+
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
   We should isolate our domain model from the persistence logic as much as possible, 
   it's not always feasible when using an ORM, we still need to adapt the domain layer and some persistence logic leaks 
@@ -10,7 +12,7 @@ using static SnackMachineDDD.logic.Money;
   we didn't have to change any of the existing tests that validate our domain classes. 
   So it is possible to maintain the same high degree of isolation even in larger projects.
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-namespace SnackMachineDDD.logic
+namespace SnackMachineDDD.logic.SnackMachine
 {
     /***************************************************************************************************
      SnackMachine is fully encapsulated aggregate,i.e. it doesn't expose its internals to other aggregates. 
@@ -47,7 +49,7 @@ namespace SnackMachineDDD.logic
 
         public SnackMachine()
         {
-            MoneyInside = None;
+            MoneyInside = Money.None;
             //MoneyInTransaction = None;
             MoneyInTransaction = 0;
             Slots = new List<Slot>
@@ -122,12 +124,12 @@ namespace SnackMachineDDD.logic
         public virtual void InsertMoney(Money money)
         {
             Money[] coinsAndNotes = {
-                Cent,
-                TenCent,
-                Quarter,
-                FiveDollar,
-                OneDollar,
-                TwentyDollar
+                Money.Cent,
+                Money.TenCent,
+                Money.Quarter,
+                Money.FiveDollar,
+                Money.OneDollar,
+                Money.TwentyDollar
             };
 
             if (!coinsAndNotes.Contains(money)) throw new InvalidOperationException();

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using NHibernate;
 using SnackMachineDDD.logic;
+using SnackMachineDDD.logic.SharedKernel;
+using SnackMachineDDD.logic.SnackMachine;
 using SnackMachineDDD.UI.Common;
 
 /*

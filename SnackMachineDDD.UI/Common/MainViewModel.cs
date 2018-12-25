@@ -1,5 +1,6 @@
 ﻿using NHibernate;
 using SnackMachineDDD.logic;
+using SnackMachineDDD.logic.SnackMachine;
 
 namespace SnackMachineDDD.UI.Common
 {

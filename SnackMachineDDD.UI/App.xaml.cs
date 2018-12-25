@@ -1,9 +1,5 @@
-﻿using System.Configuration;
-using NHibernate;
-using SnackMachineDDD.logic;
-
-namespace SnackMachineDDD.UI
-{
+﻿using SnackMachineDDD.logic.Utils;
+namespace SnackMachineDDD.UI{
     public partial class App
     {
         public App()

@@ -1,6 +1,6 @@
-﻿using System;
+﻿using SnackMachineDDD.logic.Common;
 
-namespace SnackMachineDDD.logic
+namespace SnackMachineDDD.logic.SnackMachine
 {
     public class Snack : AggregateRoot
     {
