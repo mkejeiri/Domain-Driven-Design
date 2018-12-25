@@ -12,10 +12,11 @@ namespace SnackMachineDDD.logic
 
     public sealed class SnackPile:ValueObject<SnackPile>
     {
+        public static readonly SnackPile EmptySnackPile = new SnackPile(Snack.None, 0,0m);
         private SnackPile(){}
         public SnackPile(Snack snack, int quantity, decimal price):this()
         {
-            //TODO:Unit test for the invanriants
+            //TODO:Unit test for the Invariants
             //Invariants
             if (quantity < 0 ) throw new InvalidOperationException();
             if (price < 0) throw new InvalidOperationException();

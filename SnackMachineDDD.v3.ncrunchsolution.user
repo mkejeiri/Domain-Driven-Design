@@ -4,12 +4,34 @@
     <CurrentEngineMode>Run all tests automatically [Global]</CurrentEngineMode>
     <TestsWindowMenuOptions>
       <VerticalSplitMenuOption>false</VerticalSplitMenuOption>
-      <ShowPassingTestsMenuOption>false</ShowPassingTestsMenuOption>
+      <ShowPassingTestsMenuOption>true</ShowPassingTestsMenuOption>
       <ShowFailingTestsMenuOption>true</ShowFailingTestsMenuOption>
       <ShowUnexecutedTestsMenuOption>true</ShowUnexecutedTestsMenuOption>
       <ShowIgnoredTestsMenuOption>false</ShowIgnoredTestsMenuOption>
     </TestsWindowMenuOptions>
-    <TestsWindowSplitterDistance>829</TestsWindowSplitterDistance>
+    <TestsWindowMenuVisibility>
+      <RunSelectedTestsMenuOption>true</RunSelectedTestsMenuOption>
+      <DebugSelectedTestsMenuOption>true</DebugSelectedTestsMenuOption>
+      <RunAllTestsMenuOption>true</RunAllTestsMenuOption>
+      <RunVisibleTestsMenuOption>true</RunVisibleTestsMenuOption>
+      <StopPendingTestsMenuOption>true</StopPendingTestsMenuOption>
+      <ResetMenuOption>true</ResetMenuOption>
+      <IgnoreTestMenuOption>true</IgnoreTestMenuOption>
+      <PinTestsMenuOption>true</PinTestsMenuOption>
+      <UnpinAllTestsMenuOption>true</UnpinAllTestsMenuOption>
+      <HideSelectedWarningsMenuOption>true</HideSelectedWarningsMenuOption>
+      <ShowAllWarningsMenuOption>true</ShowAllWarningsMenuOption>
+      <VerticalSplitMenuOption>true</VerticalSplitMenuOption>
+      <CollapseAllMenuOption>true</CollapseAllMenuOption>
+      <ShowPassingTestsMenuOption>true</ShowPassingTestsMenuOption>
+      <ShowFailingTestsMenuOption>true</ShowFailingTestsMenuOption>
+      <ShowUnexecutedTestsMenuOption>true</ShowUnexecutedTestsMenuOption>
+      <ShowIgnoredTestsMenuOption>true</ShowIgnoredTestsMenuOption>
+      <CombinedExportToolWindowPlaceHolderMenuOption>true</CombinedExportToolWindowPlaceHolderMenuOption>
+      <GroupByDropDownMenuOption>true</GroupByDropDownMenuOption>
+      <SearchMenuOption>true</SearchMenuOption>
+    </TestsWindowMenuVisibility>
+    <TestsWindowSplitterDistance>853</TestsWindowSplitterDistance>
     <TestsWindowTreeLayout>
       <Column>
         <Name>Name</Name>

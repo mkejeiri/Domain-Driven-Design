@@ -8,7 +8,7 @@ namespace SnackMachineDDD.logic
      - To adhere to the immutability rule of value objects. Instead of making the quantity property in the SnackPile ValueObject mutable, 
        a separate method that creates a new instance of that value object had been introduce.     
      ************************************************************************************************************************************************/
-    public class Slot
+    public class Slot: Entity
     {
         public virtual Snack Snack { get;  set; }
         //public virtual int Quantity { get;  set; }
@@ -27,7 +27,8 @@ namespace SnackMachineDDD.logic
             //Snack = snack ;
             //Quantity = quantity;
             //Price = price;
-            SnackPile = new SnackPile(null, 0, 0m);
+            //SnackPile = new SnackPile(Snack.None, 0, 0m);
+            SnackPile = SnackPile.EmptySnackPile;
         }
     }
 }

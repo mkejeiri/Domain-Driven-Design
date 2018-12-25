@@ -55,6 +55,5 @@ namespace SnackMachineDDD.UI.Common
         public Command(Action execute)
             : this(() => true, execute)
         {
-        }
-    }
+        }}
 }

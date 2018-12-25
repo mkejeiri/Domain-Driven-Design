@@ -5,6 +5,7 @@ using FluentNHibernate.Visitors;
 using SnackMachineDDD.logic;
 using Xunit;
 using static SnackMachineDDD.logic.Money;
+using static SnackMachineDDD.logic.Snack;
 
 namespace SnackMachineDDD.Tests
 {
@@ -23,7 +24,7 @@ namespace SnackMachineDDD.Tests
         public void BuySnack_trades_inserted_money_for_a_snack()
         {
             var snackMachine = new SnackMachine();
-            snackMachine.LoadSnacks(1, new SnackPile(new Snack("Some snack"), 10, 1m));
+            snackMachine.LoadSnacks(1, new SnackPile(Chocolate, 10, 1m));
             snackMachine.InsertMoney(OneDollar);
             snackMachine.BuySnack(position:1);
 
@@ -46,7 +47,7 @@ namespace SnackMachineDDD.Tests
         public void Cannot_make_purchase_if_not_enough_money_inserted()
         {
             var snackMachine = new SnackMachine();
-            snackMachine.LoadSnacks(1, new SnackPile(new Snack("some snack"),1, 2m));
+            snackMachine.LoadSnacks(1, new SnackPile(Chocolate, 1, 2m));
             Action actionDelegate = () => snackMachine.BuySnack(1);
             actionDelegate.Should().Throw<InvalidOperationException>();
         }
@@ -75,7 +76,7 @@ namespace SnackMachineDDD.Tests
         public void After_purchase_change_is_returned()
         {
             var snackMachine = new SnackMachine();
-            snackMachine.LoadSnacks(1, new SnackPile(new Snack("some snack"),1,  0.5m));
+            snackMachine.LoadSnacks(1, new SnackPile(Chocolate, 1,  0.5m));
 
             //snackMachine.LoadMoney(new Money(0,10,0,0,0,0));
             snackMachine.LoadMoney(TenCent * 10);
@@ -89,7 +90,7 @@ namespace SnackMachineDDD.Tests
         public void Cannot_buy_snack_if_not_enough_change()
         {
             var snackMachine = new SnackMachine();
-            snackMachine.LoadSnacks(1, new SnackPile(new Snack("some snack"), 1, 0.5m));
+            snackMachine.LoadSnacks(1, new SnackPile(Chocolate, 1, 0.5m));
             //the MoneyInside = 0
             snackMachine.InsertMoney(OneDollar);
             Action actionDelegate = () => snackMachine.BuySnack(1);

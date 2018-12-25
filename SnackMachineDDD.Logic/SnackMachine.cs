@@ -21,7 +21,25 @@ namespace SnackMachineDDD.logic
 
     //Nhibernate require all non-private members to be marked as virtual!
     public class SnackMachine : AggregateRoot
-    {
+    { 
+        
+        //amount of money inside the machine
+        public virtual Money MoneyInside { get; protected set; }
+
+        //amount of money in transaction
+        //we might return the amount of money in different bills or cents than the ones inserted by the customer,
+        //we want to track only the amount, back to decimal 
+        //public virtual Money MoneyInTransaction { get; protected set; }
+
+        public virtual decimal MoneyInTransaction { get; protected set; }
+        public virtual decimal Amount { get; set; }
+
+        /*************************************************************************************************************
+         * NHibernate requires collections that are part of the mapping to be either of ICollection or IList types.
+         * Here we not exposing internal Slot entity (client couldn't tamper directly with this entity)
+         **************************************************************************************************************/
+        protected virtual IList<Slot> Slots { get; set; }
+
         public virtual SnackPile GetSnackPile(int position)
         {
             return Slots.Single(x => x.Position == position).SnackPile;
@@ -40,22 +58,7 @@ namespace SnackMachineDDD.logic
             };
         }
 
-        //amount of money inside the machine
-        public virtual Money MoneyInside { get; protected set; }
-
-        //amount of money in transaction
-        //we might return the amount of money in different bills or cents than the ones inserted by the customer,
-        //we want to track only the amount, back to decimal 
-        //public virtual Money MoneyInTransaction { get; protected set; }
-
-        public virtual decimal MoneyInTransaction { get; protected set; }
-        public virtual decimal Amount { get; set; }
-
-        /*************************************************************************************************************
-         * NHibernate requires collections that are part of the mapping to be either of ICollection or IList types.
-         * Here we not exposing internal Slot entity (client couldn't tamper directly with this entity)
-         **************************************************************************************************************/
-        protected virtual IList<Slot> Slots { get; set; }
+       
 
         //public virtual void InsertMoney(Money money) => MoneyInTransaction += money;
         //public virtual void ReturnMoney() => MoneyInTransaction = None;
@@ -66,12 +69,40 @@ namespace SnackMachineDDD.logic
             MoneyInTransaction = 0;
         }
 
+        /***********************************************************************************************         
+         Command-query separation principle (a part from some cases : e.g. removing a file!)
+            - BuySnack (Commands are void) : doesn't return value : just side effects (i.e. mutates objects state)
+            - CanBuySnack (Queries are non-void ): return a boolean value with no side effects
+        ************************************************************************************************/
+        public virtual string CanBuySnack(int position)
+        {
+            SnackPile snackPile = GetSnackPile(position);
+            if (snackPile.Quantity == 0)
+            {
+                return "The snack pile is empty";
+            }
+
+            if (MoneyInTransaction < snackPile.Price)
+            {
+                return "Not enough money";
+            }
+
+            if (!MoneyInside.CanAllocate(MoneyInTransaction - snackPile.Price))
+            {
+                return "Not enough change!";
+            }
+
+            return string.Empty;
+
+        }
+
         public virtual void BuySnack(int position)
         {
+            if (CanBuySnack(position) != string.Empty) throw new InvalidOperationException();
             //Slots.Single(x => x.Position == position).Quantity--;
             var slot = GetSlot(position);
             //if (slot.SnackPile.Price > MoneyInTransaction.Amount) throw new InvalidOperationException();
-            if (slot.SnackPile.Price > MoneyInTransaction) throw new InvalidOperationException();
+            //if (slot.SnackPile.Price > MoneyInTransaction) throw new InvalidOperationException();
             slot.SnackPile = slot.SnackPile.SubtractOne();
 
             //No longer needed the InsertMoney take care of it
@@ -79,12 +110,13 @@ namespace SnackMachineDDD.logic
 
             //MoneyInTransaction = None;
             Money change = MoneyInside.Allocate(MoneyInTransaction - slot.SnackPile.Price);
-
-            if (change.Amount < MoneyInTransaction - slot.SnackPile.Price) {throw new InvalidOperationException();}
+            //if (change.Amount < MoneyInTransaction - slot.SnackPile.Price) throw new InvalidOperationException();
 
             MoneyInside -= change;
             MoneyInTransaction = 0;
         }
+
+
 
 
         public virtual void InsertMoney(Money money)
@@ -125,17 +157,19 @@ namespace SnackMachineDDD.logic
 
         }
 
-        public virtual string CanBuySnack(int position)
+       
+        /**********************************************************************************************************************************
+         Return a ReadOnly list:
+            - It's a good practice to show the clients only immutable collection => i.e. the SnackPile is indeed immutable.   
+            - GetAllSnackPiles method expose a collection of value objects (i.e immutable SnackPile), not the collection of internal entities, 
+                thus maintaining the encapsulation of the aggregate.
+         ***********************************************************************************************************************************/
+        public virtual IReadOnlyList<SnackPile> GetAllSnackPiles()
         {
-            throw new NotImplementedException();
+            return Slots
+                .OrderBy(x => x.Position)
+                .Select(x => x.SnackPile)
+                .ToList();
         }
-
-        public virtual void GetAllSnackPiles()
-        {
-            throw new NotImplementedException();
-        }
-
-
-
     }
 }

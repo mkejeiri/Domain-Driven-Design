@@ -95,6 +95,25 @@ namespace SnackMachineDDD.logic
                 );
         }
 
+        /********************************************************************************************
+         Command-query separation principle (a part from some cases : e.g. removing a file case!)
+            - Allocate (Commands are void) : doesn't return value : just side effects
+            - CanAllocate (Queries are non-void ): return a boolean value with no side effects
+        *********************************************************************************************/
+
+        public bool CanAllocate(decimal amount)
+        {
+            Money money = AllocateCore(amount);
+            //Amount should differ in not enough change
+           return (amount == money.Amount);
+        }
+
+        public Money Allocate(decimal amount)
+        {
+            if (!CanAllocate(amount)) throw new InvalidOperationException();
+            return AllocateCore(amount);
+        }
+
         protected override bool EqualsCore(Money other)
         {
             return (OneCentCount == other.OneCentCount) &&
@@ -123,7 +142,7 @@ namespace SnackMachineDDD.logic
             => (Amount < 1) ?  "¢" + (Amount * 100).ToString("0") :  "$" + Amount.ToString("0.00");
 
         //transform an amount into Money object from the highest bill to  the lower cent!
-        public Money Allocate(decimal amount)
+        private Money AllocateCore(decimal amount)
         {
             int twentyDollarCount = Math.Min((int)(amount / 20), TwentyDollarCount);
             amount -= twentyDollarCount * 20;
