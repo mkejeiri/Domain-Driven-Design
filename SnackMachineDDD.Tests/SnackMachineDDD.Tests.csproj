@@ -83,6 +83,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AtmSpecs.cs" />
     <Compile Include="MoneySpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SnackMachineSpecs.cs" />

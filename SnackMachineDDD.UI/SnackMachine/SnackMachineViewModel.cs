@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using NHibernate;
-using SnackMachineDDD.logic;
 using SnackMachineDDD.logic.SharedKernel;
 using SnackMachineDDD.logic.SnackMachine;
 using SnackMachineDDD.UI.Common;
@@ -22,11 +20,11 @@ using SnackMachineDDD.UI.Common;
     - otherwise all business logic should go to the domain layer (Entities, ValueObjects, ...).
  */
 
-namespace SnackMachineDDD.UI
+namespace SnackMachineDDD.UI.SnackMachine
 {
     public class SnackMachineViewModel : ViewModel
     {
-        private readonly SnackMachine _snackMachine;
+        private readonly logic.SnackMachine.SnackMachine _snackMachine;
         private readonly SnackMachineRepository _snackMachineRepository;
         public override string Caption => "Snack Machine";
         public string MoneyInTransaction => _snackMachine.MoneyInTransaction.ToString();
@@ -67,7 +65,7 @@ namespace SnackMachineDDD.UI
 
 
 
-        public SnackMachineViewModel(SnackMachine snackMachine)
+        public SnackMachineViewModel(logic.SnackMachine.SnackMachine snackMachine)
         {
             _snackMachine = snackMachine ?? throw new ArgumentNullException(nameof(snackMachine));
             _snackMachineRepository = new SnackMachineRepository();

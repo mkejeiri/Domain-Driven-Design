@@ -31,7 +31,7 @@
       <GroupByDropDownMenuOption>true</GroupByDropDownMenuOption>
       <SearchMenuOption>true</SearchMenuOption>
     </TestsWindowMenuVisibility>
-    <TestsWindowSplitterDistance>853</TestsWindowSplitterDistance>
+    <TestsWindowSplitterDistance>829</TestsWindowSplitterDistance>
     <TestsWindowTreeLayout>
       <Column>
         <Name>Name</Name>

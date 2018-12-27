@@ -1,6 +1,9 @@
 ﻿using NHibernate;
 using SnackMachineDDD.logic;
+using SnackMachineDDD.logic.Atms;
 using SnackMachineDDD.logic.SnackMachine;
+using SnackMachineDDD.UI.Atm;
+using SnackMachineDDD.UI.SnackMachine;
 
 namespace SnackMachineDDD.UI.Common
 {
@@ -17,8 +20,11 @@ namespace SnackMachineDDD.UI.Common
             //    _dialogService.ShowDialog(viewModel);
             //}
 
-            SnackMachine snackMachine = new SnackMachineRepository().GetById(1);
-            var viewModel = new SnackMachineViewModel(snackMachine);
+            //logic.SnackMachine.SnackMachine snackMachine = new SnackMachineRepository().GetById(1);
+            //var viewModel = new SnackMachineViewModel(snackMachine);
+
+            var atm = new AtmRepository().GetById(1);
+            var viewModel = new AtmViewModel(atm);
             _dialogService.ShowDialog(viewModel);
 
 

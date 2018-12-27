@@ -6,7 +6,8 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Common/Images.xaml" />
-                <ResourceDictionary Source="SnackMachineViewModel.xaml" />
+                <ResourceDictionary Source="SnackMachine/SnackMachineViewModel.xaml" />
+                <ResourceDictionary Source="Atm/AtmViewModel.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
