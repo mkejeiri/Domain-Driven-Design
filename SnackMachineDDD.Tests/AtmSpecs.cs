@@ -1,4 +1,5 @@
-﻿using FluentAssertions;
+﻿using System.Linq;
+using FluentAssertions;
 using SnackMachineDDD.logic.Atms;
 using SnackMachineDDD.logic.Common;
 using SnackMachineDDD.logic.Utils;
@@ -46,17 +47,33 @@ namespace SnackMachineDDD.Tests
         [Fact]
         public void Take_money_raise_an_event()
         {
-            SessionFactory.Init(@"Server=.\SQLEXPRESS;Database=SnackMachineDDD;Trusted_Connection=True;"); ;
+            SessionFactory.Init(@"Server=.\SQLEXPRESS;Database=SnackMachineDDD;Trusted_Connection=True;");
+            DomainEvents.Init();
             Atm atm = new Atm();
             atm.LoadMoney(OneDollar);
+            //BalanceChangedEvent balanceChangedEvent = null;
+            //DomainEvents.Register<BalanceChangedEvent>(ev => balanceChangedEvent = ev);
+
             atm.TakeMoney(1m);
-
-            BalanceChangedEvent balanceChangedEvent = null;
-            DomainEvents.Register<BalanceChangedEvent>(ev => balanceChangedEvent = ev);
-
+            
             //Check event
-            balanceChangedEvent.Should().NotBeNull();
-            balanceChangedEvent.Delta.Should().Be(1.01m);
+            var balanceChangedEvent = atm.DomainEvents[0] as BalanceChangedEvent; 
+            //balanceChangedEvent.Should().NotBeNull();
+            //balanceChangedEvent.Delta.Should().Be(1.01m);
+            atm.ShouldContainsBalanceChangedEvent(1.01m);
         }
     }
+
+    //extension method to increase the readability  
+    internal static class AtmExtensions
+    {
+        public static void ShouldContainsBalanceChangedEvent(this Atm atm, decimal delta)
+        {
+            BalanceChangedEvent domainEvent = (BalanceChangedEvent) atm.DomainEvents
+                .SingleOrDefault(x => x.GetType() == typeof(BalanceChangedEvent));
+            domainEvent.Should().NotBeNull();
+            domainEvent.Delta.Should().Be(1.01m);
+        }
+    }
+
 }

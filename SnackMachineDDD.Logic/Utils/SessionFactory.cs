@@ -1,11 +1,12 @@
-﻿using System.Reflection;
-using FluentNHibernate.Cfg;
+﻿using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using FluentNHibernate.Conventions;
 using FluentNHibernate.Conventions.AcceptanceCriteria;
 using FluentNHibernate.Conventions.Helpers;
 using FluentNHibernate.Conventions.Instances;
 using NHibernate;
+using NHibernate.Event;
+using System.Reflection;
 
 namespace SnackMachineDDD.logic.Utils
 {
@@ -38,10 +39,25 @@ namespace SnackMachineDDD.logic.Utils
                     .AddFromAssembly(Assembly.GetExecutingAssembly())
                     .Conventions.Add(
                         ForeignKey.EndsWith("ID"),
-                        ConventionBuilder.Property.When(criteria => criteria.Expect(x => x.Nullable, Is.Not.Set), x => x.Not.Nullable()))
+                        ConventionBuilder.Property.When(criteria => criteria.Expect(x => x.Nullable, Is.Not.Set),
+                            x => x.Not.Nullable()))
                     .Conventions.Add<TablenNameConvention>()
                     .Conventions.Add<HiloConvention>()
-                );
+                )
+                /*
+                 NHibernate provides several extension points that allow us to inject our code into its internal pipeline 
+                 so that it would be executed only when some persistent event occurs. We process domain events only when 
+                 the aggregate was successfully persisted into the database.                  
+                 */
+                //To be able to dispatch event after the unit of work is committed
+                //This make sure that NHibernate aware of the DomainEventListener class, we need to specify it in the configuration
+                .ExposeConfiguration(x =>
+                {
+                    x.EventListeners.PostCommitUpdateEventListeners = new IPostUpdateEventListener[]{new EventListerner()};
+                    x.EventListeners.PostCommitDeleteEventListeners = new IPostDeleteEventListener[]{new EventListerner()};
+                    x.EventListeners.PostCommitInsertEventListeners = new IPostInsertEventListener[]{new EventListerner()};
+                    x.EventListeners.PostCollectionUpdateEventListeners = new IPostCollectionUpdateEventListener[]{new EventListerner()};
+                });
             return configuration.BuildSessionFactory();
         }
         public class TablenNameConvention : IClassConvention

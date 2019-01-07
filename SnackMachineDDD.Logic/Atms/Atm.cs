@@ -38,7 +38,12 @@ namespace SnackMachineDDD.logic.Atms
             MoneyInside -= output;
             decimal amountWithCommission = CalculateAmountWithCommission(amount);
             MoneyCharged += amountWithCommission;
-            DomainEvents.Raise(new BalanceChangedEvent(amountWithCommission));
+            //DomainEvents.Raise(new BalanceChangedEvent(amountWithCommission));
+
+
+            //domain entity is no longer responsible for raising the event, it just saves it to the internal list.
+            // creating an event is the responsability of domain entities and dispatching it is the responsability of infrastracture. 
+            AddDomainEvents(new BalanceChangedEvent(amountWithCommission));
             //if (amount < 1m)
             //{
             //    //decimal amountWithCommission = amount + CommissionRate;

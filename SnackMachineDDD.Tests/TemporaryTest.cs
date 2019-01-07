@@ -1,6 +1,4 @@
-﻿using NHibernate;
-using SnackMachineDDD.logic;
-using SnackMachineDDD.logic.SnackMachine;
+﻿using SnackMachineDDD.logic.SnackMachine;
 using SnackMachineDDD.logic.Utils;
 using Xunit;
 using static SnackMachineDDD.logic.SharedKernel.Money;

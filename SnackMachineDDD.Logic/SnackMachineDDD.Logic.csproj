@@ -50,6 +50,7 @@
       <HintPath>..\packages\Remotion.Linq.EagerFetching.2.2.0\lib\net45\Remotion.Linq.EagerFetching.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Activities" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.ServiceModel" />
@@ -77,6 +78,7 @@
     <Compile Include="Management\HeadOfficeInstance.cs" />
     <Compile Include="Management\HeadOfficeMap.cs" />
     <Compile Include="Management\HeadOfficeRepository.cs" />
+    <Compile Include="Utils\EventListerner.cs" />
     <Compile Include="Utils\Initer.cs" />
     <Compile Include="SharedKernel\Money.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
