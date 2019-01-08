@@ -54,7 +54,7 @@ namespace SnackMachineDDD.UI.Atm
             _repository.Save(_atm);
 
             /*Option 1 :
-                         HeadOffice headOffice = GetHeadOfficeInstance();
+                        HeadOffice headOffice = GetHeadOfficeInstance();
                         headOffice.Balance += amountWithCommission;
                         _headOfficeRepository.Save(headOffice);
           
@@ -73,11 +73,11 @@ namespace SnackMachineDDD.UI.Atm
 
                Pros: it allows us to eliminate code duplicate but...
                Drawbacks: 
-                   a - still bidirectional coupling between ATM and mngt bounded contexts => should be avoided
+                   a - same as before, still bidirectional coupling between ATM and mngt bounded contexts => should be avoided
                        not only mgt knows about ATM but also ATM becomes aware of mngt => bidirectional coupling!!!
 
-                   b - ATM entity gets responsability which not related to ATM itself, it's not up to ATM to increase 
-                   the balance of the headoffice  
+                   b -in addition, now ATM entity gets responsibility which not related to ATM itself, it's not up to ATM to increase 
+                   the balance of the headoffice!  
             */
             /********************************************************************************
              * Option 3 : decoupling of the bounded context through the use of Domain events
