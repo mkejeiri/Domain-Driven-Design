@@ -127,6 +127,18 @@ namespace SnackMachineDDD.logic.SharedKernel
 
         protected override int GetHashCodeCore()
         {
+        /*
+        The value 397 was chosen because it is an odd prime. If it were even and the multiplication overflowed, 
+        information would be lost, as multiplication by 2 is equivalent to shifting. The advantage of using a prime is less clear, 
+        but it is traditional. Shifting left just introduces a zero on the right and loses a bit on the left of the number's binary 
+        representation, so it's a clear information loss. Repeating this process gradually loses all information that was accumulated 
+        from earlier computation. That means that the more fields enter your hashcode calculation, the less effect on the final result 
+        the early fields have. The objective of hashCode is basically randomizing it across all unequal instances. 
+        Overflows are no concern here. Multiplication is there to avoid collisions between two fields having commuted values.
+        For example, if you have int x, y, you don't want the same hashCode when you swap x and y. Multiplication by an odd prime 
+        ensures that.
+        
+        */
             unchecked
             {
                 int hashCode = OneCentCount;
