@@ -4,7 +4,7 @@
     where T: ValueObject<T>
     {
 
-        //check for null already done (2)
+        //check for null done (2) and not in each derived class
         //this will delegate the real work to abstract EqualsCore
         public override bool Equals(object obj)
         {
