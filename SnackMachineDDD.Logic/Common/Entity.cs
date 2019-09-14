@@ -47,6 +47,8 @@ namespace SnackMachineDDD.logic.Common
             {
                 return false;
             }
+          
+            //if the Idenity not yet set!
             if (Id == 0 || other.Id == 0)
             {
                 return false;
