@@ -55,7 +55,8 @@ namespace SnackMachineDDD.logic.Common
             }
             return Id == other.Id;
         }
-
+        
+       //Two operators equals to each others generate the same hashcode!
         public override int GetHashCode()
         {
             //return (GetType().ToString() + Id).GetHashCode();
@@ -67,6 +68,7 @@ namespace SnackMachineDDD.logic.Common
             return NHibernateProxyHelper.GetClassWithoutInitializingProxy(this);
         }
 
+       
         public static bool operator ==(Entity a, Entity b)
         {
             if (ReferenceEquals(a, null) && ReferenceEquals(b, null))
