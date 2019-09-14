@@ -87,6 +87,14 @@ namespace SnackMachineDDD.logic.Common
         {
             return !(a == b);
         }
+      
+        //this was designed for the value type = struct and it usage doesn't provide any additional value
+        //therefore it violates the YAGNI principle  
+        //public override bool Equals(object obj)
+        //{
+        //    var other = obj as Entity;
+        //    return Equals(other);
+        //}
 
 
     }
