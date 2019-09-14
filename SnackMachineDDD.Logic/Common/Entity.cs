@@ -25,7 +25,7 @@ namespace SnackMachineDDD.logic.Common
     {
         public virtual long Id { get; protected set; }
 
-
+        //Equals is used in the list for instance when list.Contains(value)
         public override bool Equals(object obj)
         {
             var other = obj as Entity;
