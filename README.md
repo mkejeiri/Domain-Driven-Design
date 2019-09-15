@@ -24,10 +24,13 @@ Interface Abuse:
 - No business logic : Implementation could lead to potential duplication 
 - Can do : a promise or a contract to do something but doesn't say anything about any eventual relationship or hierarchy of the classes
 
+*_.Net Value type VS Value Object_*
 
-.Net Value type : Implementation details, Immutable, Structural equality
-Value Object : Design Object, Immutable, Structural equality
-Why not use struct (i.e. .Net Value type) instead of value object? : 
+- .Net Value type : Implementation details, Immutable, Structural equality
+- Value Object : Design Object, Immutable, Structural equality..
+
+*_Why not use struct (i.e. .Net Value type) instead of value object? :_*
+
 - Struct doesn't support inheritance => equality should be implemented in each struct separately which lead to code duplication.
 - Struct doesn't interact very well with ROM's
 
