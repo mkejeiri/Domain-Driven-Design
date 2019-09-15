@@ -32,7 +32,7 @@ Interface Abuse:
 *_Why not use struct (i.e. .Net Value type) instead of value object? :_*
 
 - Struct doesn't support inheritance => equality should be implemented in each struct separately which lead to code duplication.
-- Struct doesn't interact very well with ROM's
+- Struct doesn't interact very well with ORM's
 
 Unit test should cover at most inner layer (entities, value object, domain events, aggregates) : [read more ...](http://bit.ly/1XF0J6H)
  
@@ -58,8 +58,7 @@ This about Snackmachine (where MoneyId as FK) and Money (with MoneyId as PK)
 - It (Money) will have a lifetime of its own (we could delete Snackmachine object without deleting Money row), it violates the rules that a value object lifetime should fully depend on the entities lifetime.
 
 *_Initialization :_*
- It's good practice to do initialization as close a possible to the startup (factory initialisation, IOC, ...)
-in WPF is the App Class
+ It's good practice to do initialization as close a possible to the startup (factory initialisation, IOC, ...), e.g. in WPF inside the App Class, WebApi Startup class...
 
 **_Aggregates_**
 
