@@ -32,6 +32,8 @@ Unit test should cover at most inner layer (entities, value object, domain event
  
  
 
+**_Application Services VS Domain Layer_**
+
 - UI = XAML VIEW = HTLM VIEW
 - Application Services = View Model = Controllers
 
