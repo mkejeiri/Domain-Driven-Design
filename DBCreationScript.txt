@@ -4,7 +4,7 @@ CREATE DATABASE [DDDSnackMachine]
 GO
 USE [DDDSnackMachine]
 GO
-/****** Object:  Table [dbo].[Atm]    Script Date: 1/5/2016 9:48:48 AM ******/
+/****** Object:  Table [dbo].[Atm]   ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -25,7 +25,7 @@ CREATE TABLE [dbo].[Atm](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[HeadOffice]    Script Date: 1/5/2016 9:48:48 AM ******/
+/****** Object:  Table [dbo].[HeadOffice]     ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -46,7 +46,7 @@ CREATE TABLE [dbo].[HeadOffice](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Ids]    Script Date: 1/5/2016 9:48:48 AM ******/
+/****** Object:  Table [dbo].[Ids]     ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -61,7 +61,7 @@ CREATE TABLE [dbo].[Ids](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Slot]    Script Date: 1/5/2016 9:48:48 AM ******/
+/****** Object:  Table [dbo].[Slot]    ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -80,7 +80,7 @@ CREATE TABLE [dbo].[Slot](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Snack]    Script Date: 1/5/2016 9:48:48 AM ******/
+/****** Object:  Table [dbo].[Snack]    ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -95,7 +95,7 @@ CREATE TABLE [dbo].[Snack](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[SnackMachine]    Script Date: 1/5/2016 9:48:48 AM ******/
+/****** Object:  Table [dbo].[SnackMachine]    ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
