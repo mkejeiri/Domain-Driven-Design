@@ -39,13 +39,13 @@ Application Services acts as mediator between the outside world and domain layer
 For instance, In WPF View Model (Application Services) acts as wrapper on top of an entity it, augment it with the functionality required by the view, it doesn't contain any business logic and rather delegated it to the entity, it also wrap other domain classes as well such a repositories... 
 
 Rule of thumb when deciding on where to put a piece of logic:
-- If the piece of logic makes sense only in the UI context that it should be better to place it in the Application Service layer
+- If the piece of logic makes sense only in the UI context that it would be better to place it in the Application Service layer
 - Otherwise it should be in the domain layer. 
 
-Why persist a value object is a bad Idea ?
+**Why persist a value object is a bad Idea ?**
 This about Snackmachine (where MoneyId as FK) and Money (with MoneyId as PK)
 - It will require an Id, which goes against the definition of value object (structural + reference equality)
-- It (Money) will have a lifetime of its own (we could delete Snackmachine object without deleting Money row), it violates the rules that a value object lifetime should fully depend on lifetime of the entities
+- It (Money) will have a lifetime of its own (we could delete Snackmachine object without deleting Money row), it violates the rules that a value object lifetime should fully depend on the entities lifetime.
 
 
 
