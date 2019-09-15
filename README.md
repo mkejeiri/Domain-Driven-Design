@@ -28,7 +28,8 @@ Why not use struct (i.e. .Net Value type) instead of value object? :
 - Struct doesn't support inheritance => equality should be implemented in each struct separately which lead to code duplication.
 - Struct doesn't interact very well with ROM's
 
-Unit test should cover at most inner layer (entities, value object, domain events, aggregates) : read more http://bit.ly/1XF0J6H
+Unit test should cover at most inner layer (entities, value object, domain events, aggregates) : [read more ...](http://bit.ly/1XF0J6H)
+ 
  
 
 - UI = XAML VIEW = HTLM VIEW
