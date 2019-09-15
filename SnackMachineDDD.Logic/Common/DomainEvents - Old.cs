@@ -1,6 +1,6 @@
 ﻿/*
  Major drawbacks Using this approach: 
-- Implementation damages the isolation of the domain model:  Layers in the onion architecture should know only of themselves and the ones residing lower. 
+- Implementation damages the isolation of the domain model:  Layers in the onion architecture should know only about themselves and the ones residing lower layers. 
     They shouldn't depend on classes from outer layers. The ATM entity works with the DomainEvents static class, which doesn't belong to the innermost layer 
     of the onion architecture. Thus, this implementation damages the isolation of the domain model. futher, an awkward delegate we have to define in the unit 
     test in order to check that the event is raised + the Register method which is used only in unit tests. We have code in the domain layer only to be used 
@@ -10,7 +10,7 @@
  a- in case of validation fails, and we need to terminate the operation, but the domain event is already raised and processed by the time the validation fails, 
     and there is no easy way to rollback the changes made. The act of processing an event occurs before the commit. 
  b- the balance of an ATM could change (multiple mutations) for several times during a single business transaction, each time a new event 
-    is raised and processed!, a better approach is create only one final event with the all netting changes and raise it.
+    is raised and processed!, a better approach is create only one final event with all the netting changes and raise it.
 
     SOLUTION => we should distinguish two concepts, creating an event and dispatching it. 
     using The AggregrateRoot base class which will store all domain events created by an aggregate so that they can be dispatched later on.

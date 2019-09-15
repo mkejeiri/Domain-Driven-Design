@@ -9,5 +9,14 @@ packages
 .vs/
 .vs
 *crunch*
-
+_NCrunch_*
+*/bin/*
+*/obj/*
+*.ncrunchproject
+*.suo
+*.ncrunchsolution.*
+*.ncrunchsolution
+*.user
+packages/*
+*.DotSettings.*
 

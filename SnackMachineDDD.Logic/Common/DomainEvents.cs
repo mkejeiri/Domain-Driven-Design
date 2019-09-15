@@ -47,6 +47,14 @@ namespace SnackMachineDDD.logic.Common
                             && x.GetGenericTypeDefinition() == typeof(IHandler<>)
                             && x.GetGenericArguments()[0] == domainEvent.GetType());
                 if (canHandleEvent)
+                /*
+                 * the dynamic type uses the System.Object type under the hood, but unlike object
+                 * it doesn't require explicit cast operations at compile time, because
+                 * it identifies the type at run time only
+                 * Usually you have to rely on reflection to get the type of the object and to access its properties and methods.
+                 * The syntax is sometimes hard to read and consequently the code is hard to maintain.
+                 * Using dynamic here might be much easier and more convenient than reflection.
+                 */
                 {   //https://visualstudiomagazine.com/Articles/2011/02/01/Understanding-the-Dynamic-Keyword-in-C4.aspx
                     dynamic handler = Activator.CreateInstance(handlerType);
                     handler.Handle((dynamic)domainEvent);
@@ -56,7 +64,7 @@ namespace SnackMachineDDD.logic.Common
                         object res = calcType.InvokeMember("Add", BindingFlags.InvokeMethod,null, new object[] { 10, 20 });
                         int sum = Convert.ToInt32(res);
 
-                B E CO M E S
+                B E C O M E S
                         dynamic calc = GetCalculator();
                         int sum = calc.Add(10, 20);
                      */

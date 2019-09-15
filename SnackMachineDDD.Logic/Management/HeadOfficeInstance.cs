@@ -14,7 +14,7 @@ namespace SnackMachineDDD.logic.Management
 {
     public static class HeadOfficeInstance
     {
-        //we use only ONE headoffice that has an Id of 1 and a singleton instance 
+        //Business rule: we use only ONE head-office that has an Id of 1 and a singleton instance 
         //that lives throughout the lifetime of the application
         private const long HeadOfficeId = 1;
         private static readonly object syncLock = new object();
@@ -23,6 +23,10 @@ namespace SnackMachineDDD.logic.Management
         {
             get
             {
+                if (_headOffice != null)
+                {
+                    return _headOffice;
+                }
                 lock (syncLock)
                 {
                     if (_headOffice == null)

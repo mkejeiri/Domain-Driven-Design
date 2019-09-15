@@ -134,9 +134,9 @@ Domain events that are significant to the domain (as opposed to system events = 
 
 Domain Events Guidelines 
  - Naming : use alway the Past tense related the events: e.g. BalanceChangedEvent,
- - Data : Include as little data as possible, don't don’t use domain classes to represent data in events, use primitive types instead: 
+ - Data : Include as little data as possible, don’t use domain classes to represent data in events, use primitive types instead: 
     -  usually domain classes they include more information than needed 
-	-  includes additional point of coupling, it's OK to use domain classes and only if the events are consumed by a downstream bounded context (conformist, but in most cases is not the case.
+	-  includes additional point of coupling, it's OK to use domain classes and only if the events are consumed by a downstream bounded context (conformist), but in most cases is not the case.
  
 *_do we need to include in the event full information or only Id ?_*
 --------------------------------------------------------------------

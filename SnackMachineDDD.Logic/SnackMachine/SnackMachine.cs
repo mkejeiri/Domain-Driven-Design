@@ -176,5 +176,15 @@ namespace SnackMachineDDD.logic.SnackMachine
                 .Select(x => x.SnackPile)
                 .ToList();
         }
+        public virtual Money UnloadMoney()
+        {
+            if (MoneyInTransaction > 0)
+                throw new InvalidOperationException();
+
+            Money money = MoneyInside;
+            MoneyInside = Money.None;
+            return money;
+        }
+
     }
 }

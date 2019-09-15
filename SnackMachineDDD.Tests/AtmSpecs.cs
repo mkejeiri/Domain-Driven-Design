@@ -47,7 +47,7 @@ namespace SnackMachineDDD.Tests
         [Fact]
         public void Take_money_raise_an_event()
         {
-            SessionFactory.Init(@"Server=.\SQLEXPRESS;Database=SnackMachineDDD;Trusted_Connection=True;");
+            SessionFactory.Init(@"Server=.;Database=SnackMachineDDD;Trusted_Connection=True;");
             DomainEvents.Init();
             Atm atm = new Atm();
             atm.LoadMoney(OneDollar);

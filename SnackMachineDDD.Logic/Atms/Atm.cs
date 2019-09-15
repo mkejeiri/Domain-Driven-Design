@@ -42,7 +42,7 @@ namespace SnackMachineDDD.logic.Atms
 
 
             //domain entity is no longer responsible for raising the event, it just saves it to the internal list.
-            // creating an event is the responsability of domain entities and dispatching it is the responsability of infrastracture. 
+            // creating an event is the responsibility of domain entities and dispatching it is the responsibility of infrastructure. 
             AddDomainEvents(new BalanceChangedEvent(amountWithCommission));
             //if (amount < 1m)
             //{

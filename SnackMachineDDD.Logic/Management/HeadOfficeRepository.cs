@@ -6,6 +6,7 @@
  **************************************************************************************/
 namespace SnackMachineDDD.logic.Management
 {
+    //All required functionality resides in the base class
     public class HeadOfficeRepository : Repository<HeadOffice> 
     {
 
