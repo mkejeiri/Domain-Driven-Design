@@ -15,7 +15,7 @@ This is merely an introduction to the DDD based on the work of [Vladimir Khoriko
 Strategic design:
 - Ubiquitous language: Bridges the gap between developers and experts
 - Bounded context: Clear boundaries between different parts of the system
-- Core domain: Focus on the most important part of the system
+- Core domain: Focus on the most important part of the system which it CANNOT be outsourced! (Competitive Advantage)
 
 
 Interface: 
