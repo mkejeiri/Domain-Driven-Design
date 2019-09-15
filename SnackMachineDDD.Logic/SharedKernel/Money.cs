@@ -37,7 +37,7 @@ namespace SnackMachineDDD.logic.SharedKernel
         //The parameter-less constructor is required
         //because NHibernate creates entities via reflection.
         private Money() {}
-        //ctr
+        //we add : this() to make resharper to stop marking it as redundant
         public Money(
             int oneCentCount, 
             int tenCentCount, 

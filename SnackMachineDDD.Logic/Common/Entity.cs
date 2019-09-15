@@ -60,6 +60,7 @@ namespace SnackMachineDDD.logic.Common
             return (GetRealType().ToString() + Id).GetHashCode();
         }
         
+        //to avoid having proxy entity type in case of lazy loading instead of the real entity type
         public virtual Type GetRealType()
         {
             return NHibernateProxyHelper.GetClassWithoutInitializingProxy(this);

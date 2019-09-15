@@ -57,5 +57,17 @@ This about Snackmachine (where MoneyId as FK) and Money (with MoneyId as PK)
 - It will require an Id, which goes against the definition of value object (structural + reference equality)
 - It (Money) will have a lifetime of its own (we could delete Snackmachine object without deleting Money row), it violates the rules that a value object lifetime should fully depend on the entities lifetime.
 
+*_Initialization :_*
+ It's good practice to do initialization as close a possible to the startup (factory initialisation, IOC, ...)
+in WPF is the App Class
+
+**_Aggregates_**
+
+Aggregate is design pattern that help us to simplify the domain model by gathering multiple entities under a single abstraction
+  - It represents a cohesive notion of domain model
+  - Has a set of invariants which acts as a guard and maintain its state permanently valid during its lifetime... 
+  - Every aggregate should have a root entity : class/entity outside the root could ONLY AND ONLY reference the ROOT ENTITY (and not other entity) of that root. 
+  - class/entity couldn't hold reference to other entities inside a different aggregate, they must go through the ROOT ENTITY!,     e.g. access to Slot must be done through SnackMachine only, Slot should be hidden from outside world!
+
 
 

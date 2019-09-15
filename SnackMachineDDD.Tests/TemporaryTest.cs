@@ -13,7 +13,7 @@ namespace SnackMachineDDD.Tests
         {
             //var connectionString = ConfigurationManager.ConnectionStrings["SnackMachineDDDDatabase"].ConnectionString;
 
-            SessionFactory.Init(@"Server=.\SQLEXPRESS;Database=SnackMachineDDD;Trusted_Connection=True;");
+            SessionFactory.Init(@"Server=.;Database=SnackMachineDDD;Trusted_Connection=True;");
 
             //using (ISession session = SessionFactory.OpenSession())
             //{

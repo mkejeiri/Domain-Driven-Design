@@ -7,7 +7,7 @@ using SnackMachineDDD.logic.SharedKernel;
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
   We should isolate our domain model from the persistence logic as much as possible, 
   it's not always feasible when using an ORM, we still need to adapt the domain layer and some persistence logic leaks 
-  into the domain model. Luckily, the degree of the leak is not too big (un-sealed class + virtual + Getype pb with lazy loading), 
+  into the domain model. Luckily, the degree of the leak is not too big (un-sealed class + virtual + Getype  = proxy type with lazy loading), 
   and the tradeoff made is worth it. we still preserve a lot of isolation for our domain model. For example, 
   we didn't have to change any of the existing tests that validate our domain classes. 
   So it is possible to maintain the same high degree of isolation even in larger projects.
@@ -39,6 +39,7 @@ namespace SnackMachineDDD.logic.SnackMachine
         /*************************************************************************************************************
          * NHibernate requires collections that are part of the mapping to be either of ICollection or IList types.
          * Here we not exposing internal Slot entity (client couldn't tamper directly with this entity)
+         * Slots acts as a storage for a snack
          **************************************************************************************************************/
         protected virtual IList<Slot> Slots { get; set; }
 
