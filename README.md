@@ -81,7 +81,7 @@ This about Snackmachine (where MoneyId as FK) and Money (with MoneyId as PK)
  It's good practice to do initialization as close a possible to the startup (factory initialisation, IOC, ...), e.g. in WPF inside the App Class, WebApi Startup class...
 
 **_Aggregates_**
- 
+-------------------------
 Aggregate (i.e. root entity) is design pattern that help us to simplify the domain model by gathering multiple entities under a single abstraction.
   - It's a conceptual whole, i.e. it represents a cohesive notion of domain model
   - Has a set of invariants which acts as a guard and maintain its state permanently valid during its lifetime... 
