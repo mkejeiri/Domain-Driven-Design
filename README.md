@@ -144,10 +144,10 @@ It depends, use :
 - Ids : When consuming BC knows about producing BC, so the downstream BC can query the data based on Id's, i.e. we won't introduce any additional coupling... 
 - Full information: When consuming BC doesn’t know about producing BC, we must use primitives type in such case otherwise we will introduce coupling.
 
-*_ how to deliver physically the events to their subscribers ?_*
+*_how to deliver physically the events to their subscribers ?_*
 ---------------------------------------------------------------------
 It depends on what isolation type is used for BC :
- - If Single process : We use Inner-memory structures
- - Not Single process : it goes through the network through a Service Bus
+ - If single process : We use Inner-memory structures
+ - Not a single process : it goes through the network through a Service Bus
  
-Note : physical delivery is orthogonal to the notion of domain events, we can use whatever techniques, we can even persist events and use them later in an events sourcing architeture. 
+Note : physical delivery is orthogonal to the notion of domain events, we can use whatever techniques, we can even persist events and use them later in an events sourcing architecture.
