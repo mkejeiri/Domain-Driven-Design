@@ -42,7 +42,7 @@ Rule of thumb when deciding on where to put a piece of logic:
 - If the piece of logic makes sense only in the UI context that it would be better to place it in the Application Service layer
 - Otherwise it should be in the domain layer. 
 
-**Why persist a value object is a bad Idea ?**
+**_Why persist a value object is a bad Idea ?_**
 This about Snackmachine (where MoneyId as FK) and Money (with MoneyId as PK)
 - It will require an Id, which goes against the definition of value object (structural + reference equality)
 - It (Money) will have a lifetime of its own (we could delete Snackmachine object without deleting Money row), it violates the rules that a value object lifetime should fully depend on the entities lifetime.
