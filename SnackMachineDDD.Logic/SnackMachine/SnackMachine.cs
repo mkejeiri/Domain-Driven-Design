@@ -28,11 +28,11 @@ namespace SnackMachineDDD.logic.SnackMachine
         //amount of money inside the machine
         public virtual Money MoneyInside { get; protected set; }
 
-        //amount of money in transaction
+        //Because we want the machine to return the hightest denomination as possible, the number of coin and notes
+        //do not matter in MoneyInTransaction, since we could return a different combination of coins and notes
         //we might return the amount of money in different bills or cents than the ones inserted by the customer,
         //we want to track only the amount, back to decimal 
         //public virtual Money MoneyInTransaction { get; protected set; }
-
         public virtual decimal MoneyInTransaction { get; protected set; }
         public virtual decimal Amount { get; set; }
 

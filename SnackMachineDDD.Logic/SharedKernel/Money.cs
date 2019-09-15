@@ -104,11 +104,15 @@ namespace SnackMachineDDD.logic.SharedKernel
 
         public bool CanAllocate(decimal amount)
         {
+            //build the available Money to return 
             Money money = AllocateCore(amount);
             //Amount should differ in not enough change
-           return (amount == money.Amount);
+            return (amount == money.Amount);
         }
 
+
+        //in case of returning the money, this will transform an amount
+        //into Money object from the highest bill to  the lower cent! (see AllocateCore)
         public Money Allocate(decimal amount)
         {
             if (!CanAllocate(amount)) throw new InvalidOperationException();
@@ -142,9 +146,12 @@ namespace SnackMachineDDD.logic.SharedKernel
         public override string ToString() 
             => (Amount < 1) ?  "¢" + (Amount * 100).ToString("0") :  "$" + Amount.ToString("0.00");
 
-        //transform an amount into Money object from the highest bill to  the lower cent!
+        //in case of returning the money, this will transform an amount
+        //into Money object from the highest bill to  the lower cent!
         private Money AllocateCore(decimal amount)
         {
+            //Imagine that the Money represents all the Money inside the SnackMachine
+            //then TwentyDollarCount represents how many 20 dollars bill inside the machine
             int twentyDollarCount = Math.Min((int)(amount / 20), TwentyDollarCount);
             amount -= twentyDollarCount * 20;
 
@@ -163,7 +170,13 @@ namespace SnackMachineDDD.logic.SharedKernel
 
             int oneCentCount = Math.Min((int)(amount / .01m), OneCentCount);
             amount -= oneCentCount * .01m;
-            return new Money(oneCentCount, tenCentCount, quarterCount, oneDollarCount, fiveDollarCount, twentyDollarCount);
+            return new Money(
+                                oneCentCount, 
+                                tenCentCount, 
+                                quarterCount, 
+                                oneDollarCount, 
+                                fiveDollarCount, 
+                                twentyDollarCount);
         }
     }
 }
