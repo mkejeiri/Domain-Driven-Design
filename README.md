@@ -18,7 +18,9 @@ Strategic design:
 - Core domain: Focus on the most important part of the system which it CANNOT be outsourced! (Competitive Advantage)
 
 
-Interface: 
+Interface Abuse:
+-----------------
+ 
 - No business logic : could lead to potential duplication
 - Can do : a promise or a contract to do something but doesn't say anything about any eventual relationship or hierarchy of the classes
 
