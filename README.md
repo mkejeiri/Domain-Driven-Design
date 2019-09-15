@@ -62,11 +62,27 @@ This about Snackmachine (where MoneyId as FK) and Money (with MoneyId as PK)
 
 **_Aggregates_**
 
-Aggregate is design pattern that help us to simplify the domain model by gathering multiple entities under a single abstraction
+Aggregate (i.e. root entity) is design pattern that help us to simplify the domain model by gathering multiple entities under a single abstraction
   - It represents a cohesive notion of domain model
   - Has a set of invariants which acts as a guard and maintain its state permanently valid during its lifetime... 
   - Every aggregate should have a root entity : classes/entities outside the root could ONLY AND ONLY reference the ROOT ENTITY (and not other entities) of that root. 
-  - classes/entities couldn't hold reference to other entities inside accross aggregates, they must go through the ROOT ENTITY! first, e.g. access to Slot must be done through SnackMachine only, Slot should be hidden from outside world!
+  - classes/entities couldn't hold reference to other entities accross aggregates, they must go through the ROOT ENTITY! first, e.g. access to Slot must be done through SnackMachine only, Slot should be hidden from outside world!
+  - Restcting access to entities (other than from RootEntities) that are internal to aggregate from outside clients(entities...) helps to better protect the invariants and thus avoiding to corrupt the internal state of the aggregate. 
+  - Aggregate acts as single operation unit (unit of work) in the application layer (AL), the AL should retrieve them from the DB, perform some operation on them and store them back as single object. 
+  - Aggregate maintain consitency boundaries, the data belonging to an aggregate in the DB should be consistent (i.e. doesn't break the invariants), hence the need to persist an aggregate in transactional way. (e.g. we cannot save snackMachine without the Slots that go with it)  
+  - Invariants which span accross multiple aggregates shoudn't be expected to be updated all the time, but they should be consistent all the times
+  - Value Object could reside in several aggregate (e.g. integer value! which could be used accross entities of multiple aggregates)
+  
+ *_Find Bounderies for Aggregates_*
+ ----------------------------------
+ - Entities inside aggregate (i.e. root entity) should be highly cohesive as a group of classes, and entities outside aggregate are loosely coupled
+ - To identify an root entity or aggregate, ask the question, does an entity make sense without other entities? if it does than it's an aggregate (root entity), otherwise it's part of an already existing aggregate or root entity, e.g. a slot cannot exist without a SnackMachine,does an entity within the SnackMachine (aggregate), the Snack class/entity can life by its own so it could be a different root aggregate/entity. 
+ - Change boundaries when you discover more information [more ...](http://biy/ly/1lisDBQ)
+ - Avoid creating aggregates that are too large because it hard to maintain consistency if you have to update/store partial part of the aggregate.
+ - Proper boundaries are sometime a trade-off between simplify and performance.
+ - There's no limit on how many value objects are in the aggregate.
+ - 1-to many should be 1-to-some, need to extract to different aggregate: e.g. SnackMachine and PurchaseLog, separate a PurchaseLog and use domain event to communicate between SnackMachine and PurchaseLog.  
+  
 
 
 
