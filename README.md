@@ -20,6 +20,18 @@ Strategic design:
 	-  Each Bounded context has it's own onion architeture (think microservices)
 	-  Explicit relationships between different bounded contexts using the [context Map](https://vimeo.com/125769142)
 - Context Map: it render the bounded contexts of the system and the communication between them.
+ 
+Sub-domain belongs to problem space and Bounded context belongs to the solution space, usually the relation is 1 to 1, but in case of legacy system you might add an extra anticorruption layer as bounded context. 
+ 
+How to find boundaries for Bounded Context ?
+ - sometimes is the same as how to find boundaries for Sub-domain ? => ask domain experts!
+ - sometimes we to look a team size (6-8 dev max) or the code size (should fit in the head)
+ - use event storming
+ - in some cases bounded context are only logically (and not physically) separeted (same project and same databases with separate schemas), which is not the case in [Microservices](http://bit.ly/1dI7ZJQ) (separate deployments and processes run)!
+ 
+The physical vs logical separation is trade-off between easy to maintain with proper isolation vs bigger maintenance overhead
+ 
+
 
 Interface abuse
 ---------------
