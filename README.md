@@ -21,7 +21,7 @@ Strategic design:
 Interface Abuse:
 -----------------
  
-- No business logic : could lead to potential duplication
+- No business logic : Implementation could lead to potential duplication 
 - Can do : a promise or a contract to do something but doesn't say anything about any eventual relationship or hierarchy of the classes
 
 
