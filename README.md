@@ -13,10 +13,13 @@ This is merely an introduction to the DDD based on the work of [Vladimir Khoriko
 **_a Few words when implementing DDD_** 
 -------------------------------------------
 Strategic design:
-- Ubiquitous language: Bridges the gap between developers and experts
-- Bounded context: Clear boundaries between different parts of the system
 - Core domain: Focus on the most important part of the system which CANNOT be outsourced! (Competitive Advantage)
-
+- Ubiquitous language: Bridges the gap between developers and experts
+- Bounded context : Clear boundaries between different parts of the system, big model brings significant communication and overhead with them as more people get involved. 
+    -  Bounded context hepls reduce that using Ubiquitous language, 
+	-  Each Bounded context has it's own onion architeture (think microservices)
+	-  Explicit relationships between different bounded contexts using the [context Map](https://vimeo.com/125769142)
+- Context Map: it render the bounded contexts of the system and the communication between them.
 
 Interface abuse
 ---------------
@@ -106,9 +109,9 @@ Aggregate (i.e. root entity) is design pattern that help us to simplify the doma
  
  *_How many repositories should we create for domain model_*
  -----------------------------------------------------------
-- The general rule it should be a repository per aggregate. e.g. SnackMachineRepository & SnackRepository, they should get eagerly/lazy all entities of the aggregate. All sub-entities should be automatically saved with aggregate.
+- The general rule it should be a repository per aggregate. e.g. SnackMachineRepository & SnackRepository, they should get eagerly/lazy all entities of the aggregate. All sub-entities should be automatically saved with aggregate (don't forget to SaveUpdate() in FluentNHibernate, for more info check Slot mapping in SnackMachineMap class).
 
 - Repository public method should work only with aggregates/aggregateRoots/Root entities.
 - If we have to retrieve a sub-entity we need to get aggregate first and then access to the sub-entity. e.g. SnackMachine snackMachine= repository.GetBySlotId(slotId) here we get SnackMachine and not slot.
- 
+- In Web based app we don't work with domain object in de-attach mode, thus the lazy loading makes sense, the reverse is true for desktop apps (domain objects are in de-attach mode).
 
