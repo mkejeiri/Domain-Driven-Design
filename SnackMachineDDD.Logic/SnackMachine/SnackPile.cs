@@ -3,14 +3,15 @@ using System;
 using SnackMachineDDD.logic.Common;
 
 namespace SnackMachineDDD.logic.SnackMachine
-{ 
+{
     /***********************************************************************************************************************************************
-     - All responsibilities of the slot entity had been transfered to the SnackPile value object (light weight). 
+     - Snack,Quantity,Price are always used together so we could extract them into SnackPile abstraction
+     - All responsibilities of the slot entity had been transferred to the SnackPile value object (light weight). 
        The Slot acts just as a host for that value object, nothing more. 
      - To adhere to the immutability rule of value objects. Instead of making the quantity property in the SnackPile ValueObject mutable, 
        a separate method that creates a new instance of that value object had been introduce.     
      ************************************************************************************************************************************************/
-
+    //This still could remain as sealed because NHibernate required to remove the sealed keyword for entities only!
     public sealed class SnackPile:ValueObject<SnackPile>
     {
         public static readonly SnackPile EmptySnackPile = new SnackPile(Snack.None, 0,0m);
@@ -49,6 +50,7 @@ namespace SnackMachineDDD.logic.SnackMachine
             }
         }
 
+        //!!!Since the SnackPile is immutable we cannot do SnackPile.Quantity--
         public SnackPile SubtractOne()
         { 
             return  new SnackPile(Snack, Quantity-1, Price);

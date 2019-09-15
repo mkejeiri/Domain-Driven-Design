@@ -11,6 +11,7 @@ namespace SnackMachineDDD.logic.SnackMachine
         public static readonly Snack Chocolate = new Snack(1, "Chocolate");
         public static readonly Snack Soda = new Snack(2, "Soda");
         public static readonly Snack Gum = new Snack(3,"Gum");
+
         //for Nhibernate to work
         protected Snack(){}
 
@@ -19,6 +20,6 @@ namespace SnackMachineDDD.logic.SnackMachine
             Name = name /*?? throw new ArgumentNullException(nameof(name))*/;
             Id = id;
         }
-
+        
     }
 }

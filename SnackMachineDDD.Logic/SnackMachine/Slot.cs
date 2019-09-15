@@ -3,14 +3,15 @@
 namespace SnackMachineDDD.logic.SnackMachine
 {
     /***********************************************************************************************************************************************
-     - All responsibilities of the slot entity had been transfered to the SnackPile value object (light weight). 
+     - Snack,Quantity,Price are always used together so we could extract them into SnackPile abstraction
+     - All responsibilities of the slot entity had been transferred to the SnackPile value object (light weight). 
        The Slot acts just as a host for that value object, nothing more. 
      - To adhere to the immutability rule of value objects. Instead of making the quantity property in the SnackPile ValueObject mutable, 
        a separate method that creates a new instance of that value object had been introduce.     
      ************************************************************************************************************************************************/
     public class Slot: Entity
     {
-        public virtual Snack Snack { get;  set; }
+        //public virtual Snack Snack { get;  set; }
         //public virtual int Quantity { get;  set; }
         //public virtual decimal Price { get;  set; }
         public virtual SnackMachine SnackMachine { get; protected set; }

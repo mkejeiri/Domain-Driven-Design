@@ -27,12 +27,17 @@ Interface Abuse:
 *_.Net Value type VS Value Object_*
 
 - .Net Value type : Implementation details, Immutable, Structural equality
-- Value Object : Design Object, Immutable, Structural equality..
+- Value Object : Design Object, Immutable, Structural equality...
+
+
 
 *_Why not use struct (i.e. .Net Value type) instead of value object? :_*
 
 - Struct doesn't support inheritance => equality should be implemented in each struct separately which lead to code duplication.
 - Struct doesn't interact very well with ORM's
+- Value Objects allow abstraction of multiple fields (e.g SnackPile {snack, quantity, price}, Slot acts as a host for SnackPile), it also has invariants which protect the internal state of the aggregate/entity at all time, there are light-weight and it's also to move business logic to them as much as possible.
+- Value Objects are immutable and should remain so (e.g. instead of subtracting quantity we create a new object bearing the same quantity, see SnackPile.SubtractOne())
+
 
 Unit test should cover at most inner layer (entities, value object, domain events, aggregates) : [read more ...](http://bit.ly/1XF0J6H)
  
