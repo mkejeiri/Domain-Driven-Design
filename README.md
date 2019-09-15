@@ -127,6 +127,11 @@ Aggregate (i.e. root entity) is design pattern that help us to simplify the doma
 - If we have to retrieve a sub-entity we need to get aggregate first and then access to the sub-entity. e.g. SnackMachine snackMachine= repository.GetBySlotId(slotId) here we get SnackMachine and not slot.
 - In Web based app we don't work with domain object in de-attach mode, thus the lazy loading makes sense, the reverse is true for desktop apps (domain objects are in de-attach mode).
 
+**_Repository anti-pattern_**
+ --------------------------------------------------------
+a well-known anti-pattern is to use methods that return not fully initialized entities, i.e. sometime we need a projection of our model that fetches only some required data, in such case we might be lead mistakenly in loading a partially initialized entities from the database which might violates their invariants and hence not adhere to always valid approach, a better approach would be to use DTO's instead.
+
+
 **_Domain event_**
  --------------------------------------------------------
 Domain events that are significant to the domain (as opposed to system events = notion representing the infrastructure), they decouple bounded context and facilitate communication between them. It could also be used within the same bounded context.
