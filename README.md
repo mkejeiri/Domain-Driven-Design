@@ -10,7 +10,7 @@ This is merely an introduction to the DDD based on the work of [Vladimir Khoriko
 
 
 
-Some notes on DDD: 
+### Some notes on DDD: 
 Strategic design:
 - Ubiquitous language: Bridges the gap between developers and experts
 - Bounded context: Clear boundaries between different parts of the system
