@@ -10,7 +10,7 @@ This is merely an introduction to the DDD based on the work of [Vladimir Khoriko
 
 
 
-## a Few words when implementing DDD 
+**_a Few words when implementing DDD_** 
 -------------------------------------------
 Strategic design:
 - Ubiquitous language: Bridges the gap between developers and experts
