@@ -15,11 +15,11 @@ This is merely an introduction to the DDD based on the work of [Vladimir Khoriko
 Strategic design:
 - Ubiquitous language: Bridges the gap between developers and experts
 - Bounded context: Clear boundaries between different parts of the system
-- Core domain: Focus on the most important part of the system which it CANNOT be outsourced! (Competitive Advantage)
+- Core domain: Focus on the most important part of the system which CANNOT be outsourced! (Competitive Advantage)
 
 
-Interface Abuse:
------------------
+Interface abuse
+---------------
  
 - No business logic : Implementation could lead to potential duplication 
 - Can do : a promise or a contract to do something but doesn't say anything about any eventual relationship or hierarchy of the classes
@@ -98,3 +98,16 @@ Aggregate (i.e. root entity) is design pattern that help us to simplify the doma
 - Perfect place to hold domain events that happens to an Aggregate during its lifetime ,in our case we will use domain event and optimistic locking so we need otherwise we don't use it.
 
 
+**_Repository_**
+ --------------------------------------------------------
+ Design pattern for encapsulating the communication with the database, the client should gather required domain object as if they reside in memory by calling a single method (no additional effort is required).
+ 
+ 
+ *_How many reposities should we create for domain model_*
+ -----------------------------------------------------------
+- The general rule it should be a repository per aggregate. e.g. SnackMachineRepository & SnackRepository, they should get eagerly/leazy all entities of the aggregate. All subentities should be automatically saved with aggregate.
+
+- Repository public method should work only with aggregates/aggregateRoots/Root entities.
+- If we have to retrieve a subentity we need to get aggregate first and then access to the subentity. e.g. SnackMachine snackMachine= repository.GetBySlotId(slotId) here we get SnackMachine and not slot.
+ 
+ 
