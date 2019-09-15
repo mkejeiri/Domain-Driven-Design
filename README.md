@@ -160,3 +160,13 @@ Prefer the "Always Valid" approach because :
 - DRY principle, it may never lead to code duplication, due to human factor (to remember the central place of validation)
 - Each class maintain its invariants and remain all time in a valid state
 for more about [Fail fast principle](http://bit.ly/1RrHvj8) 
+
+----------------------------------------
+ - Don't have state per its own
+ - Contain some domain logic
+ - Contains knowledge that doesn't belong neither to entities not to value objects
+ 
+*_Domain Services Vs Application Service_*
+----------------------------------------
+ - Domain Services :resides inside of the domain layer, Contains domain logic and doesn't communicate with the outside world 
+ - Application Service: resides outside of the domain layer, Communicates with the outside world and doesn't contain domain logic, they delegates execution to domain classes such as entities, value objects, repositories and domain services. 
