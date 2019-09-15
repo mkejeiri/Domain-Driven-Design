@@ -161,6 +161,7 @@ Prefer the "Always Valid" approach because :
 - Each class maintain its invariants and remain all time in a valid state
 for more about [Fail fast principle](http://bit.ly/1RrHvj8) 
 
+*_Domain Services_*
 ----------------------------------------
  - Don't have state per its own
  - Contain some domain logic
