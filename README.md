@@ -127,3 +127,27 @@ Aggregate (i.e. root entity) is design pattern that help us to simplify the doma
 - If we have to retrieve a sub-entity we need to get aggregate first and then access to the sub-entity. e.g. SnackMachine snackMachine= repository.GetBySlotId(slotId) here we get SnackMachine and not slot.
 - In Web based app we don't work with domain object in de-attach mode, thus the lazy loading makes sense, the reverse is true for desktop apps (domain objects are in de-attach mode).
 
+**_Domain event_**
+ --------------------------------------------------------
+Domain events that are significant to the domain (as opposed to system events = notion representing the infrastructure), they decouple bounded context and facilitate communication between them. It could also be used within the same bounded context.
+
+
+Domain Events Guidelines 
+ - Naming : use alway the Past tense related the events: e.g. BalanceChangedEvent,
+ - Data : Include as little data as possible, don't don’t use domain classes to represent data in events, use primitive types instead: 
+    -  usually domain classes they include more information than needed 
+	-  includes additional point of coupling, it's OK to use domain classes and only if the events are consumed by a downstream bounded context (conformist, but in most cases is not the case.
+ 
+*_do we need to include in the event full information or only Id ?_*
+--------------------------------------------------------------------
+It depends, use :
+- Ids : When consuming BC knows about producing BC, so the downstream BC can query the data based on Id's, i.e. we won't introduce any additional coupling... 
+- Full information: When consuming BC doesn’t know about producing BC, we must use primitives type in such case otherwise we will introduce coupling.
+
+*_ how to deliver physically the events to their subscribers ?_*
+---------------------------------------------------------------------
+It depends on what isolation type is used for BC :
+ - If Single process : We use Inner-memory structures
+ - Not Single process : it goes through the network through a Service Bus
+ 
+Note : physical delivery is orthogonal to the notion of domain events, we can use whatever techniques, we can even persist events and use them later in an events sourcing architeture. 
