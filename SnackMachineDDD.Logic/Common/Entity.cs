@@ -25,7 +25,7 @@ namespace SnackMachineDDD.logic.Common
     {
         public virtual long Id { get; protected set; }
 
-        //Equals is used in the list for instance when list.Contains(value)
+
         public override bool Equals(object obj)
         {
             var other = obj as Entity;
@@ -47,16 +47,13 @@ namespace SnackMachineDDD.logic.Common
             {
                 return false;
             }
-          
-            //if the Idenity not yet set!
             if (Id == 0 || other.Id == 0)
             {
                 return false;
             }
             return Id == other.Id;
         }
-        
-       //Two operators equals to each others generate the same hashcode!
+
         public override int GetHashCode()
         {
             //return (GetType().ToString() + Id).GetHashCode();
@@ -68,7 +65,6 @@ namespace SnackMachineDDD.logic.Common
             return NHibernateProxyHelper.GetClassWithoutInitializingProxy(this);
         }
 
-       
         public static bool operator ==(Entity a, Entity b)
         {
             if (ReferenceEquals(a, null) && ReferenceEquals(b, null))
@@ -87,14 +83,6 @@ namespace SnackMachineDDD.logic.Common
         {
             return !(a == b);
         }
-      
-        //this was designed for the value type = struct and it usage doesn't provide any additional value
-        //therefore it violates the YAGNI principle  
-        //public override bool Equals(object obj)
-        //{
-        //    var other = obj as Entity;
-        //    return Equals(other);
-        //}
 
 
     }

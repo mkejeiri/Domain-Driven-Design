@@ -13,6 +13,15 @@ namespace SnackMachineDDD.Tests
 {
     public class SnackMachineSpecs
     {
+
+        [Fact]
+        public void Newly_created_snack_do_not_contain_money()
+        {
+            var snackMachine = new SnackMachine();
+            snackMachine.MoneyInTransaction.Should().Be(0m);
+            snackMachine.MoneyInside.Amount.Should().Be(0m);
+        }
+
         [Fact]
         public void Cannot_insert_more_than_one_coin_or_note_at_a_time()
         {

@@ -1,7 +1,13 @@
-bin/
-obj/
-packages/
-*.dll
+bin
+obj
+packages
 *.exe
+*.dll
 *.pdb
+.vs/
+.vs/*
+.vs/
+.vs
+*crunch*
+
 

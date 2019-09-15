@@ -38,16 +38,11 @@ namespace SnackMachineDDD.logic.Atms
             MoneyInside -= output;
             decimal amountWithCommission = CalculateAmountWithCommission(amount);
             MoneyCharged += amountWithCommission;
-
-            //DomainEvents.Raise damages the isolation of the domain model: Layers in the onion architecture
-            //should know only of themselves and the ones residing lower.
-            //They shouldn't depend on classes from outer layers. The ATM entity works
-            //with the DomainEvents static class, which doesn't belong to the innermost layer
             //DomainEvents.Raise(new BalanceChangedEvent(amountWithCommission));
 
 
             //domain entity is no longer responsible for raising the event, it just saves it to the internal list.
-            //creating an event is the responsability of domain entities and dispatching it is the responsability of infrastracture. 
+            // creating an event is the responsability of domain entities and dispatching it is the responsability of infrastracture. 
             AddDomainEvents(new BalanceChangedEvent(amountWithCommission));
             //if (amount < 1m)
             //{

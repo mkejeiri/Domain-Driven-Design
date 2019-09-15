@@ -39,9 +39,10 @@ namespace SnackMachineDDD.logic.Utils
                     .AddFromAssembly(Assembly.GetExecutingAssembly())
                     .Conventions.Add(
                         ForeignKey.EndsWith("ID"),
+                        //All column in the tables should be treated as nullable in the table
                         ConventionBuilder.Property.When(criteria => criteria.Expect(x => x.Nullable, Is.Not.Set),
                             x => x.Not.Nullable()))
-                    .Conventions.Add<TablenNameConvention>()
+                    .Conventions.Add<TableNameConvention>()
                     .Conventions.Add<HiloConvention>()
                 )
                 /*
@@ -60,7 +61,7 @@ namespace SnackMachineDDD.logic.Utils
                 });
             return configuration.BuildSessionFactory();
         }
-        public class TablenNameConvention : IClassConvention
+        public class TableNameConvention : IClassConvention
         {
             public void Apply(IClassInstance instance)
             {
@@ -68,7 +69,11 @@ namespace SnackMachineDDD.logic.Utils
             }
         }
 
-        /* High is the number of the batch, whereas low is the number of identifier in that batch*/
+        /* High is the number of the batch, whereas low is the number of identifier in that batch
+            this will avoid unnecessary round-trip to the DB to get the next ID VS the identity columns the SQL Server
+            which required not only round-trip which doesn't play well with the concept of unit of work        
+        */
+
         public class HiloConvention : IIdConvention
         {
             public void Apply(IIdentityInstance instance)
