@@ -37,9 +37,11 @@ namespace SnackMachineDDD.logic.SnackMachine
         public virtual decimal Amount { get; set; }
 
         /*************************************************************************************************************
-         * NHibernate requires collections that are part of the mapping to be either of ICollection or IList types.
-         * Here we not exposing internal Slot entity (client couldn't tamper directly with this entity)
-         * Slots acts as a storage for a snack
+         - NHibernate requires collections that are part of the mapping to be either of ICollection or IList types.
+         - Here we not exposing internal Slot entity (client couldn't tamper directly with this entity)
+         - Slots acts as a storage for a snack
+         - protected modifier : allow us to hide this entity to outside world (entities which aren't part of the aggregate)
+           thus protect the invariants (e.g. MAX of 3 slots in our example)
          **************************************************************************************************************/
         protected virtual IList<Slot> Slots { get; set; }
 
