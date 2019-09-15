@@ -154,6 +154,7 @@ Note : physical delivery is orthogonal to the notion of domain events, we can us
 
 
 *_Always Valid vs. Not Always Valid_*
+----------------------------------------
 Prefer the "Always Valid" approach because :
 - Removes temporal coupling, no need to call isValid in one single place at the end by another class
 - DRY principle, it may never lead to code duplication, due to human factor (to remember the central place of validation)
