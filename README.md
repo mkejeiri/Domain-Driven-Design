@@ -10,7 +10,8 @@ This is merely an introduction to the DDD based on the work of [Vladimir Khoriko
 
 
 
-### a Few words when implementing DDD 
+## a Few words when implementing DDD 
+-------------------------------------------
 Strategic design:
 - Ubiquitous language: Bridges the gap between developers and experts
 - Bounded context: Clear boundaries between different parts of the system
