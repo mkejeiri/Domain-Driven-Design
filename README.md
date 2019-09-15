@@ -66,8 +66,8 @@ in WPF is the App Class
 Aggregate is design pattern that help us to simplify the domain model by gathering multiple entities under a single abstraction
   - It represents a cohesive notion of domain model
   - Has a set of invariants which acts as a guard and maintain its state permanently valid during its lifetime... 
-  - Every aggregate should have a root entity : class/entity outside the root could ONLY AND ONLY reference the ROOT ENTITY (and not other entity) of that root. 
-  - class/entity couldn't hold reference to other entities inside a different aggregate, they must go through the ROOT ENTITY!,     e.g. access to Slot must be done through SnackMachine only, Slot should be hidden from outside world!
+  - Every aggregate should have a root entity : classes/entities outside the root could ONLY AND ONLY reference the ROOT ENTITY (and not other entities) of that root. 
+  - classes/entities couldn't hold reference to other entities inside accross aggregates, they must go through the ROOT ENTITY! first, e.g. access to Slot must be done through SnackMachine only, Slot should be hidden from outside world!
 
 
 
