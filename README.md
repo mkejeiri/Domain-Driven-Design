@@ -100,7 +100,7 @@ Aggregate (i.e. root entity) is design pattern that help us to simplify the doma
  - To identify an root entity or aggregate, ask the question, Does an entity makes sense by its own? if it does than it's an aggregate (root entity), otherwise it's part of an already existing aggregate or root entity, e.g. a slot cannot exist without a SnackMachine,does an entity within the SnackMachine (aggregate), the Snack class/entity can life by its own so it could be a different root aggregate/entity. 
  - Change boundaries when you discover more information 
  - Avoid creating aggregates that are too large because it hard to maintain consistency if you have to update/store partial part of the aggregate.
- - Proper boundaries are sometime a trade-off between simplify and performance.
+ - Proper boundaries are sometime a trade-off between simplicity and performance.
  - There's no limit on how many value objects are in the aggregate.
  - 1-to-many should be 1-to-some, need to extract to different aggregate: e.g. SnackMachine and PurchaseLog, separate the PurchaseLog and use domain event to communicate between SnackMachine and PurchaseLog.  
  - Do NOT expose internal entities outside the aggregate
