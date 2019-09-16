@@ -163,7 +163,7 @@ Note : physical delivery is orthogonal to the notion of domain events, we can us
 Prefer the "Always Valid" approach because :
 - Removes temporal coupling, no need to call isValid in one single place at the end by another class
 - Always Valid respects inherently the DRY principle, it may never lead to code duplication, due to human factor (e.g. hard to remember the central place for validation by all team member)
-- Each class maintain its invariants and remain all time in a valid state
+- In Always Valid, each class maintain its invariants and remain all time in a valid state
 for more about [Fail fast principle](http://bit.ly/1RrHvj8) 
 
 *_Domain Services_*
