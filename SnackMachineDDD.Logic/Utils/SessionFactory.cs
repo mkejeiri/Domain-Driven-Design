@@ -33,11 +33,11 @@ namespace SnackMachineDDD.logic.Utils
         
         /**********************************************************************************************************************
         Nhibernate has 3 types of configurations:
-                a - Xml files : quite verbose and error prone, due to its inability to use intellisense, 
+                a - Xml files configuration : quite verbose and error prone, due to its inability to use intellisense, 
                                 it could be that we refactor a property or class, we forget to update the configuration
-                b- Convention based using annotations: although it will solve the problem of lied out by  Xml files approach but 
+                b- Convention based using annotations: although it will solve the problem lied out by Xml files approach but 
                     it will violate the isolation principle which state that entities shouldn't be aware how to get persisted
-                c- fluent configuration: this approach avoid the drawbacks of the 2 previous approaches
+                c- Fluent configuration: this approach avoid the drawbacks of the 2 previous approaches
         ***********************************************************************************************************************/
         private static ISessionFactory BuildSessionFactory(string connectionString)
         {
