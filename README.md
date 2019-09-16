@@ -87,7 +87,7 @@ Aggregate (i.e. root entity) is design pattern that help us to simplify the doma
   - Has a set of invariants which acts as a guard and maintain its state permanently valid during its lifetime... 
   - Every aggregate should have a root entity : classes/entities outside the root could ONLY AND ONLY reference the ROOT ENTITY (and not other entities) of that root. 
   - classes/entities couldn't hold reference to other entities accross aggregates, they must go through the ROOT ENTITY! first, e.g. access to Slot must be done through SnackMachine only, Slot should be hidden from outside world!
-  - Restcting access to entities (other than from RootEntities) that are internal to aggregate from outside clients(entities...) helps to better protect the invariants and thus avoiding to corrupt the internal state of the aggregate. 
+  - Restricting access to entities (other than from RootEntities) that are internal to aggregate from outside clients(entities...) helps to better protect the invariants and thus avoiding to corrupt the internal state of the aggregate. 
   - Single operational unit for the application layer: Aggregate acts as single operation unit (unit of work) in the application layer (AL), the AL should retrieve them from the DB, perform some operation on them and store them back as single object. 
   - Consistency boundaries: Aggregate maintain consitency boundaries, the data belonging to an aggregate in the DB should be consistent (i.e. doesn't break the invariants), hence the need to persist an aggregate in transactional way. (e.g. we cannot save snackMachine without the Slots that go with it)  
   - Invariants which span accross multiple aggregates shoudn't be expected to be updated all the time, but they should be consistent all the times
