@@ -110,7 +110,7 @@ Aggregate (i.e. root entity) is design pattern that help us to simplify the doma
  --------------------------------------------------------
 - More readable code base : which entities are AggregateRoot and which ones are part of an existing Aggregate
 - Optimistic locking : if it's introduced we need to version the Aggregate
-- Perfect place to hold domain events that happens to an Aggregate during its lifetime ,in our case we will use domain event and optimistic locking so we need otherwise we don't use it.
+- Perfect place to hold domain events that happens to an Aggregate during its lifetime ,in our case we will use domain event and optimistic locking so we need it, otherwise we don't use it.
 
 
 
