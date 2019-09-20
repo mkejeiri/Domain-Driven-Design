@@ -80,7 +80,7 @@ This about Snackmachine (where MoneyId as FK) and Money (with MoneyId as PK)
 *_Initialization :_*
  It's good practice to do initialization as close a possible to the startup (factory initialisation, IOC, ...), e.g. in WPF inside the App Class, WebApi Startup class...
 
-**_Aggregates_**
+**_Aggregates(DDD Tactical Design)_**
 -------------------------
 Aggregate (i.e. root entity) is design pattern that help us to simplify the domain model by gathering multiple entities under a single abstraction.
   - It's a conceptual whole, i.e. it represents a cohesive notion of domain model
@@ -100,7 +100,7 @@ Aggregate (i.e. root entity) is design pattern that help us to simplify the doma
  - To identify an root entity or aggregate, ask the question, Does an entity makes sense by its own? if it does than it's an aggregate (root entity), otherwise it's part of an already existing aggregate or root entity, e.g. a slot cannot exist without a SnackMachine,does an entity within the SnackMachine (aggregate), the Snack class/entity can life by its own so it could be a different root aggregate/entity. 
  - Change boundaries when you discover more information 
  - Avoid creating aggregates that are too large because it hard to maintain consistency if you have to update/store partial part of the aggregate.
- - Proper boundaries are sometime a trade-off between simplicity and performance.
+ - Proper boundaries are sometime a trade-off between simplicity and performance, in that case newly split aggregates are referenced by their id's in the aggregate root which were part of, they will have their own transaction boundary. If those aggregate lives in the same bounded context and deployed as single physical unit, then use Domain Events to communicate between them and skip the messaging infrastructure such as NServicebus (immediate consistency), otherwise we have to go through the messaging infrastructure (eventual consistency).
  - There's no limit on how many value objects are in the aggregate.
  - 1-to-many should be 1-to-some, need to extract to different aggregate: e.g. SnackMachine and PurchaseLog, separate the PurchaseLog and use domain event to communicate between SnackMachine and PurchaseLog.  
  - Do NOT expose internal entities outside the aggregate
@@ -125,7 +125,7 @@ Aggregate (i.e. root entity) is design pattern that help us to simplify the doma
 
 - Repository public method should work only with aggregates/aggregateRoots/Root entities.
 - If we have to retrieve a sub-entity we need to get aggregate first and then access to the sub-entity. e.g. SnackMachine snackMachine= repository.GetBySlotId(slotId) here we get SnackMachine and not slot.
-- In Web based app we don't work with domain object in de-attach mode, thus the lazy loading makes sense, the reverse is true for desktop apps (domain objects are in de-attach mode).
+- In Web based app we don't work with domain object in deattached mode, thus the lazy loading makes sense, the reverse is true for desktop apps (domain objects are in attached mode).
 
 **_Repository anti-pattern_**
  --------------------------------------------------------
