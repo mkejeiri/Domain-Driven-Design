@@ -20,14 +20,18 @@ together into a right-sized cluster, modeling your domain in the most explicit w
 - Supporting Subdomain: modeling a situation that calls for custom development, because an off-the-shelf solution doesn't exist, it is The software model that the Core Domain cannot be successful without it.
 - Generic Subdomain: may be available for purchase or be outsourced or even developed in house by less elite developers 
 
-
+# Domain Driven Design Distilled
 ##  Tactical Design : Aggregate
 **Aggregate 4 Rules of Thumb**
+
 1- Protect business invariants inside Aggregate boundaries.
+
 2- Design small Aggregates and choose right-sizing Aggregates.
+
 3- Reference other Aggregates by identity only.
+
 4- Update other Aggregates using eventual consistency.
--------------------------
+
 
 **How to Right-Sizing Aggregates (merging and tuning)**
 
