@@ -43,7 +43,8 @@ reaction to changes made to Aggregate, use consistency rules, which will indicat
 - Immediately 
 - Within N seconds/minutes/hours/days
 
-4- Immediate time frames, strongly consider composing those two Entities within the same Aggregate boundary
+4- Immediate time frames, strongly consider composing those two Entities within the same Aggregate boundary.
+
 5- Reacting Aggregates that can be updated following a given elapsed time, we will update these using eventual consistency (4th rule).
 
 ## Tactical Design : Domain Events
