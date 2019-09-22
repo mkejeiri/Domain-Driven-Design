@@ -21,7 +21,7 @@ together into a right-sized cluster, modeling your domain in the most explicit w
 - Generic Subdomain: may be available for purchase or be outsourced or even developed in house by less elite developers 
 
 ##  Tactical Design : Aggregate
-**Aggregate 4 Rules of Thumb**
+**Aggregate's 4 rules of thumb**
 
 1- Protect business invariants inside Aggregate boundaries.
 
