@@ -240,4 +240,4 @@ for more about [Fail fast principle](http://bit.ly/1RrHvj8)
 *_Domain Services Vs Application Service_*
 ----------------------------------------
  - Domain Services : resides inside of the domain layer, Contains domain logic and doesn't communicate with the outside world 
- - Application Service: resides outside of the domain layer, Communicates with the outside world and doesn't contain domain logic, they delegates execution to domain classes such as entities, value objects, repositories and domain services. 
+ - Application Services: resides outside of the domain layer, Communicates with the outside world and doesn't contain domain logic, they delegates execution to domain classes such as entities, value objects, repositories and domain services. 
