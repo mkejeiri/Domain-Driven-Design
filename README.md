@@ -140,7 +140,7 @@ Rule of thumb when deciding on where to put a piece of logic:
 
 **_Why persist a value object is a bad Idea ?_**
 ------------------------------------------------
-This about Snackmachine (where MoneyId as FK) and Money (with MoneyId as PK)
+This is about Snackmachine example (where MoneyId as FK) and Money (with MoneyId as PK)
 - It will require an Id, which goes against the definition of value object (structural + reference equality)
 - It (Money) will have a lifetime of its own (we could delete Snackmachine object without deleting Money row), it violates the rules that a value object lifetime should fully depend on the entities lifetime.
 
