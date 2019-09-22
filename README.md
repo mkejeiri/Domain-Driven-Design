@@ -9,10 +9,10 @@ This is merely an introduction to the DDD based on the work of [Vladimir Khoriko
   - ...
 # [Domain Driven Design Distilled](https://www.amazon.com/Domain-Driven-Design-Distilled-Vaughn-Vernon/dp/0134434420)
 ## Strategic Design
-highlights what is strategically important to business, how to divide up the work by importance, and how to best integrate as needed using Ubiquitous Language, Bounded Contexts, Subdomains within a Bounded Context, Context Mapping...at this stage we need to identify which Bounded Contexts will be the Core Domain.
+It highlights what is strategically important to business, how to divide up the work by importance, and how to best integrate as needed using Ubiquitous Language, Bounded Contexts, Subdomains within a Bounded Context, Context Mapping...at this stage we need to identify which Bounded Contexts will be the Core Domain.
 
 ## Tactical Design
-enables us to tune the fine details of the domain model, important tools are used such aggregating entities and value objects
+It enables us to tune the fine details of the domain model, important tools are used such aggregating entities and value objects
 together into a right-sized cluster, modeling your domain in the most explicit way possible...
 
 **Types of Subdomains** 
@@ -68,7 +68,9 @@ Domain Events may be caused by commands, while others may happen due to the dete
 -   As you iterate don't ignore new Domain Events discoveries, rather place them along side of their Commands and Aggregates.
 
 4- Draw boundaries and lines with arrows to show flow on  modeling surface and circule the Bounded Contexts
+
 5- Identify the various views (user interface) that users will need to carry out their actions, and important roles for various users
+
 6- Other Tools: 
 -   Introduce high-level executable specifications that follow the given/when/then approach. Need to be timeboxed, requires between 15% to 25% more time and effort to use and maintain executable specifications
 -   Try Impact Mapping to make sure the software you are designing is a Core Domain
