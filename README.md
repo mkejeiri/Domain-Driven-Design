@@ -8,6 +8,71 @@ This is merely an introduction to the DDD based on the work of [Vladimir Khoriko
   - Usage of HILO Algorithm when assigning ID's 
   - ...
 
+## Strategic Design
+highlights what is strategically important to business, how to divide up the work by importance, and how to best integrate as needed using Ubiquitous Language, Bounded Contexts, Subdomains within a Bounded Context, Context Mapping...at this stage we need to identify which Bounded Contexts will be the Core Domain.
+
+## Tactical Design
+enables us to tune the fine details of the domain model, important tools are used such aggregating entities and value objects
+together into a right-sized cluster, modeling your domain in the most explicit way possible...
+
+**Types of Subdomains** 
+- Core Domain: where we make a strategic investment in a single, well-defined domain model
+- Supporting Subdomain: modeling a situation that calls for custom development, because an off-the-shelf solution doesn't exist, it is The software model that the Core Domain cannot be successful without it.
+- Generic Subdomain: may be available for purchase or be outsourced or even developed in house by less elite developers 
+
+
+##  Tactical Design : Aggregate
+**Aggregate 4 Rules of Thumb**
+1- Protect business invariants inside Aggregate boundaries.
+2- Design small Aggregates and choose right-sizing Aggregates.
+3- Reference other Aggregates by identity only.
+4- Update other Aggregates using eventual consistency.
+-------------------------
+
+**How to Right-Sizing Aggregates (merging and tuning)**
+
+1- Design small Aggregates: Start by creating every Aggregate with just one Entity , which will serve as the Aggregate Root and Populate each of the Entities with the fields/attributes/properties that have highly cohesive (the ones required to identify and find the Aggregate + additional intrinsic ones that leaves an aggregate in a valid initial state), all intrinsic fields/attributes must be up-to-date when the single-Entity Aggregate is persisted.
+
+2- use the previous 1st rule of Aggregate design : ask the Domain Experts if any other Aggregates you have defined must be updated in
+reaction to changes made to Aggregate, use consistency rules, which will indicate the time frames for all reaction-based updates => Aggregate types would be listed under a single Aggregate Root AR if they will be updated in reaction to AR updates.
+
+3- Domain Experts would tell how much time may elapse until each of the reaction-based updates may take place (poke them by presenting an exaggerated time frame) :
+- Immediately 
+- Within N seconds/minutes/hours/days
+
+4- Immediate time frames, strongly consider composing those two Entities within the same Aggregate boundary
+5- Reacting Aggregates that can be updated following a given elapsed time, we will update these using eventual consistency (4th rule).
+
+## Tactical Design : Domain Events
+Domain Events may be caused by commands, while others may happen due to the detection of some other changing state, such as a date or time
+1- Use Event storming to find Events and aggregates : Storm out the business process by creating a series of Domain Events on sticky notes
+-   Creating Domain Events, Write the name of each Domain Event, Place the sticky notes on your modeling surface in time order
+-   Domain Event that happens in parallel with another according to your business process can be located under the Domain Event that happens at the same time
+-   Mark new business process that need further investigation with a purple/red sticky note
+-   When Domain Event is a Process that needs to run in single step or multiple complex steps. Domain Events that causes a Process to run named on a lilac sticky note,draw a line with an arrowhead from the Domain Event to the named Process (lilac sticky note). Model a fine-grained Domain Event only if it is important to your Core Domain. Take a break if needed and come back next day 
+
+2 - Create Commands that cause each Domain Event
+-   Use light blue sticky note for commands and place it to the left of the Domain Event
+-   Use  lilac sticky note for command that will cause a single step or multiple complex steps Process to be run. 
+-   Commands will cause you to think about Domain Events that you didn’t previously envision, address the discovery by placing the newly discovered Domain Event along with its corresponding Command.
+-   It could be that a Command which causes multiple Domain Events, model it  and place it to the left of the multiple Domain Events that caused.
+
+3- Associate the Entity/Aggregate on which the Command is executed and that produces the Domain Event outcome
+-   Use Data/Entity instead of Aggregate to communicate with business
+-   Place the Aggregate sticky note behind and slightly above the Command and Domain Event pairs.
+-   Don’t rearrange your timeline as you find that Aggregates are repeatedly used. Rather, create the same Aggregate noun on multiple sticky notes and place them repeatedly on the timeline
+-   As you iterate don't ignore new Domain Events discoveries, rather place them along side of their Commands and Aggregates.
+
+4- Draw boundaries and lines with arrows to show flow on  modeling surface and circule the Bounded Contexts
+5- Identify the various views (user interface) that users will need to carry out their actions, and important roles for various users
+6- Other Tools: 
+-   Introduce high-level executable specifications that follow the given/when/then approach. Need to be timeboxed, requires between 15% to 25% more time and effort to use and maintain executable specifications
+-   Try Impact Mapping to make sure the software you are designing is a Core Domain
+-   User Story Mapping : understand what software features you should be investing in (Core domain)
+
+*Note* : The closer the storming is to the big picture, the farther is from its actual implementation.
+
+
 
 
 **_a Few words when implementing DDD_** 
