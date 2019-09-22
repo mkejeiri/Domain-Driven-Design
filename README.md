@@ -7,7 +7,7 @@ This is merely an introduction to the DDD based on the work of [Vladimir Khoriko
   - WPF
   - Usage of HILO Algorithm when assigning ID's 
   - ...
-
+# [Domain Driven Design Distilled](https://www.amazon.com/Domain-Driven-Design-Distilled-Vaughn-Vernon/dp/0134434420)
 ## Strategic Design
 highlights what is strategically important to business, how to divide up the work by importance, and how to best integrate as needed using Ubiquitous Language, Bounded Contexts, Subdomains within a Bounded Context, Context Mapping...at this stage we need to identify which Bounded Contexts will be the Core Domain.
 
@@ -20,7 +20,6 @@ together into a right-sized cluster, modeling your domain in the most explicit w
 - Supporting Subdomain: modeling a situation that calls for custom development, because an off-the-shelf solution doesn't exist, it is The software model that the Core Domain cannot be successful without it.
 - Generic Subdomain: may be available for purchase or be outsourced or even developed in house by less elite developers 
 
-# Domain Driven Design Distilled
 ##  Tactical Design : Aggregate
 **Aggregate 4 Rules of Thumb**
 
@@ -102,20 +101,18 @@ The physical vs logical separation is trade-off between easy to maintain with pr
  
 
 
-Interface abuse
----------------
- 
+**Interface abuse in DDD**
 - No business logic : Implementation could lead to potential duplication 
 - Can do : a promise or a contract to do something but doesn't say anything about any eventual relationship or hierarchy of the classes
 
-*_.Net Value type VS Value Object_*
+**_.Net Value type VS Value Object_**
 
 - .Net Value type : Implementation details, Immutable, Structural equality
 - Value Object : Design Object, Immutable, Structural equality...
 
 
 
-*_Why not use struct (i.e. .Net Value type) instead of value object? :_*
+**_Why not use struct (i.e. .Net Value type) instead of value object? :_**
 
 - Struct doesn't support inheritance => equality should be implemented in each struct separately which lead to code duplication.
 - Struct doesn't interact very well with ORM's
@@ -180,8 +177,6 @@ Aggregate (i.e. root entity) is design pattern that help us to simplify the doma
 - More readable code base : which entities are AggregateRoot and which ones are part of an existing Aggregate
 - Optimistic locking : if it's introduced we need to version the Aggregate
 - Perfect place to hold domain events that happens to an Aggregate during its lifetime ,in our case we will use domain event and optimistic locking so we need it, otherwise we don't use it.
-
-
 
 **_Repository_**
  --------------------------------------------------------
