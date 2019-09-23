@@ -25,7 +25,7 @@ together into a right-sized cluster, modeling your domain in the most explicit w
 
 1- Protect business invariants inside Aggregate boundaries.
 
-2- Design small Aggregates and choose right-sizing Aggregates.
+2- Design small Aggregates with the right-sizing.
 
 3- Reference other Aggregates by identity only.
 
