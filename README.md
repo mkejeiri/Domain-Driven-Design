@@ -98,7 +98,7 @@ How to find boundaries for Bounded Context ?
  - sometimes is the same as how to find boundaries for Sub-domain ? => ask domain experts!
  - sometimes we to look a team size (6-8 dev max) or the code size (should fit in the head)
  - use event storming
- - in some cases bounded context are only logically (and not physically) separeted (same project and same databases with separate schemas), which is not the case in [Microservices](http://bit.ly/1dI7ZJQ) (separate deployments and processes run)!
+ - in some cases bounded context are only logically (and not physically) separated (same project and same databases with separate schemas), which is not the case in [Microservices](http://bit.ly/1dI7ZJQ) (separate deployments and processes run)!
  
 The physical vs logical separation is trade-off between easy to maintain with proper isolation vs bigger maintenance overhead
  
