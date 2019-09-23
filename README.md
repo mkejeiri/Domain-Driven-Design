@@ -146,8 +146,8 @@ This is about Snackmachine example (where MoneyId as FK) and Money (with MoneyId
 - It will require an Id, which goes against the definition of value object (structural + reference equality)
 - It (Money) will have a lifetime of its own (we could delete Snackmachine object without deleting Money row), it violates the rules that a value object lifetime should fully depend on the entities lifetime.
 
-*_Initialization :_*
- It's good practice to do initialization as close a possible to the startup (factory initialisation, IOC, ...), e.g. in WPF inside the App Class, WebApi Startup class...
+> *_Initialization :_*
+>> It's good practice to do initialization as close a possible to the startup (factory initialisation, IOC, ...), e.g. in WPF inside the App Class, WebApi Startup class...
 
 **_Aggregates(DDD Tactical Design)_**
 -------------------------
