@@ -76,7 +76,7 @@ Domain Events may be caused by commands, while others may happen due to the dete
 -   Try Impact Mapping to make sure the software you are designing is a Core Domain
 -   User Story Mapping : understand what software features you should be investing in (Core domain)
 
-*Note* : The closer the storming is to the big picture, the farther is from its actual implementation.
+> Note : The closer the storming is to the big picture, the farther is from its actual implementation.
 
 
 
@@ -110,7 +110,7 @@ The physical vs logical separation is trade-off between easy to maintain with pr
 
 **_.Net Value type VS Value Object_**
 
-- .Net Value type : Implementation details, Immutable, Structural equality
+- .Net Value type :.Net Implementation details, Immutable, Structural equality
 - Value Object : Design Object, Immutable, Structural equality...
 
 
