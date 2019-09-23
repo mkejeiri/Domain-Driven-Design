@@ -119,7 +119,7 @@ The physical vs logical separation is trade-off between easy to maintain with pr
 
 - Struct doesn't support inheritance => equality should be implemented in each struct separately which lead to code duplication.
 - Struct doesn't interact very well with ORM's
-- Value Objects allow abstraction of multiple fields (e.g SnackPile {snack, quantity, price}, Slot acts as a host for SnackPile), it also has invariants which protect the internal state of the aggregate/entity at all time, there are light-weight => move as much as possible business logic into them.
+- Value Objects allow abstraction of multiple fields (e.g SnackPile {snack, quantity, price}, Slot acts as a host for SnackPile), it also has invariants which protect the internal state of the aggregate/entity at all time, there are light-weight => when it makes sense  move as much as possible business logic into them bearing in mind of the Single Responsibility principle and Separation of Concerns...
 - Value Objects are immutable and should remain so (e.g. instead of subtracting quantity we create a new object bearing the same quantity, see SnackPile.SubtractOne())
 
 
