@@ -36,8 +36,7 @@ together into a right-sized cluster, modeling your domain in the most explicit w
 
 1- Design small Aggregates: Start by creating every Aggregate with just one Entity , which will serve as the Aggregate Root and Populate each of the Entities with the fields/attributes/properties that are highly cohesive (the ones required to identify and find the Aggregate + additional intrinsic ones that leaves an aggregate in a valid initial state), all intrinsic fields/attributes must be up-to-date when the single-Entity Aggregate is persisted.
 
-2- use the previous 1st rule of Aggregate design : ask the Domain Experts if any other Aggregates you have defined must be updated in
-reaction to changes made to Aggregate, use consistency rules, which will indicate the time frames for all reaction-based updates => Aggregate types would be listed under a single Aggregate Root AR if they will be updated in reaction to AR updates.
+2- Use the previous 1st rule thumb (see aggregate design) : ask the Domain Experts if any other Aggregates you have defined must be updated in reaction to changes made to Aggregate, use consistency rules, which will indicate the time frames for all reaction-based updates => Aggregate types would be listed under a single Aggregate Root AR if they will be updated in reaction to AR updates.
 
 3- Domain Experts would tell how much time may elapse until each of the reaction-based updates may take place (poke them by presenting an exaggerated time frame) :
 - Immediately 
