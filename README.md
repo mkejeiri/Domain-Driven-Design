@@ -134,7 +134,7 @@ Unit test should cover at most inner layer (entities, value object, domain event
 - Application Services = View Model = Controllers
 
 Application Services acts as mediator between the outside world and domain layer (Entities, Value objects, Domain Events, Aggregates and Domain services + repo + Factories), It shouldn't contains any business logic, it only coordinates and delegates inputs from UI and pass it to the domain layer for validation. 
-For instance, In WPF View Model (Application Services) acts as wrapper on top of an entity, it increases it with the functionality required by the view, it doesn't contain any business logic and rather delegated it to the entity, it also wraps other domain classes such a repositories... 
+For instance, In WPF View Model (Application Services) acts as wrapper on top of an entity, it increases it with the functionality required by the view, it doesn't contain any business logic and rather delegated it to the entity (eventually domain service), it also wraps other domain classes such as repositories... 
 
 Rule of thumb when deciding on where to put a piece of logic:
 - If the piece of logic makes sense only in the UI context that it would be better to place it in the Application Service layer
