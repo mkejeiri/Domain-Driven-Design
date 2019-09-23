@@ -62,7 +62,7 @@ Domain Events may be caused by commands, while others may happen due to the dete
 -   It could be that a Command which causes multiple Domain Events, model it  and place it to the left of the multiple Domain Events that caused.
 
 3- Associate the Entity/Aggregate on which the Command is executed and that produces the Domain Event outcome
--   Use Data/Entity instead of Aggregate to communicate with business
+-   Use Data/Entity (not Aggregate jargon) to communicate with business
 -   Place the Aggregate sticky note behind and slightly above the Command and Domain Event pairs.
 -   Don’t rearrange your timeline as you find that Aggregates are repeatedly used. Rather, create the same Aggregate noun on multiple sticky notes and place them repeatedly on the timeline
 -   As you iterate don't ignore new Domain Events discoveries, rather place them along side of their Commands and Aggregates.
