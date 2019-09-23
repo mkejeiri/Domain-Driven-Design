@@ -48,6 +48,7 @@ together into a right-sized cluster, modeling your domain in the most explicit w
 
 ## Tactical Design : Domain Events
 Domain Events may be caused by commands, while others may happen due to the detection of some other changing state, such as a date or time
+
 1- Use Event storming to find Events and aggregates : Storm out the business process by creating a series of Domain Events on sticky notes
 -   Creating Domain Events, Write the name of each Domain Event, Place the sticky notes on your modeling surface in time order
 -   Domain Event that happens in parallel with another according to your business process can be located under the Domain Event that happens at the same time
