@@ -108,7 +108,7 @@ The physical vs logical separation is trade-off between easy to maintain with pr
 - No business logic : Implementation could lead to potential duplication 
 - Can do : a promise or a contract to do something but doesn't say anything about any eventual relationship or hierarchy of the classes
 
-**_.Net Value type VS Value Object_**
+[**_.Net Value type VS Value Object_**](https://enterprisecraftsmanship.com/posts/net-value-type-ddd-value-object)
 
 - .Net Value type :.Net Implementation details, Immutable, Structural equality
 - Value Object : Design Object, Immutable, Structural equality...
