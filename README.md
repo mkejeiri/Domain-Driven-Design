@@ -153,6 +153,7 @@ This is about Snackmachine example (where MoneyId as FK) and Money (with MoneyId
 -------------------------
 Aggregate (i.e. root entity) is design pattern that help us to simplify the domain model by gathering multiple entities under a single abstraction.
   - It's a conceptual whole, i.e. it represents a cohesive notion of domain model
+  > Cohesion is the drive to have related code all grouped together
   - Has a set of invariants which acts as a guard and maintain its state permanently valid during its lifetime... 
   - Every aggregate should have a root entity : classes/entities outside the root could ONLY AND ONLY reference the ROOT ENTITY (and not other entities) of that root. 
   - classes/entities couldn't hold reference to other entities accross aggregates, they must go through the ROOT ENTITY! first, e.g. access to Slot must be done through SnackMachine only, Slot should be hidden from outside world!
