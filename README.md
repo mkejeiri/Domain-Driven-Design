@@ -13,7 +13,8 @@ This is merely an introduction to the DDD based on the work of [Vladimir Khoriko
 According to [Alberto Brandolini: Introducing EventStorming eBook](https://leanpub.com/introducing_eventstorming), When modeling large scale system, we shouldn’t aim for a large “enterprise model”. That’s an attractor for ambiguities and contradictions. Instead we should aim for 2 things:
 - multiple, relatively small models with a high degree of semantic consistency,
 - a way to make those interdependent models work together.
-A small, strongly semantically consistent model is called Bounded Context in Domain-Driven Design and this is what we should be aiming for.
+A small, strongly semantically consistent model is called Bounded Context in Domain-Driven Design; a portion of the model which we must
+keep ambiguity free. Every word in the model has exactly a precise meaning.
 
 # [Domain Driven Design Distilled](https://www.amazon.com/Domain-Driven-Design-Distilled-Vaughn-Vernon/dp/0134434420)
 ## Strategic Design
