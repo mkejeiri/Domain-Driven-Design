@@ -88,7 +88,9 @@ Domain Events may be caused by commands, while others may happen due to the dete
 > Note : The closer the storming is to the big picture, the farther is from its actual implementation.
 
 
-#### The EventStorming approach
+#### The Event Storming approach
+
+Splitting a well established legacy model in a Database-centric architecture is among the most expensive refactorings in software development. The risks are so hard to evaluate that initiatives are killed before the start. Even for teams embracing agile, these refactorings tend to float in the backlog in a loop of continuous procrastination, while bugs emerging from nobody knows where always get the top priority lane.
 
 There’s a connection between the different problems we’ve just highlighted. If you remove the context from the picture it all boils down to a very few distinguished things.
 
@@ -100,7 +102,7 @@ There’s a connection between the different problems we’ve just highlighted. 
 
 4. Start implementing a solution from the best possible starting point.
 
-In EventStorming, we gather the best available brains for the job and we collaboratively build a model of a very complex problem space.
+In Event Storming, we gather the best available brains for the job and we collaboratively build a model of a very complex problem space.
 
 
 **_a Few words when implementing DDD_** 
