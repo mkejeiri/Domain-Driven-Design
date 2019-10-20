@@ -88,6 +88,19 @@ Domain Events may be caused by commands, while others may happen due to the dete
 > Note : The closer the storming is to the big picture, the farther is from its actual implementation.
 
 
+#### The EventStorming approach
+
+There’s a connection between the different problems we’ve just highlighted. If you remove the context from the picture it all boils down to a very few distinguished things.
+
+1. See the system as a whole.
+
+2. Find a problem worth solving.
+
+3. Gather the best immediately available information.
+
+4. Start implementing a solution from the best possible starting point.
+
+In EventStorming, we gather the best available brains for the job and we collaboratively build a model of a very complex problem space.
 
 
 **_a Few words when implementing DDD_** 
