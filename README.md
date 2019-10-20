@@ -7,6 +7,14 @@ This is merely an introduction to the DDD based on the work of [Vladimir Khoriko
   - WPF
   - Usage of HILO Algorithm when assigning ID's 
   - ...
+  
+  
+### Domain Driven Design Goal
+According to [Alberto Brandolini](https://www.eventstorming.com/) eBook (Event storming), When modeling large scale system, we shouldn’t aim for a large “enterprise model”. That’s an attractor for ambiguities and contradictions. Instead we should aim for 2 things:
+- multiple, relatively small models with a high degree of semantic consistency,
+- a way to make those interdependent models work together.
+A small, strongly semantically consistent model is called Bounded Context in Domain-Driven Design and this is what we should be aiming for.
+
 # [Domain Driven Design Distilled](https://www.amazon.com/Domain-Driven-Design-Distilled-Vaughn-Vernon/dp/0134434420)
 ## Strategic Design
 It highlights what is strategically important to business, how to divide up the work by importance, and how to best integrate as needed using Ubiquitous Language, Bounded Contexts, Subdomains within a Bounded Context, Context Mapping...at this stage we need to identify which Bounded Contexts will be the Core Domain.
