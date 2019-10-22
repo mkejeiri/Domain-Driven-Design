@@ -16,6 +16,8 @@ According to [Alberto Brandolini: Introducing EventStorming eBook](https://leanp
 
 A small, but strongly semantically consistent model is called Bounded Context in Domain-Driven Design; a portion of the model which we must keep ambiguity free. Every word in the model has exactly a precise meaning.
 
+> Ideally, a bounded context should contain a model tailored around a specific purpose: the perfectly shaped tool for one specific job, no trade-offs.
+
 **“What did we do wrong?”**
 
 A common concept (like the Order in an e-commerce web shop) becomes vital for several business capabilities, raising the need for reliability and availability, up to the unexplored limits of the CAP theorem, where buying more expensive hardware can’t help you anymore.
@@ -36,9 +38,6 @@ A common concept (like the Order in an e-commerce web shop) becomes vital for se
 - Now your workplace isn’t just that fun anymore. Some good developers that made it great are now looking for more challenging adventures. 
 - The business isn’t happy either: delayed software evolution caused some business opportunities to be missed, and new players are moving on the market at a speed that is inconceivable with your current software.
 
-
-
-> Ideally, a bounded context should contain a model tailored around a specific purpose: the perfectly shaped tool for one specific job, no trade-offs.
 [Quick start to get some taste](https://medium.com/skills-matter/eventstorming-modelling-tips-to-facilitate-microservice-design-38e99b8c96ff)
 
 # [Domain Driven Design Distilled](https://www.amazon.com/Domain-Driven-Design-Distilled-Vaughn-Vernon/dp/0134434420)
