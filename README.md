@@ -18,7 +18,7 @@ A small, but strongly semantically consistent model is called Bounded Context in
 
 **“What did we do wrong?”**
 
-A common concept (like the Order in an e-commerce web shop) becomesvital for several business capabilities, raising the need for reliability and availability, up to the unexplored limits of the CAP theorem, where buying more expensive hardware can’t help you anymore.
+A common concept (like the Order in an e-commerce web shop) becomes vital for several business capabilities, raising the need for reliability and availability, up to the unexplored limits of the CAP theorem, where buying more expensive hardware can’t help you anymore.
 - Security and access control get more complicated: different roles are accessing the same information, but not exactly the same, hence the need for sophisticated filtering.
 
 - Changing shared resources requires more coordination: “we have to be sure” we are not breaking anyone else’s software and plans. The result is usually more and more meetings, more trade-offs, more elapsed time to complete, and less time for proper software development.
