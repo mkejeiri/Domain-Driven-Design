@@ -19,6 +19,8 @@ A small, but strongly semantically consistent model is called Bounded Context in
 **“What did we do wrong?”**
 
 A common concept (like the Order in an e-commerce web shop) becomes vital for several business capabilities, raising the need for reliability and availability, up to the unexplored limits of the CAP theorem, where buying more expensive hardware can’t help you anymore.
+
+>> CAP Theorem is a concept that a distributed database system can only have 2 of the 3: Consistency, Availability and Partition Tolerance.
 - Security and access control get more complicated: different roles are accessing the same information, but not exactly the same, hence the need for sophisticated filtering.
 
 - Changing shared resources requires more coordination: “we have to be sure” we are not breaking anyone else’s software and plans. The result is usually more and more meetings, more trade-offs, more elapsed time to complete, and less time for proper software development.
@@ -33,6 +35,7 @@ A common concept (like the Order in an e-commerce web shop) becomes vital for se
 
 - Now your workplace isn’t just that fun anymore. Some good developers that made it great are now looking for more challenging adventures. 
 - The business isn’t happy either: delayed software evolution caused some business opportunities to be missed, and new players are moving on the market at a speed that is inconceivable with your current software.
+
 
 
 > Ideally, a bounded context should contain a model tailored around a specific purpose: the perfectly shaped tool for one specific job, no trade-offs.
