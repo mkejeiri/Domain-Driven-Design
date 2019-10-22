@@ -39,6 +39,7 @@ A common concept (like the Order in an e-commerce web shop) becomes vital for se
 
 
 > Ideally, a bounded context should contain a model tailored around a specific purpose: the perfectly shaped tool for one specific job, no trade-offs.
+[Quick start to get some taste](https://medium.com/skills-matter/eventstorming-modelling-tips-to-facilitate-microservice-design-38e99b8c96ff)
 
 # [Domain Driven Design Distilled](https://www.amazon.com/Domain-Driven-Design-Distilled-Vaughn-Vernon/dp/0134434420)
 ## Strategic Design
