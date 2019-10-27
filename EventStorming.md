@@ -2,6 +2,8 @@
 
 The **Big Picture EventStorming** will deliver the **snapshot** of our **current collective level of understanding** of the **business** including **holes** and **gaps**.
 
+![pic](images/bigpicture.jpg)
+
 The **purpose** of this step is to keep **everything visible on the board** using **notations**, the first trick to make sure that we don't talk about **invisible things** (no side discussion!). 
 
 
