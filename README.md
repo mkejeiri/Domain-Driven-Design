@@ -11,9 +11,9 @@ This is merely an introduction to the DDD based on the work of [Vladimir Khoriko
   
 ### Domain Driven Design Goal
 
-![pic](components-overview.png)
+![pic](images/components-overview.png)
 
-![pic](Events-DDD.jpg)
+![pic](images/Events-DDD.jpg)
 
 According to [Alberto Brandolini: Introducing EventStorming eBook](https://leanpub.com/introducing_eventstorming), When modeling large scale system, we shouldn’t aim for a large “enterprise model”. That’s an attractor for ambiguities and contradictions. Instead we should aim for 2 things:
 - multiple, relatively small models with a high degree of semantic consistency,
