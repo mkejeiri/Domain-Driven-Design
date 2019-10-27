@@ -18,21 +18,21 @@ Dan North said **Software development is a learning process, working code is a s
 
 Being **learners** instead of **builders** isn't that easy. Talented developers are often **compulsive learners**. **Curiosity** is their main driver, and they take **pride** in **solving** the **puzzle**. However, putting learning at the centers of everything isn't as actionable as we'd like.
 
-The value for the company is not in the software itself, it's in the company ability to leverage the software in order to deliver value.
+The **value** for the **company** is not in the **software** itself, it's the company **ability** to **leverage** the **software** in order to **deliver value**.
 
-The problem with programmers striving to do a good job, is that for the vast majority of them, they have no experience of what a good job looks like.
+The problem with **programmers** striving to do a **good job**, is that for the vast majority of them, they have **no experience** of what a **good job looks like**.
 
-Software engineers have been tried modeling enterprise application looking for relevant nouns. Nouns are in fact the portion of the enterprise knowledge which is more prone to ambiguity. Remember silos? Try asking: "Do you know what an Order is?" to different department like Sales, Packaging, Shipping, Billing, or Customer Care.
+Software engineers have been tried **modeling enterprise application** looking for relevant **nouns**. **Nouns** are in fact the **portion** of the **enterprise knowledge** which is more prone to **ambiguity**. Remember **silos**? Try asking: "Do you know what an Order is?" to different department like **Sales**, **Packaging**, **Shipping**, **Billing**, or **Customer Care**.
 
-- In Sales, a salesperson will open a draft order, add and remove items, and apply discounts. Then place the order once she has the customer agreement. 
+- In **Sales**, a salesperson will open a draft order, add and remove items, and apply discounts. Then place the order once she has the customer agreement. 
 
-- In Packaging, a warehouse clerk will pick items from the shelves, eventually updating their availability and reporting missing items in case of surprises. Once finished, the clerk will seal the package, and declare it ready for shipment.
+- In **Packaging**, a warehouse clerk will pick items from the shelves, eventually updating their availability and reporting missing items in case of surprises. Once finished, the clerk will seal the package, and declare it ready for shipment.
 
-- In Shipping, one or more deliveries will be planned for the given order. The order is fulfilled once all the items are delivered. 
+- In **Shipping**, one or more deliveries will be planned for the given order. The order is fulfilled once all the items are delivered. 
 
-- In Billing, we'll send and invoice for the order according to our billing **policy**, such as 50% open placing the order and 50% after order delivered. 
+- In **Billing**, we'll send and invoice for the order according to our billing **policy**, such as 50% open placing the order and 50% after order delivered. 
 
-- In Claims, customers are opening a claim about a received order, if something didn't match the expectations: broken or missing items, and so on. Of course a claim can be opened only if you're the customer that placed the order, and only about the items included in the order.
+- In **Claims**, customers are opening a claim about a received order, if something didn't match the expectations: broken or missing items, and so on. Of course a claim can be opened only if you're the customer that placed the order, and only about the items included in the order.
 
 **The Product Owner fallacy**
 
