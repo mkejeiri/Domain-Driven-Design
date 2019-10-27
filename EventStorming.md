@@ -74,11 +74,11 @@ This **habits** is a **burden towards development of meaningful products**. Unco
 
 **Domain-Driven Design** focused on **language** as the **key tool** for a deep understanding of a given domain's complexity, it doesn't assume **consistency of the different areas of expertises**. In fact, it states that **consistency** can only be achieved at a **model level**, and that this **model can't be large**.
 
-When modeling large scale system, we shouldn't aim for a large *enterprise model*. That's an attractor for ambiguities and contradictions. Instead we should aim for:
+When **modeling large scale system**, we shouldn't aim for a large **enterprise model**. That's an attractor for **ambiguities and contradictions**. Instead we **should aim for**:
 
-- Multiple, relatively small models with a high degree of semantic consistency, 
+- **Multiple**, **relatively small models** with a high degree of **semantic consistency**, 
 
-- a way to make those interdependent models work together.
+- a way to make those **interdependent models** **work together**.
 
 A small, strongly **semantically consistent model** is called **Bounded Context** in Domain-Driven Design.
 
