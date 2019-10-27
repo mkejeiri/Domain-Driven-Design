@@ -136,7 +136,7 @@ They can happen for different reasons :
 
 **Example**
 
-collect temperature information from an external system, a first **Domain Event** candidate might be **Temperature Raised**. A closer look, we might need to have a combination of Temperature Registered from an external source and a **Temperature increment measured** as a consequence, and realize that the initial writing, despite being correct, was actually not closer to system design but it fine because we don't need make it precise too early (*Embrace Fuzziness* at this stage).
+collect temperature information from an external system, a first **Domain Event** candidate might be **Temperature Raised**. A closer look, we might need to have a combination of **Temperature Registered** from an external source and a **Temperature increment measured** as a consequence, and realize that the initial writing, despite being correct, was actually not closer to system design but it fine because we don't need make it precise too early (*Embrace Fuzziness* at this stage).
 
 **Why Domain events ?**
 
