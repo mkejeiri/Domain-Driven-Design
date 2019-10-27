@@ -1,23 +1,22 @@
 ## Big Picture
 
-The Big Picture EventStorming will deliver the snapshot of our current collective level of understanding of the business including holes and gaps.
+The **Big Picture EventStorming** will deliver the **snapshot** of our **current collective level of understanding** of the **business** including **holes** and **gaps**.
 
-The purpose of this step is to keep everything visible on the board using notations, the first trick to make sure that we don't talk about invisible things (no side discussion!). 
-
-
-The Big Picture is an on-boarding process of workshop sequences which relies on incremental notation and visible legend.
-
-the goal is a representation of our current understanding of the systems, including inconsistencies and holes.
+The **purpose** of this step is to keep **everything visible on the board** using **notations**, the first trick to make sure that we don't talk about **invisible things** (no side discussion!). 
 
 
-### the problem space
-### Pretending to solve the problem writing software
+The **Big Picture** is an **on-boarding process** of workshop sequences which relies on **incremental notation** and **visible legend**.
+
+The **goal** is a **representation** of our **current understanding** of the **systems**, including **inconsistencies** and holes.
+
+
+### Pretending to solve the problem by writing software
 
 **The Software Development fallacy**
 
-Dan North said Software development is a learning process, working code is a side effect, It's not the typing, it's the understanding that matters. 
+Dan North said **Software development is a learning process, working code is a side effect, It's not the typing, it's the understanding that matters**. 
 
-Being learners instead of builders isn't that easy. Talented developers are often compulsive learners. Curiosity is their main driver, and they take pride in solving the puzzle. However, putting learning at the centers of everything isn't as actionable as we'd like.
+Being **learners** instead of **builders** isn't that easy. Talented developers are often **compulsive learners**. **Curiosity** is their main driver, and they take **pride** in **solving** the **puzzle**. However, putting learning at the centers of everything isn't as actionable as we'd like.
 
 The value for the company is not in the software itself, it's in the company ability to leverage the software in order to deliver value.
 
@@ -31,13 +30,13 @@ Software engineers have been tried modeling enterprise application looking for r
 
 - In Shipping, one or more deliveries will be planned for the given order. The order is fulfilled once all the items are delivered. 
 
-- In Billing, we'll send and invoice for the order according to our billing policy, such as 50% open placing the order and 50% after order delivered. 
+- In Billing, we'll send and invoice for the order according to our billing **policy**, such as 50% open placing the order and 50% after order delivered. 
 
 - In Claims, customers are opening a claim about a received order, if something didn't match the expectations: broken or missing items, and so on. Of course a claim can be opened only if you're the customer that placed the order, and only about the items included in the order.
 
 **The Product Owner fallacy**
 
-Software development is mostly a learning endeavor, Scrum, place a lot of responsibility upon the shoulders of the Product Owner, who serves as the primary interface between the team and the business stakeholder. Often, teams are kept in isolation because the PO is taking care of all the necessary conversations with different stakeholders.
+**Software development** is mostly a **learning** endeavor, Scrum places a lot of **responsibility** upon the shoulders of the **Product Owner**, who serves as the primary interface between the team and the business stakeholder. Often, **teams** are kept in **isolation** because the PO is taking care of all the necessary **conversations** with different **stakeholders**.
 
 Slowly, the Product Owner becomes the only person who's entitled of learning, while the development teams turns into a mere translation of requirements into code. Everything starts to smell like the old Analysts vs Developers segregation that was so popular in Waterfall-like environment. 
 
@@ -51,9 +50,9 @@ But if we think software development as learning, it suddenly becomes obvious th
 
 - read a specification document written by a friend that talked with a biker.
 
-Choice is yours.
+*Choice is yours.*
 
-Single point of failures are bad, i.e. placing the burden of understanding the whole system on a single person/role sounds like a terrible idea even in strategic terms.
+**Single point** of **failures** is bad, i.e. placing the **burden of understanding** the whole **system** on a **single person/role** sounds like a terrible idea even in **strategic terms**.
 
 
 What *Scrum really pointed out was that a development team is very bad at managing conflicting priorities*, and it's a *Product Owner responsibility to sort them out* before the development iteration takes place. *What Scrum didn't prescribe is that all the learning should happen through the product owner*. This is a dysfunction that lowers the quality of the overall learning and of the resulting product.
@@ -61,19 +60,19 @@ What *Scrum really pointed out was that a development team is very bad at managi
 
 **The backlog fallacy**
 
-Iterations are supposed to be a good thing. The backlogs provide the illusion of the whole project is just the sum of its parts, which, unfortunately, isn't the case. 
+**Iterations** are supposed to be a good thing. The backlogs provide the illusion of the **whole project** is just the sum of its parts, which, unfortunately, isn't the case. 
 
-A backlog is optimized for delivery. Having a cadence and releasing in small increments works great in order to provide a heartbeat and a measurable delivery progress. But a cadence in which every week repeats the same old basic schema of the previous one, with planning, implementation, and then release may not leave enough space for those activities that don't follow the plan. 
+A **backlog** is optimized for delivery. Having a **cadence and releasing** in small increments works great in order to provide a heartbeat and a measurable delivery progress. But a cadence in which every week repeats the same old basic schema of the previous one, with planning, implementation, and then release may not leave **enough space** for those **activities** that don't follow the plan. 
 
-In fact, some project follow the plan relatively well. They're usually the project where there's not that much of discovery to happen. Compliance projects are a typical example: a new regulation mandates certain requirements and we just have to deal with a checklist.
+In fact, some project follow the plan relatively well. They're usually the project where there's not that much of **discovery** to happen. **Compliance** projects are a typical example: a new **regulation** mandates certain requirements and we just have to deal with a **checklist**.
 
-This habits is a burden towards development of meaningful products. Unconventional activities like *'going on the field to see how users are really using our software'*, or *'running a large scale workshop in order to better understand the problem that our software is supposed to solve'*, simply don't happen, because there's always something more important, already planned for the week. Repeating things week after week is boring and Boredom is the arch enemy of learning.
+This **habits** is a **burden towards development of meaningful products**. Unconventional activities like *'going on the field to see how users are really using our software'*, or *'running a large scale workshop in order to better understand the problem that our software is supposed to solve'*, simply don't happen, because there's always something more important, already planned for the week. Repeating things week after week is boring and Boredom is the arch enemy of learning.
 
-Optimized planning and delivery. They aren't really optimized for discovery. In fact discovery is more likely to happen when we break our habits and do something distinctively different.
+*Optimized planning and delivery* isn't really optimized for discovery. In fact discovery is more likely to happen when we break **our habits** and do something **distinctively different**.
 
 **Domain-Driven Design**
 
-Domain-Driven Design focused on language as the key tool for a deep understanding of a given domain's complexity, it doesn't assume consistency of the different areas of expertises. In fact, it states that consistency can only be achieved at a model level, and that this model can't be large.
+**Domain-Driven Design** focused on **language** as the **key tool** for a deep understanding of a given domain's complexity, it doesn't assume **consistency of the different areas of expertises**. In fact, it states that **consistency** can only be achieved at a **model level**, and that this **model can't be large**.
 
 When modeling large scale system, we shouldn't aim for a large *enterprise model*. That's an attractor for ambiguities and contradictions. Instead we should aim for:
 
@@ -81,26 +80,26 @@ When modeling large scale system, we shouldn't aim for a large *enterprise model
 
 - a way to make those interdependent models work together.
 
-A small, strongly semantically consistent model is called Bounded Context in Domain-Driven Design.
+A small, strongly **semantically consistent model** is called **Bounded Context** in Domain-Driven Design.
 
 
 **The EventStorming approach**
 
 There's a connection between the different highlighted problems. If you remove the context from the picture it all boils down to a very few distinguished things:
 
-1. See the system as a whole.
+1. See the **system as a whole**.
 
-2. Find a problem worth solving.
+2. Find a problem **worth solving**.
 
-3. Gather the best immediately available information.
+3. Gather the best immediately **available information**.
 
-4. Start implementing a solution from the best possible starting point.
+4. Start implementing a solution from the **best** possible **starting point**.
 
 
 ![pic](images/roomsetup.jpg)
 
 
-This requires :
+**EventStorming setup** :
 
 - Gather all the key people in the same room and build together a model of the current understanding of the system
 
@@ -118,86 +117,82 @@ This requires :
 
 *There's no implicit filter on the source, No implicit scope limitation*.
 
-We use a verb at past tense to describe events which forces us to explore the whole domain with the focus on state transitions (when something changes).
+We use a **verb at past tense** to describe events which forces us to explore the whole domain with the focus on **state transitions** (when something changes).
 
 They can happen for different reasons :
 
-- consequence of some User Initiated Action
+- consequence of some **User Initiated Action**
 
-- coming from some external system
+- coming from some **external system**
 
-- the result of time passing
+- the result of **time passing**
 
-- direct consequence of some other event.
+- direct consequence of **some other event**.
 
 ![pic](images/events_origin.jpg)
 
 
 **Example**
-collect temperature information from an external system, a first Domain Event candidate might be Temperature Raised. A closer look, we might need to have a combination of Temperature Registered from an external source and a Temperature increment measured as a consequence, and realize that the initial writing, despite being correct, was actually not closer to system design but it fine because we don't need make it precise too early -> *Embrace Fuzziness*.
+
+collect temperature information from an external system, a first **Domain Event** candidate might be **Temperature Raised**. A closer look, we might need to have a combination of Temperature Registered from an external source and a **Temperature increment measured** as a consequence, and realize that the initial writing, despite being correct, was actually not closer to system design but it fine because we don't need make it precise too early (*Embrace Fuzziness* at this stage).
 
 **Why Domain events ?**
 
-- Domain Events are easy enough to be grasped by everyone, No previous experience required.
+- **Domain Events** are easy enough to be grasped by everyone, No previous experience required.
 
-- Domain Events are precise enough to remove a whole lot of ambiguities from the conversation.
+- **Domain Events** are precise enough to remove a whole lot of ambiguities from the conversation.
 
-- Domain Events are meaningful, by definition. If no one cares about a sticky note, maybe it's not that relevant in the system.
+- **Domain Events** are meaningful, by definition. If no one cares about a sticky note, maybe it's not that relevant in the system.
 
-- Domain Events represent state transitions to which reactive logic can be attached (**Policies**). 
+- **Domain Events** represent state transitions to which reactive logic can be attached (**Policies**). 
 
-- Domain Events can point us towards the bottleneck of our current flow, e.g. probably the most relevant problem to solve.
+- **Domain Events** can point us towards the bottleneck of our current flow, e.g. probably the most relevant problem to solve.
 
-- Domain Events can support different narratives and modeling techniques such as conversations from very different backgrounds can sparkle from the very same model.
+- **Domain Events** can support different narratives and modeling techniques such as conversations from very different backgrounds can sparkle from the very same model.
 
-- Domain Events are triggers for consequences
+- **Domain Events** are triggers for consequences
 
 ### Commands
-They are key ingredient for user interaction (Commands - Actions - Decisions) or the result of a user decision (which might have required some sophisticated thinking) and are the trigger of some computation on the other side. If we focus on human behavior, we might see them as some action that a user is performing, like registering on a system or placing an order. If we focus on system implementation instead, they can represent a command we've just received, and the system has to fulfill.
+They are key ingredient for user interaction (**Commands** - Actions - Decisions) or the result of a **user decision** (which might have required some sophisticated thinking) and are the trigger of some computation on the other side. If we focus on human behavior, we might see them as some action that a user is performing, like registering on a system or placing an order. If we focus on system implementation instead, they can represent a command we've just received, and the system has to fulfill.
 
 ### Hotspot
 when getting sucked into a discussion that we're not able to finish, we use a Hotspot notation so we will come back to it in the next session.
 
-
-
-### Playing with value
-
 ### Discovering Bounded Contexts with EventStorming
 
-Ideally, a bounded context should contain a model tailored around a specific purpose: the perfectly shaped tool for one specific job, no trade-offs.
+Ideally, a **bounded context** should contain a **model tailored around a specific purpose**: the perfectly **shaped tool** for one **specific job**, **no trade-offs**.
 
-Whenever we realize a different purpose is emerging, we should give a chance to a new model, fitting the new purpose, and then find the best way to allow the two models interact.
+Whenever we realize a different **purpose is emerging**, we should give a chance to a **new model**, fitting the **new purpose**, and then find the best way to allow the **two models interact**.
 
-> It's job as software architects to discover boundaries in our domain, and this will be more an investigation on a crime scene than a tick-the-checkboxes conversation.
+> It's job of **software architects** to discover **boundaries** in our domain, and this will be more an investigation on a crime scene than a tick-the-checkboxes conversation.
 
 #### 1. Chaotic Exploration
 
-with no timeline participants explore the domain, writing verbs at past tense on sticky notes, nobody knows the whole story
+with **no timeline** participants explore the domain, writing **verbs at past tense** on sticky notes, nobody knows the whole story
 
 ![pic](images/chaoticexploration.jpg)
 
-As a result, we'll end up with a lot of duplicated sticky notes (e.g. schedule Ready, Schedule Completed, Schedule
-Published), or apparently duplicated ones in unordered manner. It's usually a good idea to resist the temptation to resolve those duplicates may refer to different Bounded Context.
+As a result, we'll end up with a **lot of duplicated sticky notes** (e.g. schedule Ready, Schedule Completed, Schedule
+Published), or apparently duplicated ones in unordered manner. It's usually a good idea to **resist the temptation** to resolve those **duplicates** because they may refer to **different Bounded Context**.
 
 #### 2. Enforce the Timeline
 
-consistent timeline describing the business flow from a beginning to an end with parallel and alternative paths to explore. 
-The need to come up with one consistent view of the entire business triggers conversations around the places where this view is not consistent we get an answer from the experts who are available!.
+**Consistent timeline** describes the **business flow** from a beginning to an end with **parallel** and **alternative paths** to explore. The need to come up with one consistent view of the entire business triggers conversations around the places where this view is not consistent, we get an answer from the experts who are available!.
 
 We get to a highlighted conversation with a Hot Spot (not solve everything yet) to let the exploration flow and address it later on.
 
-The participants often look for a more sophisticated emerging structures. Pivotal Events and Swimlanes are strategies to make the emerging structure visible and at discovering bounded contexts.
+The **participants** often look for a more **sophisticated emerging structures**. **Pivotal Events and Swimlanes** are **strategies** to make the **emerging structure visible** and discover **bounded contexts**.
 
 **Pivotal Events**
 
-They mark a transition between different business phases. once highlighting pivotal events, sorting becomes a lot faster inside the boundaries, and a more sophisticated structure starts to emerge.
+They mark a **transition** between **different business phases**. once highlighting **pivotal events**, sorting becomes a lot faster inside the **boundaries**, and a more **sophisticated structure** starts to emerge.
 
 ![pic](images/pivotalevents.jpg)
 
 **Swimlanes**
 
-Horizontal Swimlanes is a common way to structure portions of the whole flow (usually happens after pivotal events).
-Even in the most straightforward businesses, the flow is not linear. There are branches, loops and things that happen in parallel (e.g. billing getting triggered only around the events of a sale, or maybe a cancellation).  
+Horizontal **Swimlanes** is a common way to structure portions of the whole **flow** (usually happens after **pivotal events**).
+Even in the most straightforward businesses the flow is not linear. There are **branches**, **loops** and things that happen in **parallel** (e.g. **billing** getting triggered only around the **events** of a **sale**, or maybe a **cancellation**).  
 
 ![pic](images/pivotaleventswimlanes.jpg)
 
@@ -206,7 +201,7 @@ Pivotal Events and Swimlanes provide an emergent structure on top of the flow of
 
 #### 3. People and Systems
 
-we explore the surroundings of our business, explicitly looking for people: actors, users, personas, or specific roles in our system. Visualizing different people (actors) in our system helps to dig into the different perspectives. We might discover specific responsibilities and roles, or differing perceptions. 
+we explore the **surroundings of our business**, explicitly looking for **people: actors, users, personas, or specific roles** in our **system**. Visualizing different **people** (actors) in our system helps to dig into the **different perspectives**. We might discover **specific responsibilities** and **roles**, or differing perceptions. 
 
 ![pic](images/peopleandsystems.jpg)
 
@@ -214,9 +209,9 @@ e.g. in a conference superstar guest, invited as a keynote speaker, an expert or
 
 #### 4. Explicit Walkthrough
 
-To validate the discoveries, a picked narrator trying to tell the whole story, from left to right. Consistent storytelling is hard, in the beginning, because the narrators' brain will be torn apart by conflicting needs. Narrators will try to tell the story using the existing events as building blocks, but at the same time, they'll realize that what seemed good enough in the previous reviews is not good enough for a public on stage storytelling session.
+To validate the **discoveries**, a picked **narrator** trying to tell the **whole story**, from **left to right**. Consistent **storytelling** is hard, in the beginning, because the **narrators' brain** will be torn apart by **conflicting needs**. Narrators will try to tell the story using the **existing events as building blocks**, but at the same time, they'll realize that what seemed good enough in the **previous reviews** is not good enough for a **public on stage storytelling session**.
 
-Usually, our model needs to be improved, to support storytelling. More events will appear, others will be moved away, paths will be split and so on. Participants are often challenging the narrator and the proposed storytelling, eventually providing examples of corner cases and not-so-exceptional-exceptions.
+Usually, our model needs to be **improved**, to support **storytelling**. More **events** will appear, others will be moved away, paths will be split and so on. Participants are often challenging the narrator and the proposed **storytelling**, eventually providing examples of corner cases and not-so-exceptional-exceptions.
 
 ![pic](images/explicitwalkthrough.jpg)
 
@@ -237,7 +232,7 @@ few extra steps may provide more insights :
 
 **Heuristic: look at the business phases**
 
-Businesses grow around a well-defined business transaction where some value — usually money — is traded for something else. Pivotal events have a fundamental role in this flow.
+Businesses grow around a well-defined business transaction where some value — usually money — is traded for something else. **Pivotal events** have a fundamental role in this flow.
 
 ![pic](images/pivotaleventzoomin.jpg)
 
@@ -284,7 +279,7 @@ People are during the exploration is probably giving the simplest and powerful c
 
 body language can be another source of information, not every dissent can be verbal, shaking heads, or eyes rolling are a clue of conflicting perspectives that haven't been addressed, different hierarchy levels come to different views on apparently the same problem.
 
-A typical conversational pattern often happening around pivotal or boundary events.
+A typical conversational pattern often happening around **pivotal** or **boundary events**.
 
 ![pic](images/competenceclash.jpg)
 
@@ -360,9 +355,9 @@ We win at the EventStorming process modeling game when:
 
 ![pic](images/processmodelingsessionframe.jpg)
 
-We're expecting processes to start from a given trigger (usually a Command or an external Event), and to finish with a combination of Events and Read Models.
+We're expecting processes to start from a given trigger (usually a Command or an external Event), and to finish with a combination of **Events** and **Read Models**.
 
-The reason for the apparent duplication is termination events are putting the system in a stable state, but human users usually need to see the outcome somewhere, to perceive the process as complete (process exposes something like a repeating).
+The reason for the apparent duplication is termination **events** are putting the **system** in a **stable state**, but human users usually need to see the outcome somewhere, to perceive the process as complete (process exposes something like a repeating).
 
 ![pic](images/pictureexplainseverything.jpg)
 Color Based Grammar which is a good summary of the basic building blocks needed during a process modeling session
@@ -372,7 +367,7 @@ Color Based Grammar which is a good summary of the basic building blocks needed 
 
 The linearized version (better fits modeling on a paper roll and event-based storytelling approach), with the beginning of the pizza example process, tailored around our simple pizza delivery example, with the beginning of an order processing flow.
 
->> note that Before the "cooking policy" we have and "OrderPlaced" Event and "PreparePizza" command
+>> note that Before the "cooking **policy**" we have and "OrderPlaced" Event and "PreparePizza" command
 
 >> use Hotspots to visualize dissent, objections, and issues that we should not address immediately.
 
@@ -389,12 +384,12 @@ Less precise conversational approach should allow the team to sketch the process
 
 ![pic](images/rephraseevents.jpg)
 
-Events will be the building blocks of our storytelling, we are building a objection-proof business process, we'll need to be a little more **formal**. We need to **rephrase** some events, which will need to be state transitions, and during process modeling and software design sessions, the phrasing will be strictly mandatory. Different rounds will increase semantic precision, and probably require more events.
+**Events** will be the building blocks of our storytelling, we are building a objection-proof business process, we'll need to be a little more **formal**. We need to **rephrase** some **events**, which will need to be state transitions, and during process modeling and software design sessions, the phrasing will be strictly mandatory. Different rounds will increase semantic precision, and probably require more **events**.
 
 
 #### Events from user interaction
 
-Events may be the result of some user interaction with a system, a single user interaction can trigger multiple events with many alternative outcomes. They also could be a result of different level of granularities or perspectives.
+**Events** may be the result of some user interaction with a system, a single user interaction can trigger multiple **events **with many **alternative outcomes**. They also could be a result of different level of **granularities** or **perspectives**.
 
 >> Keep in mind that different perspective can suggest different naming for the same event (i.e. Hospots : aren't the same?).
 
@@ -404,7 +399,7 @@ Events may be the result of some user interaction with a system, a single user i
 An emergent pattern in this situation is to position the happy path on top and less frequent alternatives below
 
 #### External Systems
-External Systems can trigger events. A typical example occurs when you have distributed sensors somewhere: something like Temperature registered or Perimeter violation detected, or when you simply don't want to investigate more in-depth on the event origin.
+**External Systems** can trigger **events**. A typical example occurs when you have distributed sensors somewhere: something like Temperature registered or Perimeter violation detected, or when you simply don't want to investigate more in-depth on the event origin.
 
 #### Time-triggered events
 
@@ -421,15 +416,15 @@ We can discover that the actual mechanics are a lot more complicated, such as or
 
 ####  Events which are not happening
 
-we consider events to be state transitions in this case is hard to model, but consider the example a birthday of a friend and we didn't forget to greet him, we can observe from the outside is that a day has passed without receiving any greetings. i.e. the event **End of day** happened before the **Greeting received** event.
+we consider **events** to be state transitions in this case is hard to model, but consider the example a birthday of a friend and we didn't forget to greet him, we can observe from the outside is that a day has passed without receiving any greetings. i.e. the event **End of day** happened before the **Greeting received** event.
 
 #### Cascading reactions
 
-Events appear sometimes to be the direct consequence of other events, something like *whenever this happens then that happens*, sometimes the overlapping between the events is so tight that it's hard to distinguish the two(two faces of the same coin).
+**Events** appear sometimes to be the **direct consequence** of other **events**, something like *whenever this happens then that happens*, sometimes the overlapping between the events is so tight that it's hard to distinguish the two(two faces of the same coin).
 
 ![pic](images/cascadingreactionevent.jpg)
 
-There is no such thing as an implicit cascading reaction, we'll try to make the connection visible by adding a policy and a few other notation in between.
+There is no such thing as an **implicit cascading reaction**, we'll try to make the connection visible by adding a **policy** and a few other **notation** in between.
 
 #### Commands, Actions or Intentions
 
@@ -515,15 +510,15 @@ Event-based approach is not good fit when intermediate steps are lost in the nua
 
 >> "Whenever we receive a clarification request from a known customer, we try to answer or to open the conversation with the desired specialist within one working day."
 
-A policy can also be seen as a placeholder for a decision happening in the organization, triggered by a given event (or combination of events). 
+A **policy** can also be seen as a placeholder for a decision happening in the organization, triggered by a given event (or combination of events). 
 
 ![pic](images/staffmanagedpolicy.jpg)
 
-Sometimes this reaction to an event is automatic, other times it is managed by people. When this is the case, we place the relevant person (which represent can represent different stages of maturity of the company) on the corresponding policy.
+Sometimes this reaction to an event is automatic, other times it is managed by people. When this is the case, we place the relevant person (which represent can represent different stages of maturity of the company) on the corresponding **policy**.
 
 **Policies** tend to be the first thing that needs to change when the business context changes. **Policies** are the flexible glue between the other building blocks of business processes.
 
-Discovering the real implementation of an existing policy is an investigation game: people will not tell you the real story at first attempt. To get through this, speak loudly and use *whenever* ... *then* with *Always/Immediate* in a sentence.
+Discovering the real implementation of an existing **policy** is an investigation game: people will not tell you the real story at first attempt. To get through this, speak loudly and use *whenever* ... *then* with *Always/Immediate* in a sentence.
 
 **Example**
  
@@ -532,7 +527,7 @@ Whenever we receive a room hold request, and always if the customer provided the
 Now, it looks like there are two competing policies, so let's make them visible!
 
 ![pic](images/splitpolicyopenhotspots.jpg)
-The resulting model, after we split the policy in two, and took care of the open hotspots.
+The resulting model, after we split the **policy** in two, and took care of the open hotspots.
 
 
 #### Read Models
@@ -626,17 +621,17 @@ From a data perspective a shopping cart must be associated with a Customer which
 A shopping cart will include the list of the items to be purchased, with the associated quantity and price.
 Do we need really to include the ItemDescription in the ItemInCart? Feels like we should, because we'll need to display the ShoppingCart info to the customer, in order to review the cart before proceeding to checkout, "is this really the stuff we  intended to buy? Have we  looked at the grand total?". Things might get awkward when starting to consider events like ItemPriceUpdated or ItemDescriptionUpdated, that should have us thinking whether we should include a copy of the entire description of the selected item, or just a reference to the Item in stock.
 
-Bottom line, These are not the aggregates we're looking for. "data to be displayed to a user in order to make a decision" will be a Read Model. Aggregates are something else, but we have to be aware of this vicious temptation of superimposing what we need to see on the screen on the internal structure of our model. **They're not the same thing**.
+The bottom line is, these are not the **aggregates** we're looking for. "data to be displayed to a user in order to make a decision" will be a Read Model. **Aggregates** are something else, but we have to be aware of this vicious temptation of superimposing what we need to see on the screen on the internal structure of our model. **They're not the same thing**.
 
 
 
 To discover aggregate (don't use the name aggregate) we could use the following :
 
-- Look for responsibilities first what is this yellow sticky responsible for? Which are the system's expectation towards it? 
+- Look for **responsibilities** first what is this yellow sticky responsible for? Which are the system's expectation towards it? 
 
-- Look for the information needed in order to fulfill this responsibility. 
+- Look for the **information** needed in order to **fulfill** this **responsibility**. 
 
-- Once this is sorted out, ask yourself, e.g. "How would I call a class with this information and purpose?".
+- Once this is sorted out, ask yourself, e.g. **"How would I call a class with this information and purpose?"**.
 
 
 #### Aggregates as state machines
@@ -645,11 +640,11 @@ What we are really looking for are units of consistent behavior, and given all t
 
 
 #### Modeling interactions with Event-Driven CRC cards
-Design starts to focus around roles, responsibilities and message passing, a very efficient way to model interaction is to simulate behavior with a variation of the CRC cards.
+Design starts to focus around roles, responsibilities and message passing, a very efficient way to model interaction is to simulate behavior with a variation of the **CRC cards**.
 
-- Humans may take the role of Users, Aggregates, Processes and Projections, i.e. humans are representing the decision makers in the system. 
+- Humans may take the **role** of **Users**, **Aggregates**, **Processes** and **Projections**, i.e. humans are representing the decision makers in the system. 
 
-- Commands, Domain Events and UIs are represented by cards. Cards will carry the information written on them. To model a process, every human can produce an output only based on the information available, i.e. humans can't ask, only tell, this sketches the necessary communication patterns needed for a component to work smoothly and continuously in an event-based solution.
+- **Commands, Domain Events and UIs** are represented by **cards**. Cards will carry the information written on them. To model a process, every human can produce an output only based on the information available, i.e. humans can't ask, only tell, this sketches the necessary communication patterns needed for a component to work smoothly and continuously in an event-based solution.
 
 
 #### How do we know we're over?
