@@ -642,6 +642,21 @@ What we are really looking for are units of consistent behavior, and given all t
 
 
 #### Modeling interactions with Event-Driven CRC cards
+
+Class Responsability Collaborator (CRC) Cards are an object oriented design technique, where teams can use to discuss what a class should know and do and what other classed it interacts with.
+
+![pic](images/crccards.jpg)
+
+**Name** : class name
+**Responsibility** : what a class does as well as what information you wish to maintain about it, often identify a responsibility for a class to fulfill a collaboration with another class.
+**Collaborators**: Some responsibilities will collaborate with one or more other classes to fulfill one or more Scenarios.
+ - A class often does not have sufficient information to fulfill its responsibilities. Therefore, it must collaborate (work) with other classes to get the job done.
+ - Collaboration will be in one of two forms: a request for information or a request to perform a task
+ - To identify the collaborators of a class for each responsibility ask the question "does the class have the ability to fulfill this responsibility?". If not then look for a class that either has the ability to fulfill the missing functionality or the class which should fulfill it. In doing so you'll often discover the need for new responsibilities in other classes and maybe even the need for a new class or two.
+
+
+
+
 Design starts to focus around roles, responsibilities and message passing, a very efficient way to model interaction is to simulate behavior with a variation of the **CRC cards**.
 
 - Humans may take the **role** of **Users**, **Aggregates**, **Processes** and **Projections**, i.e. humans are representing the decision makers in the system. 
