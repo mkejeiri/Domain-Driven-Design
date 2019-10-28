@@ -369,7 +369,7 @@ Color Based Grammar which is a good summary of the basic building blocks needed 
 
 The linearized version (better fits modeling on a paper roll and event-based storytelling approach), with the beginning of the pizza example process, tailored around our simple pizza delivery example, with the beginning of an order processing flow.
 
->> note that Before the "cooking **policy**" we have and "OrderPlaced" Event and "PreparePizza" command
+>> note that the "cooking **policy**" is located between the "OrderPlaced" **Event** and "PreparePizza" **command**.
 
 >> use Hotspots to visualize dissent, objections, and issues that we should not address immediately.
 
@@ -391,7 +391,7 @@ Less precise conversational approach should allow the team to sketch the process
 
 #### Events from user interaction
 
-**Events** may be the result of some user interaction with a system, a single user interaction can trigger multiple **events **with many **alternative outcomes**. They also could be a result of different level of **granularities** or **perspectives**.
+**Events** may be the result of some user interaction with a system, a single user interaction can trigger multiple **events** with many **alternative outcomes**. They also could be a result of different level of **granularities** or **perspectives**.
 
 >> Keep in mind that different perspective can suggest different naming for the same event (i.e. Hospots : aren't the same?).
 
@@ -500,7 +500,7 @@ Event-based approach is not good fit when intermediate steps are lost in the nua
 
 
 #### Policies
-**Policies** capture the reactive logic of our processes : Whenever ![pic](images/event(s)] then ![pic](images/command(s)]
+**Policies** capture the reactive logic of our processes : Whenever **[event(s)]** then **[command(s)]**
 
 '**Whenever**' helps us highlight the expected system reaction whenever a given event, or a combination of events happen.
 
@@ -651,7 +651,7 @@ Class Responsability Collaborator (CRC) Cards are an object oriented design tech
 
 **Responsibility** : what a class does as well as what information you wish to maintain about it, often identify a responsibility for a class to fulfill a collaboration with another class.
 
-**Collaborators**: Some responsibilities will collaborate with one or more other classes to fulfill one or more Scenarios.
+**Collaboration**: Some responsibilities will collaborate with one or more other classes to fulfill one or more Scenarios.
  
  - A class often does not have sufficient information to fulfill its responsibilities. Therefore, it must collaborate (work) with other classes to get the job done.
  
