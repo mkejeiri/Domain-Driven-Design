@@ -430,12 +430,11 @@ There is no such thing as an **implicit cascading reaction**, we'll try to make 
 
 #### Commands, Actions or Intentions
 
-We accept the fuzziness of the definitions here, and we might also consider them to represent intentions or user decisions (software architects call them commands).
+We accept the **fuzziness** of the definitions here, and we might also consider them to represent **intentions** or **user decisions** (software architects call them **commands**).
 
 ![pic](images/commandinaction.jpg)
 
-There's a lot of little semantic differences here: Commands, Actions, and
-Decisions are similar concepts, but they're definitely not the same thing. However, in process modeling game, it's more efficient to focus on the visible traits of a Command with an action written in the present tense.
+There's a lot of little semantic differences here: **Commands, Actions, and Decisions** are **similar concepts**, but they're definitely not the same thing. However, in process modeling game, it's more efficient to focus on the **visible traits** of a **Command** with an action written in the present tense.
 
 
 **command** does not imply **completion**, **Events** will eventually contain **its outcome(s)**, but **commands** can still **fail** or be **rejected**.
@@ -443,11 +442,11 @@ Decisions are similar concepts, but they're definitely not the same thing. Howev
 
 #### People
 
-They match with different concepts like Users, Actors, Roles, Personas or even specific persons with name and surname, we could get more specific than a simple *user* or *customer* if that helps the discussion.
+They match with different concepts like **Users, Actors, Roles, Personas or even specific persons** with **name** and **surname**, we could get more specific than a simple *user* or *customer* if that helps the discussion.
 
 ![pic](images/people.jpg)
 
-During the exploration, you might discover that different types of people have different interests and motivations in different steps:
+During the **exploration**, you might **discover** that different types of **people** have different **interests and motivations** in different steps:
 - do the same thing but for different reasons like buying a train ticket for a job trip or for a holiday
 
 - need alternative or extra steps in the flow, and the reason for branching depends on the customer type, like *New Customer* or *Returning Customer*
@@ -462,7 +461,7 @@ When designing processes, much attention is usually devoted to external generati
 
 #### Systems
 
-While modeling processes, we may progressively need something more sophisticated than the original definition such as *whatever we can blame*, by looking for inconsistencies and corner cases, and we should progressively inject precision into our discussion
+While **modeling processes**, we may progressively need something more **sophisticated** than the original **definition** such as *whatever we can blame*, by looking for **inconsistencies and corner cases**, and we should progressively **inject precision** into our **discussion**.
 
 **Generic systems?**
 participants will try to make things simple, by making systems generic. We must resist and make every specific system explicit
@@ -472,7 +471,7 @@ participants will try to make things simple, by making systems generic. We must 
 >> Different systems have different strengths and pain points and Generic systems don't. Sometimes displaying every system might confusing, it's usually a good idea to pick a representative, and use HotSpots for others.
 
 **Conversational Systems**
-Systems like phones, email, chats can host a more human-friendly interaction, but conversational systems are somewhat harder to model in an event-driven fashion.
+**Systems** like phones, email, chats can host a more human-friendly interaction, but conversational systems are somewhat harder to model in an event-driven fashion.
 
 ![pic](images/longUnfinishedDiscussion.jpg)
 Modeling a conversation with events can take up a lot of precious modeling space without leading us anywhere (DO NOT script the conversation).
@@ -480,62 +479,62 @@ Modeling a conversation with events can take up a lot of precious modeling space
 
 **conversational system**
 
-Implicit assumption that we'll stay on the conversational system for a while until some terminal event.
+Implicit **assumption** that we'll stay on the conversational system for a while until some **terminal event**.
 
 ![pic](images/conversationalsystem.jpg)
 
 **Focus on the outcome**
 
-Event-based approach is not good fit when intermediate steps are lost in the nuances of natural language, we could use termination condition, or the final outcome of the conversation and ask the question "What will make this conversation end?":
+**Event-based** approach is not good fit when **intermediate steps** are **lost** in the **nuances** of **natural language**, we could use **termination condition**, or the final outcome of the conversation and ask the question *"What will make this conversation end?"*:
 
-- Closing words like goodbye
+- Closing words like *goodbye*
 
-- Goal of the conversation has been accomplished
+- Goal of the conversation has been *accomplished*
  
-- This conversation is clearly going nowhere
+- *This conversation is clearly going nowhere*
 
-- Embrace the perspective of downstream actors : "don't care how you reach the deal, I only care about the deal details"
+- Embrace the perspective of downstream actors : *"don't care how you reach the deal, I only care about the deal details"*
 
-- also Looking at the pivotal events could help
+- also Looking at the **pivotal events** could help
 
 
 #### Policies
-**Policies** capture the reactive logic of our processes : Whenever **[event(s)]** then **[command(s)]**
+**Policies** capture the **reactive logic** of our **processes** : Whenever **[event(s)]** then **[command(s)]**
 
-'**Whenever**' helps us highlight the expected system reaction whenever a given event, or a combination of events happen.
+'**Whenever**' helps us highlight the expected system **reaction** whenever a given **event**, or a **combination of events** happen.
 
 ![pic](images/simplepolicy.jpg)
 
-**Policies** are missing glue between a domain event and the resulting command, there is always a business decision between an event and the reaction.
+**Policies** are **missing glue** between a **domain event** and the resulting **command**, there is always a **business decision** between an **event** and the **reaction**.
 
 > Example of *Customer Support Policy*
 
 >> "Whenever we receive a clarification request from a known customer, we try to answer or to open the conversation with the desired specialist within one working day."
 
-A **policy** can also be seen as a placeholder for a decision happening in the organization, triggered by a given event (or combination of events). 
+A **policy** can also be seen as a **placeholder** for a **decision happening** in the **organization**, triggered by a given **event** (or **combination of events**). 
 
 ![pic](images/staffmanagedpolicy.jpg)
 
-Sometimes this reaction to an event is automatic, other times it is managed by people. When this is the case, we place the relevant person (which represent can represent different stages of maturity of the company) on the corresponding **policy**.
+Sometimes this **reaction to an event** is **automatic**, other times it is managed by **people**. When this is the case, we place the relevant **person** (which could represent different stages of maturity of the company) on the corresponding **policy**.
 
-**Policies** tend to be the first thing that needs to change when the business context changes. **Policies** are the flexible glue between the other building blocks of business processes.
+**Policies** tend to be the **first** thing that needs to **change** when the **business context changes**. **Policies** are the flexible glue between the other building blocks of business processes.
 
-Discovering the real implementation of an existing **policy** is an investigation game: people will not tell you the real story at first attempt. To get through this, speak loudly and use *whenever* ... *then* with *Always/Immediate* in a sentence.
+**Discovering** the real **implementation** of an existing **policy** is an **investigation game**: people will not tell you the real **story** at **first** attempt. To get through this, **speak loudly** and use *whenever* ... *then* with a **combination** of **Always/Immediate** in a sentence.
 
 **Example**
  
-Whenever we receive a room hold request, and always if the customer provided their full name and phone number, and there's room availability for the selected dates, immediately we just do it.
+*Whenever we receive a room hold request, and always if the customer provided their full name and phone number, and there's room availability for the selected dates, immediately we just do it.*
 
-Now, it looks like there are two competing policies, so let's make them visible!
+Now, it looks like there are two **competing policies**, so let's **make** them **visible!**
 
 ![pic](images/splitpolicyopenhotspots.jpg)
-The resulting model, after we split the **policy** in two, and took care of the open hotspots.
+The resulting model, after we split the **policy** in two, and took care of the **open hotspots**.
 
 
 #### Read Models
 Read models are the information that needs to be available to take a given decision. We use read models to visualize **constraints** on the **data** that needs to be available to implement a **process**, but we use it also to **visualize** the **assumptions** behind the **decision-making process** and eventually **challenge** them. 
 
-> We should listen to the voice of a user to fetch the data that he needs to make a decision. It could be everything he needs is a voice-activated service running.
+> We should **listen** to the **voice** of a **user** to fetch the **data** that he needs to make a **decision**. It could be everything he **needs** is just a *voice-activated service running*.
 
 Some implementation need sequences, and the sequence matters, but many times, fetching data is not a process step: it's a piece of one possible solution leaking into the problem space.
 
@@ -546,41 +545,39 @@ Sometimes, the list of relevant information such as wireframes and sketches is a
 
 ![pic](images/informationdecision.jpg)
 
-We can write the relevant information to support a user choice in a green read model
+We can write the relevant information to support a user choice in a *green* **read model**
 
 ### Process modeling game strategies
-Like in most games, being familiar with the rules is only the first step. The more we  play, the more we'll shift your focus from following the rules, into developing a more sophisticated set of moves that will allow you to win the game.
+Like in most **games**, being familiar with the **rules** is only the first step. The more we  play, the more we'll **shift** your **focus** from following the rules, into **developing** a more **sophisticated** set of **moves** that will allow you to **win** the **game**.
 
-- add a little more structure than in Big Picture EventStorming by showing the **expected frame of a process modeling** session.
+- add a little more **structure** than in Big Picture EventStorming by showing the **expected frame of a process modeling** session.
 
 ![pic](images/processmodelingexpectedframe.jpg)
 
-- Use explicit walk-through 
+- Use **explicit walk-through**
 
-- Use reverse narratives
+- Use **reverse narratives**
 
-- Make a little mess or run a chaotic exploration first, and then use the notation to connect the dots
+- Make a little mess or run a **chaotic exploration** first, and then use the **notation** to connect the dots
 
 #### Managing branches
 
-Before starting the modeling session we might have the illusion that the process we're going to model should be approximately linear. 
+Before starting the modeling session we might have the **illusion** that the **process** we're going to model should be approximately **linear**. 
 
 ![pic](images/openbranchesdiscussion.jpg)
 
-That's never the case, we should be prepared to handle a continuous explosion of branches and alternatives using Hotspots to stop long open branches discussion.
+That's never the case, we should be prepared to handle a **continuous explosion of branches** and **alternatives** using **Hotspots** to **stop** long open branches **discussion**.
 
 ![pic](images/balancingpersonalities.jpg)
 
-With Team dynamics we get balancing personalities, thanks to different personalities and styles which will play different roles, and each one of them is precious!
+With Team dynamics we get **balancing personalities**, thanks to **different personalities and styles** which will play different **roles**, and each one of them is **precious!**
 
 
 #### Split & Merge
 
-Different personalities can have a hard time working together. There's a universe of possible reasons, coming from outside the modeling session, e.g. people resisting the whole idea of designing a new process, or alpha-male leaving no space for dissent or different style of reasonings.
+Different **personalities** can have a hard time **working** together. There's a universe of possible reasons, coming from outside the modeling session, e.g. people **resisting** the whole idea of **designing a new process**, or *alpha-male* leaving no space for *dissent* or *different style of reasonings*.
 
-We can split teams and attack the problem from two different angles (e.g. solo mode person before facing the rest with his model/thoughts). Using the same notation, it will be easier to spot parts which are very similar or not on both sides and then have an educated discussion to touch different solutions and make a more informed choice.
-
-
+We can **split teams** and attack the problem from two different **angles** (e.g. solo mode person before facing the rest with his model/thoughts). Using the same **notation**, it will be easier to **spot** parts which are very **similar** or **not** on both sides and then have an **educated discussion** to touch **different solutions** and make a more **informed choice**.
 
 
 ### Observing global state
@@ -600,34 +597,34 @@ A Transaction is just a process, we zoom into business transactions, we'll disco
 
 #### What do we do with the Big Picture Artifact?
 
-- It contains a good enough dictionary of domain events.
+- It contains a good enough **dictionary** of **domain events**.
 
-- It highlights, usually as a hotspot, an indication of the problem we're trying to solve. 
+- It highlights, usually as a **hotspot**, an indication of the **problem** we're trying to **solve**. 
 
-- it shows the current level of understanding of the external contexts we're working with.
+- it shows the **current** level of **understanding** of the **external contexts** we're working with.
 
 
 ### Modeling Aggregates
-they are defined as units of transactional consistency. They are groups of objects whose state can change, but that should always expose some consistency as a whole. This consistency is achieved enforcing given invariants, properties that should always be true, no matter what. 
+they are defined as **units of transactional consistency**. They are **groups of objects** whose **state** can **change**, but that should **always** expose some **consistency** as a **whole**. This **consistency** is achieved **enforcing** given **invariants**, **properties** that should **always** be **true**, no matter what. 
 
-e.g. the amount subtotal of selected items should reflect the current status of the cart, i.e. The Cart subtotal will always be the sum of each article quantity multiplied by the corresponding unit price - Always valid state, i.e. no way to have inconsistent reads while accessing different portions of the aggregate
+e.g. the *amount subtotal* of selected *items* should reflect the **current status** of the *ShoppingCart*, i.e. The *ShoppingCart subtotal* will always be the **sum** of each article **quantity multiplied** by **unit price**, we adhere to **Always valid state** principle, i.e. **no way** to have **inconsistent reads** while accessing different **portions** of the **Aggregate**.
 
 #### Discovering aggregates
-Looking at the **data to be contained** get us into **data and the static structure trap**. i.e. it drives software stakeholders into misleading agreements: everybody would pretend to agree we need a container for the data, and the data will need to be used (or reused) in many places.
+Looking at the **data to be contained** get us into **data and the static structure trap**. i.e. it drives software stakeholders into **misleading agreements**: everybody would **pretend** to **agree** we need a **container** for the **data**, and the **data** will need to be **used** (or **reused**) in **many places**.
 
 
 **Example of treacherous thinking process in action**: 
 --------------------------------------------------
-From a data perspective a shopping cart must be associated with a Customer which is not usually the case, a ShoppingCart will need to be associated with a WebSession instead which might be associated to an authenticated User or not! We'll need a Customer in order to create a valid Order starting from the ShoppingCart, and this would force the current Users to log in if they started adding items in some anonymous session.
+From a **data** perspective a **ShoppingCart** must be associated with a **Customer** which is not usually the case, a ShoppingCart will need to be associated with a **WebSession** instead which might be **associated** to an **authenticated User** or **not**! We'll need a Customer in order to create a valid Order starting from the ShoppingCart, and this would force the current Users to log in if they started adding items in some anonymous session.
 
-A shopping cart will include the list of the items to be purchased, with the associated quantity and price.
-Do we need really to include the ItemDescription in the ItemInCart? Feels like we should, because we'll need to display the ShoppingCart info to the customer, in order to review the cart before proceeding to checkout, "is this really the stuff we  intended to buy? Have we  looked at the grand total?". Things might get awkward when starting to consider events like ItemPriceUpdated or ItemDescriptionUpdated, that should have us thinking whether we should include a copy of the entire description of the selected item, or just a reference to the Item in stock.
+A **ShoppingCart** will include the **list** of the **items** to be **purchased**, with the associated **quantity** and **price**.
+Do we need really to include the *ItemDescription* in the ItemInCart? Feels like we should, because we'll need to display the **ShoppingCart** info to the **customer**, in order to **review** the **cart** before proceeding to **checkout**, *"is this really the stuff we  intended to buy? Have we looked at the grand total?"*. Things might get awkward when starting to consider events like *ItemPriceUpdated* or *ItemDescriptionUpdated*, that should have us thinking whether we should include a **copy** of the entire **description** of the selected **item**, or just a **reference** to the **Item** in stock.
 
-The bottom line is, these are not the **aggregates** we're looking for. "data to be displayed to a user in order to make a decision" will be a Read Model. **Aggregates** are something else, but we have to be aware of this vicious temptation of superimposing what we need to see on the screen on the internal structure of our model. **They're not the same thing**.
+**The bottom line** is, these are not the **Aggregates** we're looking for. "data to be displayed to a user in order to make a decision" will be a **Read Model**. **Aggregates** are something else, but we have to be aware of this **vicious temptation** of **superimposing** what we need to **see** on the **screen** on the **internal structure** of our **model**. **They're not the same thing**.
 
 
 
-To discover aggregate (don't use the name aggregate) we could use the following :
+To **discover aggregate** (don't use the name aggregate) we could use the following :
 
 - Look for **responsibilities** first what is this yellow sticky responsible for? Which are the system's expectation towards it? 
 
@@ -637,32 +634,32 @@ To discover aggregate (don't use the name aggregate) we could use the following 
 
 
 #### Aggregates as state machines
-What we are really looking for are units of consistent behavior, and given all the corporate dysfunctions we might not expect consistency to scale much.
+What we are really **looking for** are **units** of **consistent behavior**, and given all the corporate dysfunctions we might not expect consistency to scale much.
 
 
 
 #### Modeling interactions with Event-Driven CRC cards
 
-Class Responsability Collaborator (CRC) Cards are an object oriented design technique, where teams can use to discuss what a class should know and do and what other classed it interacts with.
+**Class Responsability Collaborator (CRC)** Cards are an object oriented design technique, where **teams** can use to **discuss** what a **class** should **know** and do and what **other classes** it **interacts** with.
 
 ![pic](images/crccards.jpg)
 
 **Name** : class name
 
-**Responsibility** : what a class does as well as what information you wish to maintain about it, often identify a responsibility for a class to fulfill a collaboration with another class.
+**Responsibility** : what a **class does** as well as what **information** you wish to **maintain** about it, often **identify** a **responsibility** for a class to **fulfill** a **collaboration** with another class.
 
-**Collaboration**: Some responsibilities will collaborate with one or more other classes to fulfill one or more Scenarios.
+**Collaboration**: Some responsibilities will **collaborate** with one or more other classes to **fulfill** one or more **Scenarios**.
  
- - A class often does not have sufficient information to fulfill its responsibilities. Therefore, it must collaborate (work) with other classes to get the job done.
+ - A class often does not have **sufficient information** to fulfill its **responsibilities**. Therefore, it must **collaborate** (work) with other classes to get the **job done**.
  
- - Collaboration will be in one of two forms: a request for information or a request to perform a task
+ - **Collaboration** will be in one of two forms: a **request for information** or a **request to perform a task**
  
- - To identify the collaborators of a class for each responsibility ask the question "does the class have the ability to fulfill this responsibility?". If not then look for a class that either has the ability to fulfill the missing functionality or the class which should fulfill it. In doing so you'll often discover the need for new responsibilities in other classes and maybe even the need for a new class or two.
+ - To **identify** the **collaborators** of a class for each **responsibility** ask the question **"does the class have the ability to fulfill this responsibility?"**. If **not** then look for a **class** that either has the **ability** to **fulfill** the **missing functionality** or the **class** which should **fulfill** it. In doing so you'll often **discover** the **need** for **new responsibilities** in other classes and maybe even the **need** for a **new class** or **two**.
 
 
 
 
-Design starts to focus around roles, responsibilities and message passing, a very efficient way to model interaction is to simulate behavior with a variation of the **CRC cards**.
+**Design starts** to focus around **roles**, **responsibilities** and **message passing**, a very efficient way to model interaction is to simulate **behavior** with a **variation** of the **CRC cards**.
 
 - Humans may take the **role** of **Users**, **Aggregates**, **Processes** and **Projections**, i.e. humans are representing the decision makers in the system. 
 
@@ -671,6 +668,6 @@ Design starts to focus around roles, responsibilities and message passing, a ver
 
 #### How do we know we're over?
 
-Once flattened, this is what we're expecting in a consistent flow.
-
 ![pic](images/expected_consistent_flow.jpg)
+
+Once flattened, this is what we're **expecting** in a **consistent flow**.
