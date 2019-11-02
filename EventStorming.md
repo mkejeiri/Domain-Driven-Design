@@ -225,34 +225,34 @@ The more we progress along the timeline, the more clarity is provided to the flo
 **Extra steps**
 
 few extra steps may provide more insights :
-- explore the value that is supposed to be generated or destroyed in the business flow (money, time, reputation, emotional safety, stress, happiness, and so on).
+- **explore** the **value** that is supposed to be **generated or destroyed** in the **business flow** (*money, time, reputation, emotional safety, stress, happiness*, and so on).
 
-- explore problems and opportunities : signal issues that didn't surface during the previous steps
+- explore **problems and opportunities** : signal issues that didn't surface during the previous steps
 
-- challenge the status quo with an alternative flow : given the current situation, what happens if we change it? Which parts are going to stay the same and which ones are going to be radically changed or dismissed?
+- **challenge** the **status quo** with an **alternative flow** : given the current situation, what happens if we change it? Which parts are going to stay the same and which ones are going to be radically changed or dismissed?
 
-- vote the most important issue to leverage the clarity of collective understanding into political momentum to do the right thing
+- **vote** the most **important issue** to leverage the **clarity** of **collective understanding** into political momentum to do the right thing
 
-> There's a lot of Bounded Context related info that comes as a byproduct of our discussion
+> There's a lot of **Bounded Context** related **information** that comes as a **byproduct** of our **discussion**
 
 **Heuristic: look at the business phases**
 
-Businesses grow around a well-defined business transaction where some value — usually money — is traded for something else. **Pivotal events** have a fundamental role in this flow.
+Businesses grow around a well-defined **business transaction** where some **value** — usually money — is traded for something else. **Pivotal events** have a fundamental role in this **flow**.
 
 ![pic](images/pivotaleventzoomin.jpg)
 
-> boundary events are also the ones with different conflicting wordings, the perception of bounded contexts usually overlaps. A key recommendation here is that we don't have to agree on the language! There's much more to discover by making disagreements visible.
+> **boundary events** are also the ones with different **conflicting** wordings, the **perception** of **bounded contexts** usually **overlaps**. A key recommendation here is that we **don't have to agree on the language!** There's much more to **discover** by making **disagreements** **visible**.
 
-> when two models are interacting, there are usually three models involved: the internal, the two bounded contexts and the communication model used to exchange information between them.
+> when two **models** are **interacting**, there are usually **three models involved**: the **internals**, the **two bounded contexts** and the **communication model** used to **exchange information** between them.
 
 ![pic](images/twointeractingmodelsthreelanguages.jpg)
 
-> Pivotal Events are usually part of a more general published language shared between the different parties.
+> **Pivotal Events** are usually part of a more general **published language** **shared** between the different **parties**.
 
-
-Emerging bounded contexts after a Big Picture EventStorming. 
 
 ![pic](images/emergingboundedcontexts.jpg)
+
+Emerging bounded contexts after a Big Picture EventStorming. 
 
 
 **Heuristic: look at the swimlanes**
