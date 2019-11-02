@@ -309,9 +309,7 @@ different places :
 
 we're not talking about the same **Talk!**, we're talking about **different models** in **selection**, **scheduling**, **staffing**, etc.
 
-**Putting everything together**
-
-*Merge the people, split the software*.
+**The bottom line is "Merge the people, split the software"**.
 
 
 
