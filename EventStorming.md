@@ -309,7 +309,7 @@ different places :
 
 we're not talking about the same **Talk!**, we're talking about **different models** in **selection**, **scheduling**, **staffing**, etc.
 
-**The bottom line is "Merge the people, split the software"**.
+
 
 
 
@@ -671,3 +671,6 @@ What we are really **looking for** are **units** of **consistent behavior**, and
 ![pic](images/expected_consistent_flow.jpg)
 
 Once flattened, this is what we're **expecting** in a **consistent flow**.
+
+
+>> **The bottom line is "Merge the people, split the software"**.
