@@ -394,7 +394,7 @@ The **linearized version** (better fits modeling on a **paper roll and event-bas
 
 **Events** may be the result of some **user interaction** with a system, a **single user interaction** can trigger multiple **events** with many **alternative outcomes**. They also could be a result of different level of **granularities** or **perspectives**.
 
->> Keep in mind that different **perspective** can suggest different **naming** for the same **event** (i.e. **Hospots** : aren't the same?).
+>> Keep in mind that different **perspective** can suggest different **naming** for the same **event** (i.e. use **Hospots** and if aren't they the same?).
 
 
 ![pic](images/eventsalternativeoutcomes.jpg)
