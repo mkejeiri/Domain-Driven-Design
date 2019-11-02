@@ -1,3 +1,5 @@
+This is merely my oversimplified takeaways/keynotes on the [Alberto Brandolini ebook on event storming ebook](https://leanpub.com/introducing_eventstorming), I stongly recommend reading the eBook.  
+
 ## Big Picture
 
 The **Big Picture EventStorming** will deliver the **snapshot** of our **current collective level of understanding** of the **business** including **holes** and **gaps**.
@@ -13,7 +15,7 @@ The **goal** is a **representation** of our **current understanding** of the **s
 
 
 ### Pretending to solve the problem by writing software
-
+--------------------------------------------------------
 **The Software Development fallacy**
 
 Dan North said **Software development is a learning process, working code is a side effect, It's not the typing, it's the understanding that matters**. 
@@ -116,7 +118,7 @@ There's a connection between the different highlighted problems. If you remove t
 ### Running a Big Picture Workshop
 
 #### Domain events
-
+--------------------------------------------------------
 *There's no implicit filter on the source, No implicit scope limitation*.
 
 We use a **verb at past tense** to describe events which forces us to explore the whole domain with the focus on **state transitions** (when something changes).
@@ -155,13 +157,14 @@ collect temperature information from an external system, a first **Domain Event*
 - **Domain Events** are triggers for consequences
 
 ### Commands
+--------------------------------------------------------
 They are key ingredient for user interaction (**Commands** - Actions - Decisions) or the result of a **user decision** (which might have required some sophisticated thinking) and are the trigger of some computation on the other side. If we focus on human behavior, we might see them as some action that a user is performing, like registering on a system or placing an order. If we focus on system implementation instead, they can represent a command we've just received, and the system has to fulfill.
 
 ### Hotspot
 when getting sucked into a discussion that we're not able to finish, we use a Hotspot notation so we will come back to it in the next session.
 
 ### Discovering Bounded Contexts with EventStorming
-
+--------------------------------------------------------
 Ideally, a **bounded context** should contain a **model tailored around a specific purpose**: the perfectly **shaped tool** for one **specific job**, **no trade-offs**.
 
 Whenever we realize a different **purpose is emerging**, we should give a chance to a **new model**, fitting the **new purpose**, and then find the best way to allow the **two models interact**.
@@ -169,7 +172,7 @@ Whenever we realize a different **purpose is emerging**, we should give a chance
 > It's job of **software architects** to discover **boundaries** in our domain, and this will be more an investigation on a crime scene than a tick-the-checkboxes conversation.
 
 #### 1. Chaotic Exploration
-
+--------------------------------------------------------
 with **no timeline** participants explore the domain, writing **verbs at past tense** on sticky notes, nobody knows the whole story
 
 ![pic](images/chaoticexploration.jpg)
@@ -178,7 +181,7 @@ As a result, we'll end up with a **lot of duplicated sticky notes** (e.g. schedu
 Published), or apparently duplicated ones in unordered manner. It's usually a good idea to **resist the temptation** to resolve those **duplicates** because they may refer to **different Bounded Context**.
 
 #### 2. Enforce the Timeline
-
+--------------------------------------------------------
 **Consistent timeline** describes the **business flow** from a beginning to an end with **parallel** and **alternative paths** to explore. The need to come up with one consistent view of the entire business triggers conversations around the places where this view is not consistent, we get an answer from the experts who are available!.
 
 We get to a highlighted conversation with a Hot Spot (not solve everything yet) to let the exploration flow and address it later on.
@@ -202,7 +205,7 @@ Pivotal Events and Swimlanes provide an emergent structure on top of the flow of
 
 
 #### 3. People and Systems
-
+--------------------------------------------------------
 we explore the **surroundings of our business**, explicitly looking for **people: actors, users, personas, or specific roles** in our **system**. Visualizing different **people** (actors) in our system helps to dig into the **different perspectives**. We might discover **specific responsibilities** and **roles**, or differing perceptions. 
 
 ![pic](images/peopleandsystems.jpg)
@@ -210,7 +213,7 @@ we explore the **surroundings of our business**, explicitly looking for **people
 e.g. in a conference superstar guest, invited as a keynote speaker, an expert or a newbie are differents, i.e. exploration phase may end up in opening an entirely new branch or making different strategies more visible and readable where systems usually trigger a different type of reasoning making the boundaries explicit.
 
 #### 4. Explicit Walkthrough
-
+--------------------------------------------------------
 To validate the **discoveries**, a picked **narrator** trying to tell the **whole story**, from **left to right**. Consistent **storytelling** is hard, in the beginning, because the **narrators' brain** will be torn apart by **conflicting needs**. Narrators will try to tell the story using the **existing events as building blocks**, but at the same time, they'll realize that what seemed good enough in the **previous reviews** is not good enough for a **public on stage storytelling session**.
 
 Usually, our model needs to be **improved**, to support **storytelling**. More **events** will appear, others will be moved away, paths will be split and so on. Participants are often challenging the narrator and the proposed **storytelling**, eventually providing examples of corner cases and not-so-exceptional-exceptions.
@@ -222,7 +225,7 @@ The more we progress along the timeline, the more clarity is provided to the flo
 **Extra steps**
 
 few extra steps may provide more insights :
-- explore the value that is supposed to be generated or destroyed in the business flow (moeny, time, reputation, emotional safety, stress, happiness, and so on).
+- explore the value that is supposed to be generated or destroyed in the business flow (money, time, reputation, emotional safety, stress, happiness, and so on).
 
 - explore problems and opportunities : signal issues that didn't surface during the previous steps
 
@@ -254,187 +257,187 @@ Emerging bounded contexts after a Big Picture EventStorming.
 
 **Heuristic: look at the swimlanes**
 
-Swimlanes often show different paths that involve different models, Not every swimlane is a Bounded Context, sometimes they're just an if statement somewhere, but when swimlanes are emerging for the need to highlight an independent process, possibly on a different timeline, then we might want to give a shot to an independent model.
+**Swimlanes** often show **different paths** that involve **different models**, **Not** every **swimlane** is a **Bounded Context**, sometimes they're just an **if statement** somewhere, but when swimlanes are **emerging** for the **need** to highlight an **independent process**, possibly on a **different timeline**, then we might want to give a **shot** to an **independent model**.
 
 ![pic](images/swimlanesboundedcontexts.jpg)
 
-Swimlanes are usually a reliable clue for possible different bounded contexts
+**Swimlanes** are usually a **reliable clue** for possible different **bounded contexts**
 
 
 **Heuristic: look at the people on the paper roll**
 
-An interesting twist might happen when dealing with different personas. Apparently, the flow should be the same, but it's not.
+An interesting twist might happen when dealing with **different personas**. Apparently, the **flow** should be the **same**, but it's **not**.
 
-as an example, Conference organizers or track hosts can invite some speakers, while others submit their proposals in the Call for Papers. The flows can be independent in the upstream part of the flow (skip review process for a superstar speaker). Downstream they're probably not (on the conference schedule, we want the same data, regardless of how we got it).
+as an example, **Conference organizers** or **track hosts** can invite some speakers, while others submit their proposals in the **Call for Papers**. The **flows** can be **independent** in the **upstream part** of the flow (skip review process for a **superstar speaker**). Downstream they're probably not (on the *conference schedule* we want the same data, regardless of how we got it).
 
 ![pic](images/parallelflowsmodels.jpg)
 
-Two parallel flows may require independent models, we shouldn't think in terms of roles: they'll recognize that speakers and keynote speakers are different in the left part of the flow, but they'll have a similar badge during the registration process, and they won't be different from regular attendees during lunchtime, when their role would be a simple mouth to feed.
+Two **parallel flows** may require **independent models**, we shouldn't think in terms of **roles**: they'll recognize that *speakers* and *keynote speakers* are **different** in the **left part** of the **flow**, but they'll have a **similar** **badge** during the **registration process**, and they won't be different from **regular attendees** during **lunchtime**, when their role would be a simple mouth to feed.
  
 **Heuristic: look at the humans in the room**
 
-People are during the exploration is probably giving the simplest and powerful clue about different model distribution, Experts tend to spend most time hovering around the areas that they know better to provide answers or to correct wrong stickies, Alternatively, they comment around the areas that they care about, maybe because the current implementation is far from satisfactory.
+**People** are during the **exploration** is probably giving the simplest and powerful **clue** about **different model distribution**, **Experts** tend to spend most time **hovering** around the **areas** that they **know better** to provide answers or to correct wrong stickies, Alternatively, they **comment** around the **areas** that they care about, maybe because the current **implementation** is far from **satisfactory**.
 
 >> Different people are a great indicator of different needs, which means different models often be remembered, through some weird spatial memory.
 
 **Heuristic: look at the body language**
 
-body language can be another source of information, not every dissent can be verbal, shaking heads, or eyes rolling are a clue of conflicting perspectives that haven't been addressed, different hierarchy levels come to different views on apparently the same problem.
+**body language** can be another source of information, not every **dissent** can be **verbal**, shaking **heads**, or **eyes rolling** are a clue of **conflicting perspectives** that haven't been **addressed**, different **hierarchy levels** come to different **views** on apparently the same **problem**.
 
-A typical conversational pattern often happening around **pivotal** or **boundary events**.
+A typical **conversational pattern** often happening around **pivotal** or **boundary events**.
 
 ![pic](images/competenceclash.jpg)
 
-typical competence clash, the persons on the left usually know all the mechanics involved in a given step, while the ones on the right only care about the outcome.
+typical **competence clash**, the **persons** on the **left** usually **know** all the **mechanics involved** in a given step, while the ones on the **right** only care about the **outcome**.
 
 **Heuristic: listen to the actual language**
 
-If you look for central terms like Talk, you'll discover that they're used in many
+If you look for central **terms** like **Talk**, you'll discover that they're used in many
 different places :
 
-- A Talk can be submitted, accepted or rejected in the call for papers.
+- **A Talk** can be **submitted**, **accepted** or **rejected** in the **call for papers**.
 
-- A Talk can be scheduled in a given slot, of a given track.
+- **A Talk** can be **scheduled** in a given slot, of a given track.
 
-- A Talk can be assigned to a given presenter or staff member, to introduce the speaker.
+- **A Talk** can be **assigned** to a given **presenter or staff member**, to introduce the speaker.
 
-- A Talk can be rated by attendees.
+- **A Talk** can be **rated** by attendees.
 
-- A Talk can be filmed and recorded.
+- **A Talk** can be **filmed** and **recorded**.
 
-- A Talk can be published on the conference YouTube channel.
+- **A Talk** can be **published** on the conference **YouTube** channel.
 
-we're not talking about the same Talk!, we're talking about different models: selection, scheduling, staffing, etc.
+we're not talking about the same **Talk!**, we're talking about **different models** in **selection**, **scheduling**, **staffing**, etc.
 
 **Putting everything together**
 
-Merge the people, split the software.
+*Merge the people, split the software*.
 
 
 
 ## Modelling processes and services
 
 ### Process Modeling as a cooperative game
+--------------------------------------------
+Here we need a **different** type of **interaction** in the **solution space**: **exploration** will progressively **blend** into a more **structured process** of **collaborative modeling** to **factor** **individual contributions** into a **shared solution**. The solution requires **different dynamics** and ultimately **reaching an agreement**:
 
-Here we need a different type of interaction in the solution space: exploration will progressively blend into a more structured process of collaborative modeling to factor individual contributions into a shared solution. The solution requires different dynamics and ultimately reaching an agreement:
+- designing a **new business process**, maybe on top of an **existing** one
 
-- designing a new business process, maybe on top of an existing one
+- addressing **relevant problem** which deserves our attention
 
-- addressing relevant problem which deserves our attention
+- dealing with a **limited scope**: focusing on a single **end-to-end process**
 
-- dealing with a limited scope: focusing on a single end-to-end process
+- talk to smaller number of **people**, usually with **different backgrounds**, **collaborating** towards a **solution**.
 
-- talk to smaller number of people, usually with different backgrounds, collaborating towards a solution.
+- not designing software yet at this stage
 
-- not designing software yet
+Here we use a **cooperative games** where **players** are not **competing** against each other, but **cooperating** towards a common **goal**. We still have to **win**, but the opponent is **"the problem"**, not another **human** being to be **defeated**.
 
-Here we use a cooperative games where players are not competing against each other, but cooperating towards a common goal. We still have to win, but the opponent is "the problem", not another human being to be defeated.
+To unlock the **team's potential** we have to give up our **technical** specialized **jargon** which create **invisible barriers** that **prevent** other **people** from joining a **collaborative** session.. 
 
-To unlock the team's potential we have to give up our technical specialized jargon which create invisible barriers that prevent other people from joining a collaborative session.. 
+We **win** at the EventStorming **process modeling** game when:
 
-We win at the EventStorming process modeling game when:
+- All **process paths** are **completed**, leading to a **stable state** where no **immediate action** is required.
 
-- All process paths are completed, leading to a stable state where no immediate action is required.
+- **Notations** are preserved, with no **holes** or **gaps**
 
-- Notations are preserved, with no holes or gaps
+- Every possible **Hotspot** is **addressed**
 
-- Every possible Hotspot is addressed
-
-- All the stakeholders involved in the process are reasonably happy
+- All the **stakeholders** involved in the process are **reasonably happy**
 
 **Business processes** are never just a **sequence of steps**, they carry the possibility of **alternatives and variations**, Some of these **alternative paths** will eventually merge into the **mainstream**, while others will **terminate** with different **exit conditions**. 
 
 **register a new user on a website**
 
-- user e-mail address to be already in the system
+- *user e-mail* address to be already in the system
 
-- An on-line purchase will need different paths for different payment methods
+- An *on-line purchase* will need different *paths* for different *payment methods*
 
-- An inquiry on a past purchase will be handled differently if the purchase is ten minutes, ten days or ten years old, and so on
+- An inquiry on a *past purchase* will be handled *differently* if the purchase is ten minutes, ten days or ten years old, and so on
 
-- trigger a few other actions, like the opening of a virtual account in the background, or some background checks on the customer, adding the new user to a mailing list and so on
+- *trigger* a few other actions, like the opening of a *virtual account* in the background, or some *background checks* on the customer, adding the *new user to a mailing list* and so on
 
 
 ![pic](images/processmodelingsessionframe.jpg)
 
-We're expecting processes to start from a given trigger (usually a Command or an external Event), and to finish with a combination of **Events** and **Read Models**.
+We're expecting processes to start from a given **trigger** (usually a **Command** or an external **Event**), and to finish with a combination of **Events** and **Read Models**.
 
-The reason for the apparent duplication is termination **events** are putting the **system** in a **stable state**, but human users usually need to see the outcome somewhere, to perceive the process as complete (process exposes something like a repeating).
+The reason for the apparent duplication is termination **events** are putting the **system** in a **stable state**, but human users usually need to see the **outcome** somewhere, to **perceive** the **process** as **complete** (process exposes something like a repeating).
 
 ![pic](images/pictureexplainseverything.jpg)
-Color Based Grammar which is a good summary of the basic building blocks needed during a process modeling session
+Color Based Grammar which is a good summary of the **basic building blocks** needed during a **process modeling** session
 
 
 ![pic](images/processlinearizedversion.jpg)
 
-The linearized version (better fits modeling on a paper roll and event-based storytelling approach), with the beginning of the pizza example process, tailored around our simple pizza delivery example, with the beginning of an order processing flow.
+The **linearized version** (better fits modeling on a **paper roll and event-based** storytelling approach), with the beginning of the pizza example process, tailored around our simple pizza delivery example, with the beginning of an order processing flow.
 
 >> note that the "cooking **policy**" is located between the "OrderPlaced" **Event** and "PreparePizza" **command**.
 
->> use Hotspots to visualize dissent, objections, and issues that we should not address immediately.
+>> use **Hotspots** to visualize **dissent**, **objections**, and **issues** that we should not **address immediately**.
 
-> This flow overlooks scenarios like 'order cancellation' or 'customer refund' which are part of nontrivial business domains, and have to be designed and managed accordingly.
+> This flow overlooks scenarios like *'order cancellation'* or *'customer refund'* which are part of **nontrivial business domains**, and have to be designed and managed accordingly.
 
 
 ### Process Modeling Building Blocks
-
-Process Modeling can happen more frequently, making the need to skip **precision** which will be gradually introduced later on.
+-------------------------------------
+**Process Modeling** can happen more **frequently**, making the need to skip **precision** which will be **gradually introduced** later on.
 
 ![pic](images/pictureexplainseverything.jpg)
 
-Less precise conversational approach should allow the team to sketch the process baseline quickly, exact semantic could be a barrier which lead into an exclusive conversation, a more conversation-friendly make everything visible quickly. 
+**Less precise** **conversational** approach should allow the **team** to **sketch** the **process baseline quickly**, **exact semantic** could be a **barrier** which lead into an **exclusive conversation**, a more **conversation-friendly** make everything **visible quickly**. 
 
 ![pic](images/rephraseevents.jpg)
 
-**Events** will be the building blocks of our storytelling, we are building a objection-proof business process, we'll need to be a little more **formal**. We need to **rephrase** some **events**, which will need to be state transitions, and during process modeling and software design sessions, the phrasing will be strictly mandatory. Different rounds will increase semantic precision, and probably require more **events**.
+**Events** will be the building **blocks** of our **storytelling**, we are building a **objection-proof business process**, we'll need to be a little more **formal**. We need to **rephrase** some **events**, which will need to be **state transitions**, and during process modeling and software design sessions, the **phrasing** will be strictly **mandatory**. Different rounds will increase **semantic precision**, and probably require more **events**.
 
 
 #### Events from user interaction
 
-**Events** may be the result of some user interaction with a system, a single user interaction can trigger multiple **events** with many **alternative outcomes**. They also could be a result of different level of **granularities** or **perspectives**.
+**Events** may be the result of some **user interaction** with a system, a **single user interaction** can trigger multiple **events** with many **alternative outcomes**. They also could be a result of different level of **granularities** or **perspectives**.
 
->> Keep in mind that different perspective can suggest different naming for the same event (i.e. Hospots : aren't the same?).
+>> Keep in mind that different **perspective** can suggest different **naming** for the same **event** (i.e. **Hospots** : aren't the same?).
 
 
 ![pic](images/eventsalternativeoutcomes.jpg)
 
-An emergent pattern in this situation is to position the happy path on top and less frequent alternatives below
+An **emergent pattern** in this situation is to position the **happy path** on **top** and less frequent **alternatives** below
 
 #### External Systems
-**External Systems** can trigger **events**. A typical example occurs when you have distributed sensors somewhere: something like Temperature registered or Perimeter violation detected, or when you simply don't want to investigate more in-depth on the event origin.
+**External Systems** can trigger **events**. A typical example occurs when you have distributed **sensors** somewhere: something like *'Temperature registered'* or *'Perimeter violation detected'*, or when you simply don't want to *investigate* more *in-depth* on the **event origin**.
 
 #### Time-triggered events
 
-Time could be considered as a particular category of an external system, but time is so pervasive than visualizing it everywhere can end up cluttering our model more the necessary.
+**Time** could be considered as a particular **category** of an **external system**, but time is so pervasive than visualizing it everywhere can end up **cluttering** our **model** more the **necessary**.
 
 ![pic](images/timetriggeredevents.jpg)
 
-We can discover that the actual mechanics are a lot more complicated, such as organization performance review per department with buffer to allow last-minute corrections pending paperwork to be completed and so on, a little process like waiting for every department to finish their homework, with a department may be unrecoverably late we will declare the quarter closed anyway.
+We can **discover** that the actual **mechanics** are a lot more **complicated**, such as **organization performance review** per **department** with buffer to *'allow last-minute corrections pending paperwork to be completed'* and so on, a little **process** like **waiting** for every **department** to **finish** their **homework**, with a **department** may be **unrecoverably late** we will declare the *'quarter closed'* anyway.
 
 ![pic](images/complicatedtimetriggeredevents.jpg)
 
-> We are still missing some building blocks to tell the story, **Policies** will play a key role in visualizing a trickier process like this one.
+> We are still missing some building **blocks** to tell the **story**, **Policies** will play a key role in visualizing a trickier **process** like this one.
 
 
 ####  Events which are not happening
 
-we consider **events** to be state transitions in this case is hard to model, but consider the example a birthday of a friend and we didn't forget to greet him, we can observe from the outside is that a day has passed without receiving any greetings. i.e. the event **End of day** happened before the **Greeting received** event.
+we consider **events** to be **state transitions** in this case is hard to **model**, but consider the example a birthday of a friend and we didn't forget to greet him, we can observe from the outside is that a day has passed without receiving any greetings. i.e. the event **'End of day'** happened before the **'Greeting received'** event.
 
 #### Cascading reactions
 
-**Events** appear sometimes to be the **direct consequence** of other **events**, something like *whenever this happens then that happens*, sometimes the overlapping between the events is so tight that it's hard to distinguish the two(two faces of the same coin).
+**Events** appear sometimes to be the **direct consequence** of other **events**, something like *whenever this happens then that happens*, sometimes the **overlapping** between the **events** is so **tight** that it's hard to **distinguish** the two(*two faces of the same coin*).
 
 ![pic](images/cascadingreactionevent.jpg)
 
-There is no such thing as an **implicit cascading reaction**, we'll try to make the connection visible by adding a **policy** and a few other **notation** in between.
+There is no such thing as an **implicit cascading reaction**, we'll try to make the connection **visible** by adding a **policy** and a few other **notation** in between.
 
 #### Commands, Actions or Intentions
 
-We accept the **fuzziness** of the definitions here, and we might also consider them to represent **intentions** or **user decisions** (software architects call them **commands**).
+We accept the **fuzziness** of the **definitions** here, and we might also consider them to represent **intentions** or **user decisions** (software architects call them **commands**).
 
 ![pic](images/commandinaction.jpg)
 
-There's a lot of little semantic differences here: **Commands, Actions, and Decisions** are **similar concepts**, but they're definitely not the same thing. However, in process modeling game, it's more efficient to focus on the **visible traits** of a **Command** with an action written in the present tense.
+There's a lot of little **semantic** differences here: **Commands, Actions, and Decisions** are **similar concepts**, but they're definitely not the same thing. However, in **process modeling** game, it's more efficient to focus on the **visible traits** of a **Command** with an action written in the **present tense**.
 
 
 **command** does not imply **completion**, **Events** will eventually contain **its outcome(s)**, but **commands** can still **fail** or be **rejected**.
@@ -447,39 +450,38 @@ They match with different concepts like **Users, Actors, Roles, Personas or even
 ![pic](images/people.jpg)
 
 During the **exploration**, you might **discover** that different types of **people** have different **interests and motivations** in different steps:
-- do the same thing but for different reasons like buying a train ticket for a job trip or for a holiday
 
-- need alternative or extra steps in the flow, and the reason for branching depends on the customer type, like *New Customer* or *Returning Customer*
+- do the **same thing** but for **different reasons** like buying a train ticket for a job trip or for a holiday
 
-- do the same thing but they need different information to start
-or complete the task.
+- need **alternative** or extra steps in the **flow**, and the reason for **branching** depends on the **customer type**, like *New Customer* or *Returning Customer*
+
+- do the **same thing** but they need **different information** to **start** or **complete** the **task**.
 
 #### Internal users
 
-When designing processes, much attention is usually devoted to external generating **revenue users** (e.g. *customers*) while internal users are usually mapped to their roles, but sometimes **internal users** may expose different behavior or apply different principles, a more in-depth look to **internal users behavior** may lead to interesting discoveries in the problem space.
+When **designing processes**, much attention is usually devoted to external generating **revenue users** (e.g. *customers*) while **internal users** are usually mapped to their **roles**, but sometimes **internal users** may **expose** different **behavior** or **apply** different **principles**, a more in-depth look to **internal users behavior** may lead to interesting **discoveries** in the **problem space**.
 
 
 #### Systems
 
-While **modeling processes**, we may progressively need something more **sophisticated** than the original **definition** such as *whatever we can blame*, by looking for **inconsistencies and corner cases**, and we should progressively **inject precision** into our **discussion**.
+While **modeling processes**, we may progressively need something more **sophisticated** than the original **definition** such as *'whatever we can blame'*, by looking for **inconsistencies and corner cases**, and we should progressively **inject precision** into our **discussion**.
 
 **Generic systems?**
-participants will try to make things simple, by making systems generic. We must resist and make every specific system explicit
+**participants** will try to make things **simple**, by making **systems** **generic**. We must resist and make every **specific** **system** **explicit**
 
 ![pic](images/genericsystem.jpg)
 
->> Different systems have different strengths and pain points and Generic systems don't. Sometimes displaying every system might confusing, it's usually a good idea to pick a representative, and use HotSpots for others.
+>> Different **systems** have different **strengths** and **pain points** and Generic systems don't. Sometimes displaying every system might **confusing**, it's usually a good idea to **pick** a **representative**, and use **HotSpots** for others.
 
-**Conversational Systems**
+##### Conversational Systems**
+
 **Systems** like phones, email, chats can host a more human-friendly interaction, but conversational systems are somewhat harder to model in an event-driven fashion.
 
 ![pic](images/longUnfinishedDiscussion.jpg)
-Modeling a conversation with events can take up a lot of precious modeling space without leading us anywhere (DO NOT script the conversation).
 
+**Modeling a conversation** with **events** can take up a lot of **precious modeling space** without leading us **anywhere** (DO NOT script the conversation).
 
-**conversational system**
-
-Implicit **assumption** that we'll stay on the conversational system for a while until some **terminal event**.
+Often, we rely on Implicit **assumption** that we'll stay on the **conversational system** for a while until some **terminal event**.
 
 ![pic](images/conversationalsystem.jpg)
 
@@ -493,7 +495,7 @@ Implicit **assumption** that we'll stay on the conversational system for a while
  
 - *This conversation is clearly going nowhere*
 
-- Embrace the perspective of downstream actors : *"don't care how you reach the deal, I only care about the deal details"*
+- **Embrace** the **perspective** of **downstream actors** : *"don't care how you reach the deal, I only care about the deal details"*
 
 - also Looking at the **pivotal events** could help
 
@@ -532,20 +534,20 @@ The resulting model, after we split the **policy** in two, and took care of the 
 
 
 #### Read Models
-Read models are the information that needs to be available to take a given decision. We use read models to visualize **constraints** on the **data** that needs to be available to implement a **process**, but we use it also to **visualize** the **assumptions** behind the **decision-making process** and eventually **challenge** them. 
+**Read models** are the information that needs to be **available** to take a given **decision**. We use **read models** to visualize **constraints** on the **data** that needs to be **available** to implement a **process**, but we use it also to **visualize** the **assumptions** behind the **decision-making process** and eventually **challenge** them. 
 
 > We should **listen** to the **voice** of a **user** to fetch the **data** that he needs to make a **decision**. It could be everything he **needs** is just a *voice-activated service running*.
 
-Some implementation need sequences, and the sequence matters, but many times, fetching data is not a process step: it's a piece of one possible solution leaking into the problem space.
+Some implementation need **sequences**, and the sequence matters, but many times, **fetching data** is not a **process step**: it's a **piece** of one possible **solution** leaking into the **problem space**.
 
-Sometimes, the list of relevant information such as wireframes and sketches is all you need to understand the flow but this is never the whole story.
+Sometimes, the list of relevant information such as **wireframes** and **sketches** is all you need to understand the **flow** but this is never the **whole story**.
 
 
 **example**
 
 ![pic](images/informationdecision.jpg)
 
-We can write the relevant information to support a user choice in a *green* **read model**
+We can write the relevant **information** to support a user choice in a *green* **read model**
 
 ### Process modeling game strategies
 Like in most **games**, being familiar with the **rules** is only the first step. The more we  play, the more we'll **shift** your **focus** from following the rules, into **developing** a more **sophisticated** set of **moves** that will allow you to **win** the **game**.
@@ -582,13 +584,13 @@ We can **split teams** and attack the problem from two different **angles** (e.g
 
 ### Observing global state
 
-> Banks are so worried about eventual consistency. But every time we transfer money, we see money disappearing in a wormhole and reappearing somewhere else a couple of days later.
+> Banks are so worried about **eventual consistency**. But every time we *transfer money*, we see *money disappearing* in a *wormhole* and reappearing somewhere else a couple of *days later*.
 
-Business transaction should be seen as a process of reconciliation, filling a gap between current and desired state. 
+**Business transaction** should be seen as a **process of reconciliation**, **filling** a **gap** between **current** and **desired state**. 
 
->> ordering a sandwich with 5 € banknote, waiting and not worrying about what if the guy take the 5 € banknote and not showing up.
+>> ordering a sandwich and paying like a 5 € banknote, waiting and not worrying about what if the guy take the 5 € banknote and not showing up.
 
-A Transaction is just a process, we zoom into business transactions, we'll discover that they're never atomic but they're rather a sequence of states which are somewhat inconsistent. It's more to consistency than it's apparent to the eye.
+A **Transaction** is just a **process**, we zoom into **business transactions**, we'll **discover** that they're **never atomic** but they're rather a **sequence of states** which are somewhat **inconsistent**. It's more to consistency than it's apparent to the eye.
 
 
 ## Process Modeling
@@ -605,7 +607,7 @@ A Transaction is just a process, we zoom into business transactions, we'll disco
 
 
 ### Modeling Aggregates
-they are defined as **units of transactional consistency**. They are **groups of objects** whose **state** can **change**, but that should **always** expose some **consistency** as a **whole**. This **consistency** is achieved **enforcing** given **invariants**, **properties** that should **always** be **true**, no matter what. 
+They are defined as **units of transactional consistency**. They are **groups of objects** whose **state** can **change**, but that should **always** expose some **consistency** as a **whole**. This **consistency** is achieved **enforcing** given **invariants**, **properties** that should **always** be **true**, no matter what. 
 
 e.g. the *amount subtotal* of selected *items* should reflect the **current status** of the *ShoppingCart*, i.e. The *ShoppingCart subtotal* will always be the **sum** of each article **quantity multiplied** by **unit price**, we adhere to **Always valid state** principle, i.e. **no way** to have **inconsistent reads** while accessing different **portions** of the **Aggregate**.
 
@@ -614,7 +616,7 @@ Looking at the **data to be contained** get us into **data and the static struct
 
 
 **Example of treacherous thinking process in action**: 
---------------------------------------------------
+------------------------------------------------------
 From a **data** perspective a **ShoppingCart** must be associated with a **Customer** which is not usually the case, a ShoppingCart will need to be associated with a **WebSession** instead which might be **associated** to an **authenticated User** or **not**! We'll need a Customer in order to create a valid Order starting from the ShoppingCart, and this would force the current Users to log in if they started adding items in some anonymous session.
 
 A **ShoppingCart** will include the **list** of the **items** to be **purchased**, with the associated **quantity** and **price**.
