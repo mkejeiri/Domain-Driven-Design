@@ -726,4 +726,5 @@ Once flattened, this is what we're **expecting** in a **consistent flow**.
 We should have a **symmetry** between **events** and **commands** (which is trivial - a verbs in present tense followed by verbs in past tense), most **importantly** we should investigate why some are **lacking symmetries** (might be some **concepts** are **missing** or **conflicting**!).
 
 
->> The bottom line is **"merge the people, split the software"**.
+
+>> The the takeaway from Event Storming in domain driven design is : **"merge the people, split the software"**.
