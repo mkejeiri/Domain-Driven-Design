@@ -1,5 +1,20 @@
 This is merely my oversimplified takeaways/keynotes on the [Alberto Brandolini ebook on event storming ebook](https://leanpub.com/introducing_eventstorming), I stongly recommend reading the eBook.  
 
+## Introduction
+
+The way we think usually about **design** is around **state of the data structure** (such as the *state of an 'Order' with a set of properties*) which we save into the **database** so we could retrieve it on demand. It always represents the **last data structure state** (or **snapshot**) of an **object**.
+
+>> This approach is called sometimes **data driven approach**. 
+
+**Event storming** takes us into the next level, we are **modeling chronology of events**, or **events timeline** were the **state of data structure** is the **sum** of all **events** that **happens** up until a certain **moment** in time. 
+
+Simply put, what are the **changes** (or **state transitions** **history** of an **object**) that **occurs** up until the **moment** we get into the **current state**.
+
+>> what are the changes that happen and cause us to get where we are right now?
+
+As a result, the **last state of the data structure/properties** is just a matter of **finding** the **last events** and playing back all chronological sequence of **events** that occurs until the **last events**, the *other way around is not possible*.
+
+
 ## Big Picture
 
 The **Big Picture EventStorming** will deliver the **snapshot** of our **current collective level of understanding** of the **business** including **holes** and **gaps**.
@@ -671,6 +686,5 @@ What we are really **looking for** are **units** of **consistent behavior**, and
 ![pic](images/expected_consistent_flow.jpg)
 
 Once flattened, this is what we're **expecting** in a **consistent flow**.
-
 
 >> **The bottom line is "Merge the people, split the software"**.
