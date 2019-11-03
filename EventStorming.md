@@ -331,6 +331,7 @@ we're not talking about the same **Talk!**, we're talking about **different mode
 ## Modelling processes and services
 
 ![pic](images/processmodeling.jpg)
+
 Color puzzle thinking
 
 ### Process Modeling as a cooperative game
