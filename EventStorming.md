@@ -10,10 +10,12 @@ The way we think usually about **design** is around **state of the data structur
 
 Simply put, what are the **changes** (or **state transitions** **history** of an **object**) that **occurs** up until the **moment** we get into the **current state**.
 
+
 >> what are the changes that happen and cause us to get where we are right now?
 
 As a result, the **last state of the data structure/properties** is just a matter of **finding** the **last events** and playing back all chronological sequence of **events** that occurs until the **last events**, the *other way around is not possible*.
 
+**Events** are the best candidate for **ubiquitous language**, **business** is speaking in **domain events**, **policies** and **peoples** are **reacting** when **something happens** **not** because some **information** is in the **database**.
 
 ## Big Picture
 
@@ -26,7 +28,7 @@ The **purpose** of this step is to keep **everything visible on the board** usin
 
 The **Big Picture** is an **on-boarding process** of workshop sequences which relies on **incremental notation** and **visible legend**.
 
-The **goal** is a **representation** of our **current understanding** of the **systems**, including **inconsistencies** and holes.
+The **goal** is a **representation** of our **current understanding** of the **systems**, including **inconsistencies** and **holes**.
 
 
 ### Pretending to solve the problem by writing software
@@ -91,7 +93,7 @@ This **habits** is a **burden towards development of meaningful products**. Unco
 
 **Domain-Driven Design**
 
-**Domain-Driven Design** focused on **language** as the **key tool** for a deep understanding of a given domain's complexity, it doesn't assume **consistency of the different areas of expertises**. In fact, it states that **consistency** can only be achieved at a **model level**, and that this **model can't be large**.
+**Domain-Driven Design** focused on **language** as the **key tool** for a deep understanding of a given domain's complexity, it doesn't assume **consistency of the different areas of expertise's**. In fact, it states that **consistency** can only be achieved at a **model level**, and that this **model can't be large**.
 
 When **modeling large scale system**, we shouldn't aim for a large **enterprise model**. That's an attractor for **ambiguities and contradictions**. Instead we **should aim for**:
 
@@ -182,9 +184,13 @@ when getting sucked into a discussion that we're not able to finish, we use a Ho
 --------------------------------------------------------
 Ideally, a **bounded context** should contain a **model tailored around a specific purpose**: the perfectly **shaped tool** for one **specific job**, **no trade-offs**.
 
-Whenever we realize a different **purpose is emerging**, we should give a chance to a **new model**, fitting the **new purpose**, and then find the best way to allow the **two models interact**.
+>> **Not accepting** a multiple languages that forms an **inconsistent whole** is so bad, that we might end up putting **same objects** that have **different semantics** across **boundaries** in the **same box**, and try to figure out how to **distinguish** them, which becomes our problem, because **business** don't have **ambiguities** within a **boundary**. Therefore, we will have no **empathy** from the **business** because we are solving a problem that they don't have.
 
-> It's job of **software architects** to discover **boundaries** in our domain, and this will be more an investigation on a crime scene than a tick-the-checkboxes conversation.
+Whenever we realize a different **purpose is emerging**, we should give a chance to a **new model**, fitting the **new purpose**,and then find the best way to allow the **two models interact**.
+
+> It's the job of **software architects** to discover **boundaries** in our domain, and this will be more an investigation on a crime scene than a tick-the-checkboxes conversation.
+
+
 
 #### 1. Chaotic Exploration
 --------------------------------------------------------
@@ -225,9 +231,9 @@ we explore the **surroundings of our business**, explicitly looking for **people
 
 ![pic](images/peopleandsystems.jpg)
 
-e.g. in a conference superstar guest, invited as a keynote speaker, an expert or a newbie are differents, i.e. exploration phase may end up in opening an entirely new branch or making different strategies more visible and readable where systems usually trigger a different type of reasoning making the boundaries explicit.
+e.g. in a conference superstar guest, invited as a keynote speaker, an expert or a newbie are different, i.e. exploration phase may end up in opening an entirely new branch or making different strategies more visible and readable where systems usually trigger a different type of reasoning making the boundaries explicit.
 
-#### 4. Explicit Walkthrough
+#### 4. Explicit Walk-through
 --------------------------------------------------------
 To validate the **discoveries**, a picked **narrator** trying to tell the **whole story**, from **left to right**. Consistent **storytelling** is hard, in the beginning, because the **narrators' brain** will be torn apart by **conflicting needs**. Narrators will try to tell the story using the **existing events as building blocks**, but at the same time, they'll realize that what seemed good enough in the **previous reviews** is not good enough for a **public on stage storytelling session**.
 
@@ -323,8 +329,6 @@ different places :
 - **A Talk** can be **published** on the conference **YouTube** channel.
 
 we're not talking about the same **Talk!**, we're talking about **different models** in **selection**, **scheduling**, **staffing**, etc.
-
-
 
 
 
@@ -518,11 +522,19 @@ Often, we rely on Implicit **assumption** that we'll stay on the **conversationa
 
 
 #### Policies
+
+**Policies** define organizational business process behavior, were people are performing tasks with an implicit or explicit agreement.
+
 **Policies** capture the **reactive logic** of our **processes** : Whenever **[event(s)]** then **[command(s)]**
 
 '**Whenever**' helps us highlight the expected system **reaction** whenever a given **event**, or a **combination of events** happen.
 
 ![pic](images/simplepolicy.jpg)
+
+**Policies** answer the following questions : 
+
+- *How is our system is supposed to react to given event(s)?*
+- *and which command(s) is/are issued as a reaction's result to that event(s)?
 
 **Policies** are **missing glue** between a **domain event** and the resulting **command**, there is always a **business decision** between an **event** and the **reaction**.
 
@@ -549,11 +561,23 @@ Now, it looks like there are two **competing policies**, so let's **make** them 
 ![pic](images/splitpolicyopenhotspots.jpg)
 The resulting model, after we split the **policy** in two, and took care of the **open hotspots**.
 
+#### Challenging value
+
+In process modeling we are also challenging the **business narrative** (why we are doing this or that?), in way to find **inconsitencies** before even **writing software**.
+
+Every step of the flow can **create** or **destroy** **value** for a given user, by:
+- discovering **multiple currencies**, e.g. personal satisfaction, reputation, happiness, anxiety,...
+- discovering **new opportunities**
+- discovering **inconsistencies**
+
+There is a need to streamline not only mechnical consitencies but also address people values in order to perform at organizational level. 
 
 #### Read Models
-**Read models** are the information that needs to be **available** to take a given **decision**. We use **read models** to visualize **constraints** on the **data** that needs to be **available** to implement a **process**, but we use it also to **visualize** the **assumptions** behind the **decision-making process** and eventually **challenge** them. 
+**Read models** are the **information** that needs to be **available** for a **user** to take **decision** and to produce a **command**. 
 
-> We should **listen** to the **voice** of a **user** to fetch the **data** that he needs to make a **decision**. It could be everything he **needs** is just a *voice-activated service running*.
+We use **read models** to visualize **constraints** on the **data** that needs to be **available** to implement a **process**, but we use it also to **visualize** the **assumptions** behind the **decision-making process** and eventually **challenge** them. 
+
+> We should **listen** to the **voice** of a **user** to fetch the **data** that he needs to make a **decision**. It might be that everything he **needs** is just a *voice-activated service running*.
 
 Some implementation need **sequences**, and the sequence matters, but many times, **fetching data** is not a **process step**: it's a **piece** of one possible **solution** leaking into the **problem space**.
 
@@ -609,11 +633,11 @@ We can **split teams** and attack the problem from two different **angles** (e.g
 
 A **Transaction** is just a **process**, we zoom into **business transactions**, we'll **discover** that they're **never atomic** but they're rather a **sequence of states** which are somewhat **inconsistent**. It's more to consistency than it's apparent to the eye.
 
+## Software Design - running a Design-Level EventStorming
 
-## Process Modeling
+![pic](images/softwaredesign.jpg)
 
-## Software Design by running a Design-Level EventStorming
-
+Color puzzle thinking
 #### What do we do with the Big Picture Artifact?
 
 - It contains a good enough **dictionary** of **domain events**.
@@ -624,6 +648,7 @@ A **Transaction** is just a **process**, we zoom into **business transactions**,
 
 
 ### Modeling Aggregates
+
 They are defined as **units of transactional consistency**. They are **groups of objects** whose **state** can **change**, but that should **always** expose some **consistency** as a **whole**. This **consistency** is achieved **enforcing** given **invariants**, **properties** that should **always** be **true**, no matter what. 
 
 e.g. the *amount subtotal* of selected *items* should reflect the **current status** of the *ShoppingCart*, i.e. The *ShoppingCart subtotal* will always be the **sum** of each article **quantity multiplied** by **unit price**, we adhere to **Always valid state** principle, i.e. **no way** to have **inconsistent reads** while accessing different **portions** of the **Aggregate**.
@@ -653,9 +678,16 @@ To **discover aggregate** (don't use the name aggregate) we could use the follow
 
 
 #### Aggregates as state machines
-What we are really **looking for** are **units** of **consistent behavior**, and given all the corporate dysfunctions we might not expect consistency to scale much.
 
+We are **looking for** **units** of **consistent behavior**, we should spot a kind of **state machine logic**, which focuses on **behavior** not on the **DATA** :   
 
+- The **key content** of an **aggregate** is the **bit of information** triggering **behavior** by the **event**. 
+- Additional **content** as **redundant information** which get **propagated** through **events** from other **bounded context**.
+- The role of **Aggregate** in the flow is a litte local decision to **accept** or **reject** a **command** based on **its internal state**.
+
+>> given all the corporate dysfunctions we might not expect **consistency** to scale much.
+
+We have to **postpone** the **Aggregate naming** because it will diverge a discussion to produce multiple perspectives and to prevent an implicit early consensus.
 
 #### Modeling interactions with Event-Driven CRC cards
 
@@ -691,4 +723,7 @@ What we are really **looking for** are **units** of **consistent behavior**, and
 
 Once flattened, this is what we're **expecting** in a **consistent flow**.
 
->> **The bottom line is "Merge the people, split the software"**.
+We should have a **symmetry** between **events** and **commands** (which is trivial - a verbs in present tense followed by verbs in past tense), most **importantly** we should investigate why some are **lacking symmetries** (might be some **concepts** are **missing** or **conflicting**!).
+
+
+>> The bottom line is **"merge the people, split the software"**.
