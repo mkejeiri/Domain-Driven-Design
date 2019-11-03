@@ -330,6 +330,9 @@ we're not talking about the same **Talk!**, we're talking about **different mode
 
 ## Modelling processes and services
 
+![pic](images/processmodeling.jpg)
+Color puzzle thinking
+
 ### Process Modeling as a cooperative game
 --------------------------------------------
 Here we need a **different** type of **interaction** in the **solution space**: **exploration** will progressively **blend** into a more **structured process** of **collaborative modeling** to **factor** **individual contributions** into a **shared solution**. The solution requires **different dynamics** and ultimately **reaching an agreement**:
