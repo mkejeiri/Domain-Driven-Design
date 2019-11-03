@@ -6,7 +6,7 @@ The way we think usually about **design** is around **state of the data structur
 
 >> This approach is called sometimes **data driven approach**. 
 
-**Event storming** takes us into the next level, we are **modeling chronology of events**, or **events timeline** were the **state of data structure** is the **sum** of all **events** that **happens** up until a certain **moment** in time. 
+**Event storming** takes us into the next level, we are **modeling chronology of events**, or **events timeline** of the **business processes behavior** were the **state of data structure** is the **sum** of all **events** that **happens** up until a certain **moment** in time. 
 
 Simply put, what are the **changes** (or **state transitions** **history** of an **object**) that **occurs** up until the **moment** we get into the **current state**.
 
