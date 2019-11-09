@@ -17,6 +17,11 @@ As a result, the **last state of the data structure/properties** is just a matte
 
 **Events** are the best candidate for **ubiquitous language**, **business** is speaking in **domain events**, **policies** and **peoples** are **reacting** when **something happens** **not** because some **information** is in the **database**.
 
+**Events** represent **business behaviors** and therefore help the **system** **capture** the **business intent** behind the message.
+
+
+>> **Event storming** is a **toolkit** for **collaborative discovery**. It enables a **large cross sectional team** to be **interactive**, **discuss**, **solution**, **think** etc. on a **given topic**. When it comes to our level of collective understanding of the business, we could **accomplish** in a **day** what might have taken **weeks** of iteration in software development (incurring a huge amount of **technical debt** on the way).
+
 ## Big Picture
 
 The **Big Picture EventStorming** will deliver the **snapshot** of our **current collective level of understanding** of the **business** including **holes** and **gaps**.
@@ -122,7 +127,7 @@ There's a connection between the different highlighted problems. If you remove t
 
 **EventStorming setup** :
 
-- Gather all the key people in the same room and build together a model of the current understanding of the system
+- Gather all the key people in the same room and build together a model of the current understanding of the system; the ones who know the questions to ask (and are curious to listen to the answers) and the ones who know the answers.
 
 - Find a room with enough space for people to move with long straight wall where our paper roll can be placed as our modeling surface
 
@@ -152,10 +157,15 @@ They can happen for different reasons :
 
 ![pic](images/events_origin.jpg)
 
+> **Write** the **events** in terms of **business language** rather than **technical language** :
+> *Order.xml submitted -> Customer order submitted*.
+> *Order REST service called -> Order fulfilled*.
+> *Command factory impl instantiated, Process manager terminated -> These are probably not even domain events, but more  infrastructure details. Overlook them*.
+
 
 **Example**
 
-collect temperature information from an external system, a first **Domain Event** candidate might be **Temperature Raised**. A closer look, we might need to have a combination of **Temperature Registered** from an external source and a **Temperature increment measured** as a consequence, and realize that the initial writing, despite being correct, was actually not closer to system design but it fine because we don't need make it precise too early (*Embrace Fuzziness* at this stage).
+collect temperature information from an external system, a first **Domain Event** candidate might be **Temperature Raised**. A closer look, we might need to have a combination of **Temperature Registered** from an external source and a **Temperature increment measured** as a consequence, and realize that the initial writing, despite being correct, was actually not closer to system design but it fine because we don't need make it precise too early (*Embrace Fuzziness/incompleteness* to make the workshop less boring and more fruitful at this stage).
 
 **Why Domain events ?**
 
@@ -177,8 +187,19 @@ collect temperature information from an external system, a first **Domain Event*
 --------------------------------------------------------
 They are key ingredient for user interaction (**Commands** - Actions - Decisions) or the result of a **user decision** (which might have required some sophisticated thinking) and are the trigger of some computation on the other side. If we focus on **human behavior**, we might see them as some **action** that a **user is performing**, like *registering* on a *system* or *placing an order*. If we focus on **system implementation** instead, they can represent a **command** we've just **received**, and the **system has to fulfill**.
 
-### Hotspot
+### Hotspots
 when getting sucked into a discussion that we're not able to finish, we use a Hotspot notation so we will come back to it in the next session.
+
+Hotspots Capture our ignorance and allow us to delay discussion over time, they highlights
+- Questions
+- Warning (system risks)
+- System Impediments (bottlenecks)
+- Assumptions
+
+*We kept them on the board until we get an answer or right people in the room!*
+
+> Hotspots are mean of visualizing/managing *Queues* such as : handoff from one person, role, or team to another, significant waiting, batching of work, common points for rework.  
+
 
 ### Discovering Bounded Contexts with EventStorming
 --------------------------------------------------------
@@ -203,9 +224,9 @@ Published), or apparently duplicated ones in unordered manner. It's usually a go
 
 #### 2. Enforce the Timeline
 --------------------------------------------------------
-**Consistent timeline** describes the **business flow** from a beginning to an end with **parallel** and **alternative paths** to explore. The need to come up with one consistent view of the entire business triggers conversations around the places where this view is not consistent, we get an answer from the experts who are available!.
+**Consistent timeline** describes the **business flow** from a beginning to an end with **parallel** and **alternative paths** to explore. The need to come up with one **consistent view** of the entire **business** triggers **conversations** around the places where this view is **not consistent**, we get an **answer** from the **experts** who are available in the room!.
 
-We get to a highlighted conversation with a **HotSpot** (i.e. marked as to be discussed later) to let the **exploration flow** and address it later on.
+We get to a highlighted conversation with a **HotSpots** (i.e. marked as to be discussed later) to let the **exploration flow** and address it later on.
 
 The **participants** often look for a more **sophisticated emerging structures**. **Pivotal Events** and **Swimlanes** are **strategies** to make the **emerging structure visible** and discover **bounded contexts**.
 
@@ -222,7 +243,7 @@ Even in the most straightforward businesses the flow is not linear. There are **
 
 ![pic](images/pivotaleventswimlanes.jpg)
 
-Pivotal Events and Swimlanes provide an emergent structure on top of the flow of Domain Events.
+**Pivotal Events** and **Swimlanes** provide an emergent structure on top of the flow of Domain Events.
 
 
 #### 3. People and Systems (actors)
@@ -255,6 +276,7 @@ few extra steps may provide more insights :
 - **vote** the most **important issue** to leverage the **clarity** of **collective understanding** into political momentum to do the right thing
 
 > There's a lot of **Bounded Context** related **information** that comes as a **byproduct** of our **discussion**
+
 
 **b- Heuristic: look at the business phases**
 
@@ -330,7 +352,11 @@ different places :
 
 we're not talking about the same **Talk!**, we're talking about **different models** in **selection**, **scheduling**, **staffing**, etc.
 
-
+> we could also use the following in each step:
+> *What else could cause this to happen?*
+> ◦ *Are there other potential outcomes?*
+> ◦ *What are the implications of __?*
+> ◦ *Is there a better way to do __? What might that be?*
 
 ## Modelling processes and services
 
@@ -552,22 +578,24 @@ Sometimes this **reaction to an event** is **automatic**, other times it is mana
 
 **Discovering** the real **implementation** of an existing **policy** is an **investigation game**: people will not tell you the real **story** at **first** attempt. To get through this, **speak loudly** and use *whenever* ... *then* with a **combination** of **Always/Immediate** in a sentence.
 
-**Example**
+**Example of room booking**
  
-*Whenever we receive a room hold request, and always if the customer provided their full name and phone number, and there's room availability for the selected dates, immediately we just do it.*
+*Whenever we receive a room hold request, and always if the customer provided their full name and phone number, and there's room availability for the selected dates, immediately we book a room.*
+
+**Not true**, *we book immediately a room if the customer is VIP*!.
 
 Now, it looks like there are two **competing policies**, so let's **make** them **visible!**
 
 ![pic](images/splitpolicyopenhotspots.jpg)
-The resulting model, after we split the **policy** in two, and took care of the **open hotspots**.
+The resulting **model**, after we split the **policy** in two, and took care of all **open hotspots**.
 
 #### Challenging value
 
-In process modeling we are also challenging the **business narrative** (why we are doing this or that?), in way to find **inconsitencies** before even **writing software**.
+In **process modeling** we are also challenging the **business narrative** (why we are doing this or that?), in way to find **inconsitencies** before even **writing software**.
 
 Every step of the flow can **create** or **destroy** **value** for a given user, by:
-- discovering **multiple currencies**, e.g. personal satisfaction, reputation, happiness, anxiety,...
-- discovering **new opportunities**
+- discovering **multiple currencies**, e.g. personal satisfaction, reputation, happiness, anxiety, customer happiness/retention, employee motivation/engagement
+- discovering **new opportunities**, e.g market acquisition & growth, new revenue, cross selling, long term relationships 
 - discovering **inconsistencies**
 
 There is a need to streamline not only mechnical consitencies but also address people values in order to perform at organizational level. 
@@ -726,3 +754,6 @@ We should have a **symmetry** between **events** and **commands** (which is triv
 
 
 >> The the takeaway from Event Storming in domain driven design is : **"merge the people, split the software"**.
+
+![pic](images/fromvisiontodetailandback.jpg)
+From vision to detail and back.
