@@ -138,7 +138,7 @@ There's a connection between the different highlighted problems. If you remove t
 --------------------------------------------------------
 *There's no implicit filter on the source, No implicit scope limitation*.
 
-We use a **verb at past tense** to describe events which forces us to explore the whole domain with the focus on **state transitions** (when something changes).
+We use a **verb at past tense** to describe events which forces us to explore the whole domain with the focus on **state transitions** (i.e. when something changes).
 
 They can happen for different reasons :
 
@@ -175,14 +175,14 @@ collect temperature information from an external system, a first **Domain Event*
 
 ### Commands
 --------------------------------------------------------
-They are key ingredient for user interaction (**Commands** - Actions - Decisions) or the result of a **user decision** (which might have required some sophisticated thinking) and are the trigger of some computation on the other side. If we focus on human behavior, we might see them as some action that a user is performing, like registering on a system or placing an order. If we focus on system implementation instead, they can represent a command we've just received, and the system has to fulfill.
+They are key ingredient for user interaction (**Commands** - Actions - Decisions) or the result of a **user decision** (which might have required some sophisticated thinking) and are the trigger of some computation on the other side. If we focus on **human behavior**, we might see them as some **action** that a **user is performing**, like *registering* on a *system* or *placing an order*. If we focus on **system implementation** instead, they can represent a **command** we've just **received**, and the **system has to fulfill**.
 
 ### Hotspot
 when getting sucked into a discussion that we're not able to finish, we use a Hotspot notation so we will come back to it in the next session.
 
 ### Discovering Bounded Contexts with EventStorming
 --------------------------------------------------------
-Ideally, a **bounded context** should contain a **model tailored around a specific purpose**: the perfectly **shaped tool** for one **specific job**, **no trade-offs**.
+Ideally, a **bounded context** should contain a **model tailored** around a **specific purpose**: the perfectly **shaped tool** for one **specific job**, **no trade-offs**.
 
 >> **Not accepting** a multiple languages that forms an **inconsistent whole** is so bad, that we might end up putting **same objects** that have **different semantics** across **boundaries** in the **same box**, and try to figure out how to **distinguish** them, which becomes our problem, because **business** don't have **ambiguities** within a **boundary**. Therefore, we will have no **empathy** from the **business** because we are solving a problem that they don't have.
 
@@ -205,17 +205,17 @@ Published), or apparently duplicated ones in unordered manner. It's usually a go
 --------------------------------------------------------
 **Consistent timeline** describes the **business flow** from a beginning to an end with **parallel** and **alternative paths** to explore. The need to come up with one consistent view of the entire business triggers conversations around the places where this view is not consistent, we get an answer from the experts who are available!.
 
-We get to a highlighted conversation with a Hot Spot (not solve everything yet) to let the exploration flow and address it later on.
+We get to a highlighted conversation with a **HotSpot** (i.e. marked as to be discussed later) to let the **exploration flow** and address it later on.
 
-The **participants** often look for a more **sophisticated emerging structures**. **Pivotal Events and Swimlanes** are **strategies** to make the **emerging structure visible** and discover **bounded contexts**.
+The **participants** often look for a more **sophisticated emerging structures**. **Pivotal Events** and **Swimlanes** are **strategies** to make the **emerging structure visible** and discover **bounded contexts**.
 
-**Pivotal Events**
+**1- Pivotal Events**
 
 They mark a **transition** between **different business phases**. once highlighting **pivotal events**, sorting becomes a lot faster inside the **boundaries**, and a more **sophisticated structure** starts to emerge.
 
 ![pic](images/pivotalevents.jpg)
 
-**Swimlanes**
+**2- Swimlanes**
 
 Horizontal **Swimlanes** is a common way to structure portions of the whole **flow** (usually happens after **pivotal events**).
 Even in the most straightforward businesses the flow is not linear. There are **branches**, **loops** and things that happen in **parallel** (e.g. **billing** getting triggered only around the **events** of a **sale**, or maybe a **cancellation**).  
@@ -225,25 +225,25 @@ Even in the most straightforward businesses the flow is not linear. There are **
 Pivotal Events and Swimlanes provide an emergent structure on top of the flow of Domain Events.
 
 
-#### 3. People and Systems
+#### 3. People and Systems (actors)
 --------------------------------------------------------
-we explore the **surroundings of our business**, explicitly looking for **people: actors, users, personas, or specific roles** in our **system**. Visualizing different **people** (actors) in our system helps to dig into the **different perspectives**. We might discover **specific responsibilities** and **roles**, or differing perceptions. 
+we explore the **surroundings of our business**, explicitly looking for **people: actors, users, personas, or specific roles** in our **system**. Visualizing different **people** (**actors**) in our system helps to dig into the **different perspectives**. We might discover **specific responsibilities** and **roles**, or differing perceptions. 
 
 ![pic](images/peopleandsystems.jpg)
 
-e.g. in a conference superstar guest, invited as a keynote speaker, an expert or a newbie are different, i.e. exploration phase may end up in opening an entirely new branch or making different strategies more visible and readable where systems usually trigger a different type of reasoning making the boundaries explicit.
+e.g. in a conference *superstar guest*, invited as a *keynote speaker*, an *expert* or a *newbie* are different, i.e. **exploration phase** may end up in opening an entirely **new branch** or making different **strategies** more **visible** and readable where **systems** usually **trigger** a different **type** of **reasoning** making the **boundaries explicit**.
 
 #### 4. Explicit Walk-through
 --------------------------------------------------------
 To validate the **discoveries**, a picked **narrator** trying to tell the **whole story**, from **left to right**. Consistent **storytelling** is hard, in the beginning, because the **narrators' brain** will be torn apart by **conflicting needs**. Narrators will try to tell the story using the **existing events as building blocks**, but at the same time, they'll realize that what seemed good enough in the **previous reviews** is not good enough for a **public on stage storytelling session**.
 
-Usually, our model needs to be **improved**, to support **storytelling**. More **events** will appear, others will be moved away, paths will be split and so on. Participants are often challenging the narrator and the proposed **storytelling**, eventually providing examples of corner cases and not-so-exceptional-exceptions.
+Usually, our model needs to be **improved**, to support **storytelling**. More **events** will **appear**, others will be **moved away**, **paths** will be **split** and so on. **Participants** are often **challenging** the **narrator** and the proposed **storytelling**, eventually providing examples of **corner cases** and **not-so-exceptional-exceptions**.
 
 ![pic](images/explicitwalkthrough.jpg)
 
-The more we progress along the timeline, the more clarity is provided to the flow, while the narrator is progressing like a defrag cursor.
+The more we **progress** along the **timeline**, the more **clarity** is provided to the **flow**, while the narrator is progressing like a defrag cursor.
 
-**Extra steps**
+**a- Extra steps**
 
 few extra steps may provide more insights :
 - **explore** the **value** that is supposed to be **generated or destroyed** in the **business flow** (*money, time, reputation, emotional safety, stress, happiness*, and so on).
@@ -256,7 +256,7 @@ few extra steps may provide more insights :
 
 > There's a lot of **Bounded Context** related **information** that comes as a **byproduct** of our **discussion**
 
-**Heuristic: look at the business phases**
+**b- Heuristic: look at the business phases**
 
 Businesses grow around a well-defined **business transaction** where some **value** — usually money — is traded for something else. **Pivotal events** have a fundamental role in this **flow**.
 
@@ -264,7 +264,7 @@ Businesses grow around a well-defined **business transaction** where some **valu
 
 > **boundary events** are also the ones with different **conflicting** wordings, the **perception** of **bounded contexts** usually **overlaps**. A key recommendation here is that we **don't have to agree on the language!** There's much more to **discover** by making **disagreements** **visible**.
 
-> when two **models** are **interacting**, there are usually **three models involved**: the **internals**, the **two bounded contexts** and the **communication model** used to **exchange information** between them.
+> when two **models** are **interacting**, there are usually **three models involved**: the **two bounded contexts** (the **internals**) and the **communication model** used to **exchange information** between them.
 
 ![pic](images/twointeractingmodelsthreelanguages.jpg)
 
@@ -276,7 +276,7 @@ Businesses grow around a well-defined **business transaction** where some **valu
 Emerging bounded contexts after a Big Picture EventStorming. 
 
 
-**Heuristic: look at the swimlanes**
+**c- Heuristic: look at the swimlanes**
 
 **Swimlanes** often show **different paths** that involve **different models**, **Not** every **swimlane** is a **Bounded Context**, sometimes they're just an **if statement** somewhere, but when swimlanes are **emerging** for the **need** to highlight an **independent process**, possibly on a **different timeline**, then we might want to give a **shot** to an **independent model**.
 
@@ -285,7 +285,7 @@ Emerging bounded contexts after a Big Picture EventStorming.
 **Swimlanes** are usually a **reliable clue** for possible different **bounded contexts**
 
 
-**Heuristic: look at the people on the paper roll**
+**d- Heuristic: look at the people on the paper roll**
 
 An interesting twist might happen when dealing with **different personas**. Apparently, the **flow** should be the **same**, but it's **not**.
 
@@ -295,13 +295,13 @@ as an example, **Conference organizers** or **track hosts** can invite some spea
 
 Two **parallel flows** may require **independent models**, we shouldn't think in terms of **roles**: they'll recognize that *speakers* and *keynote speakers* are **different** in the **left part** of the **flow**, but they'll have a **similar** **badge** during the **registration process**, and they won't be different from **regular attendees** during **lunchtime**, when their role would be a simple mouth to feed.
  
-**Heuristic: look at the humans in the room**
+**e- Heuristic: look at the humans in the room**
 
 **People** are during the **exploration** is probably giving the simplest and powerful **clue** about **different model distribution**, **Experts** tend to spend most time **hovering** around the **areas** that they **know better** to provide answers or to correct wrong stickies, Alternatively, they **comment** around the **areas** that they care about, maybe because the current **implementation** is far from **satisfactory**.
 
 >> Different people are a great indicator of different needs, which means different models often be remembered, through some weird spatial memory.
 
-**Heuristic: look at the body language**
+**f- Heuristic: look at the body language**
 
 **body language** can be another source of information, not every **dissent** can be **verbal**, shaking **heads**, or **eyes rolling** are a clue of **conflicting perspectives** that haven't been **addressed**, different **hierarchy levels** come to different **views** on apparently the same **problem**.
 
@@ -311,7 +311,7 @@ A typical **conversational pattern** often happening around **pivotal** or **bou
 
 typical **competence clash**, the **persons** on the **left** usually **know** all the **mechanics involved** in a given step, while the ones on the **right** only care about the **outcome**.
 
-**Heuristic: listen to the actual language**
+**g- Heuristic: listen to the actual language**
 
 If you look for central **terms** like **Talk**, you'll discover that they're used in many
 different places :
@@ -393,7 +393,7 @@ Color Based Grammar which is a good summary of the **basic building blocks** nee
 
 The **linearized version** (better fits modeling on a **paper roll and event-based** storytelling approach), with the beginning of the pizza example process, tailored around our simple pizza delivery example, with the beginning of an order processing flow.
 
->> note that the "cooking **policy**" is located between the "OrderPlaced" **Event** and "PreparePizza" **command**.
+>> note that the "cooking **policy**" is located between the *"OrderPlaced"* **Event** and *"PreparePizza"* **command**.
 
 >> use **Hotspots** to visualize **dissent**, **objections**, and **issues** that we should not **address immediately**.
 
@@ -494,7 +494,7 @@ While **modeling processes**, we may progressively need something more **sophist
 
 >> Different **systems** have different **strengths** and **pain points** and Generic systems don't. Sometimes displaying every system might **confusing**, it's usually a good idea to **pick** a **representative**, and use **HotSpots** for others.
 
-##### Conversational Systems**
+##### Conversational Systems
 
 **Systems** like phones, email, chats can host a more human-friendly interaction, but conversational systems are somewhat harder to model in an event-driven fashion.
 
@@ -668,9 +668,9 @@ Do we need really to include the *ItemDescription* in the ItemInCart? Feels like
 
 
 
-To **discover aggregate** (don't use the name aggregate) we could use the following :
+To **discover aggregate** (don't use the name aggregate yet!) we could use the following :
 
-- Look for **responsibilities** first what is this yellow sticky responsible for? Which are the system's expectation towards it? 
+- Look for **responsibilities** first what is this yellow (located between command and event) sticky responsible for? Which are the system's expectation towards it? 
 
 - Look for the **information** needed in order to **fulfill** this **responsibility**. 
 
@@ -706,8 +706,6 @@ We have to **postpone** the **Aggregate naming** because it will diverge a discu
  - **Collaboration** will be in one of two forms: a **request for information** or a **request to perform a task**
  
  - To **identify** the **collaborators** of a class for each **responsibility** ask the question **"does the class have the ability to fulfill this responsibility?"**. If **not** then look for a **class** that either has the **ability** to **fulfill** the **missing functionality** or the **class** which should **fulfill** it. In doing so you'll often **discover** the **need** for **new responsibilities** in other classes and maybe even the **need** for a **new class** or **two**.
-
-
 
 
 **Design starts** to focus around **roles**, **responsibilities** and **message passing**, a very efficient way to model interaction is to simulate **behavior** with a **variation** of the **CRC cards**.
