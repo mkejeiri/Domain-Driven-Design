@@ -759,6 +759,5 @@ We should have a **symmetry** between **events** and **commands** (which is triv
 
 If needed we could always iterates back and forth from Big Picture, into Process Modelling and into Software Design using events.
 
-![pic](images/fromvisiontodetailandback.jpg)
-			
-			*From vision to detail and back*
+![pic](images/fromvisiontodetailandback.jpg)			
+			From vision to detail and back
