@@ -23,6 +23,8 @@ A small, but strongly semantically consistent model is called Bounded Context in
 
 > Ideally, a bounded context should contain a model tailored around a specific purpose: the perfectly shaped tool for one specific job, no trade-offs.
 
+[more ...](./EventStorming.md)
+
 **“What did we do wrong?”**
 
 A common concept (like the Order in an e-commerce web shop) becomes vital for several business capabilities, raising the need for reliability and availability, up to the unexplored limits of the CAP theorem, where buying more expensive hardware can’t help you anymore.
