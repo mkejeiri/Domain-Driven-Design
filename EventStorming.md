@@ -765,8 +765,6 @@ If needed we could always iterates back and forth from Big Picture, into Process
 
 
 >> Mauro Servienti: 
-
 >> - "To design a process we should look at the behaviors (i.e. follow the coupling not the data, and identify processes and chop them up by services)",simply put, don't look at processes in term of data, but in term what change what? what need to be changed together with what?, e.g. if we change a price of an item does it affect a description? if the answer is no they shouldn't stay together!, look at the processes and model the boundaries based on what they touch...
-
->> - Use delayed messaging to model time which simplifies decision making in an async world, e.g. payment gateway delay, we should be able to send a command to the message broker to notify us if the publishing of event is really succeeded instead of changing the behavior of other microservice to accommodate our need such as sending us a failed message which is introduce a kind of functional coupling.
+>> - Use delayed messaging to model time which simplifies decision making in an async world, e.g. payment gateway delay, we should be able to send a command to the message broker (RabbitMQ) to notify us of the timeout and consider that the sent message has failed, instead of changing the behavior of other microservice to accommodate our need such as sending us a failed message which is introduce a kind of functional coupling.
 
