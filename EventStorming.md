@@ -19,8 +19,8 @@ As a result, the **last state of the data structure/properties** is just a matte
 
 **Events** represent **business behaviors** and therefore help the **system** **capture** the **business intent** behind the message.
 
-
 >> **Event storming** is a **toolkit** for **collaborative discovery**. It enables a **large cross sectional team** to be **interactive**, **discuss**, **solution**, **think** etc. on a **given topic**. When it comes to our level of collective understanding of the business, we could **accomplish** in a **day** what might have taken **weeks** of iteration in software development (incurring a huge amount of **technical debt** on the way).
+
 
 ## Big Picture
 
@@ -761,3 +761,12 @@ If needed we could always iterates back and forth from Big Picture, into Process
 
 ![pic](images/fromvisiontodetailandback.jpg)			
 			From vision to detail and back
+
+
+
+>> Mauro Servienti: 
+
+>> - "To design a process we should look at the behaviors (i.e. follow the coupling not the data, and identify processes and chop them up by services)",simply put, don't look at processes in term of data, but in term what change what? what need to be changed together with what?, e.g. if we change a price of an item does it affect a description? if the answer is no they shouldn't stay together in one bounded context!, look at the processes and model the boundaries based on what they touch...
+
+>> - Use delayed messaging to model time which simplifies decision making in an async world, e.g. payment gateway delay, we should be able to send a command to the message broker to notify us if the publishing of event is really succeeded instead of changing the behavior of other microservice to accommodate our need such as sending us a failed message which is introduce a kind of functional coupling.
+
