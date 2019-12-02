@@ -757,7 +757,7 @@ We should have a **symmetry** between **events** and **commands** (which is triv
 
 
 
->> The the takeaway from Event Storming in domain driven design is : **"merge the people, split the software"**.
+>> The the takeaway from Event Storming in domain driven design is : **"merge the people, split the software"**, so we get our mind round the business complexity (not the technical complexity). 
 
 
 
