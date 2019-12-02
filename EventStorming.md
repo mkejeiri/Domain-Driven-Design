@@ -22,7 +22,7 @@ As a result, the **last state of the data structure/properties** is just a matte
 >> **Event storming** is a **toolkit** for **collaborative discovery**. It enables a **large cross sectional team** to be **interactive**, **discuss**, **solution**, **think** etc. on a **given topic**. When it comes to our level of collective understanding of the business, we could **accomplish** in a **day** what might have taken **weeks** of iteration in software development (incurring a huge amount of **technical debt** on the way).
 
 
-In classical approach where people uses UML diagram and tends to think about the **data structure** and ignores the **system behavior intent**, what a **system** is **supposed to do** versus how we **persist the data**?
+In classical approach where people uses UML diagram and tends to think about the **data structure** and ignores the **system behavior intent**: what a **system** is **supposed to do** versus how we **persist the data**?
 
 ## Big Picture
 
