@@ -22,6 +22,8 @@ As a result, the **last state of the data structure/properties** is just a matte
 >> **Event storming** is a **toolkit** for **collaborative discovery**. It enables a **large cross sectional team** to be **interactive**, **discuss**, **solution**, **think** etc. on a **given topic**. When it comes to our level of collective understanding of the business, we could **accomplish** in a **day** what might have taken **weeks** of iteration in software development (incurring a huge amount of **technical debt** on the way).
 
 
+In classical approach where people uses UML diagram and tends to think about the **data structure** and ignores the **system behavior intent**, what a **system** is **supposed to do** versus how we **persist the data**?
+
 ## Big Picture
 
 The **Big Picture EventStorming** will deliver the **snapshot** of our **current collective level of understanding** of the **business** including **holes** and **gaps**.
@@ -142,6 +144,8 @@ There's a connection between the different highlighted problems. If you remove t
 #### Domain events
 --------------------------------------------------------
 *There's no implicit filter on the source, No implicit scope limitation*.
+
+to put it mildly, **something** happens in the **system** that the **business expert care about** in a particular **domain**, it could be happens in **schedule basis**, or as result of something else happens as **domain event trigger** another one **domain event**.
 
 We use a **verb at past tense** to describe events which forces us to explore the whole domain with the focus on **state transitions** (i.e. when something changes).
 
