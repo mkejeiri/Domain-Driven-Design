@@ -567,7 +567,7 @@ Often, we rely on Implicit **assumption** that we'll stay on the **conversationa
 **Policies** answer the following questions : 
 
 - *How is our system is supposed to react to given event(s)?*
-- *and which command(s) is/are issued as a reaction's result to that event(s)?
+- *and which command(s) is/are issued as a reaction's result to that event(s)?*
 
 **Policies** are **missing glue** between a **domain event** and the resulting **command**, there is always a **business decision** between an **event** and the **reaction**.
 
