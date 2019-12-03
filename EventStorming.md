@@ -145,7 +145,7 @@ There's a connection between the different highlighted problems. If you remove t
 --------------------------------------------------------
 *There's no implicit filter on the source, No implicit scope limitation*.
 
-to put it mildly, **something** happens in the **system** that the **business expert care about** in a particular **domain**, it could be happens in **schedule basis**, or as result of something else happens as **domain event trigger** another one **domain event**.
+to put it mildly, **something** happens in the **system** that the **business expert cares about** in a particular **domain**, it could be happens in **schedule basis**, or as result of something else happens as **domain event trigger** another one **domain event**.
 
 We use a **verb at past tense** to describe events which forces us to explore the whole domain with the focus on **state transitions** (i.e. when something changes).
 
