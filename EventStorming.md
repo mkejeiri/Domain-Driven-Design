@@ -568,6 +568,13 @@ Often, we rely on Implicit **assumption** that we'll stay on the **conversationa
 
 **Policies** are **missing glue** between a **domain event** and the resulting **command**, there is always a **business decision** between an **event** and the **reaction**.
 
+It visualizes the **business rule** that *whenever something happens this is what should we do*.
+**Policies** are around something like *if I have a pricing discount of a certain items and promotions, how are they interacting with each other’s* (e.g. buying items in certain order and quantities gives the most available promotion possible), **thus** It becomes **necessary** to **capture** in the **model** as well.
+
+**Policies** are sometime **automatic** (explicitly done by a system) or **manual/implicit** (people has to remember them).
+
+
+
 > Example of *Customer Support Policy*
 
 >> "Whenever we receive a clarification request from a known customer, we try to answer or to open the conversation with the desired specialist within one working day."
@@ -608,6 +615,8 @@ There is a need to streamline not only mechnical consitencies but also address p
 **Read models** are the **information** that needs to be **available** for a **user** to take **decision** and to produce a **command**. 
 
 We use **read models** to visualize **constraints** on the **data** that needs to be **available** to implement a **process**, but we use it also to **visualize** the **assumptions** behind the **decision-making process** and eventually **challenge** them. 
+
+**Read model** is a kind of **replaying events * (starting from last event) to build up a **state** of a **business object** (such as order, invoice, credit,...) and being able to **create** a **representative model** to **display** to the **user** so he can make a **decision**.
 
 > We should **listen** to the **voice** of a **user** to fetch the **data** that he needs to make a **decision**. It might be that everything he **needs** is just a *voice-activated service running*.
 
