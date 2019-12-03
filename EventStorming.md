@@ -569,7 +569,7 @@ Often, we rely on Implicit **assumption** that we'll stay on the **conversationa
 **Policies** are **missing glue** between a **domain event** and the resulting **command**, there is always a **business decision** between an **event** and the **reaction**.
 
 It visualizes the **business rule** that *whenever something happens this is what should we do*.
-**Policies** are around something like *if I have a pricing discount of a certain items and promotions, how are they interacting with each other’s* (e.g. buying items in certain order and quantities gives the most available promotion possible), **thus** It becomes **necessary** to **capture** in the **model** as well.
+**Policies** are around something like *if I have a pricing discount of a certain items and promotions, how are they interacting with each other’s* (e.g. buying items in certain order and quantities gives the most available promotion possible), **thus** It becomes **necessary** to **capture** them in the **model** as well.
 
 **Policies** are sometime **automatic** (explicitly done by a system) or **manual/implicit** (people has to remember them).
 
