@@ -2,7 +2,7 @@ This is merely my oversimplified takeaways/keynotes on the [Alberto Brandolini e
 
 ## Introduction
 
-The way we think usually about **design** is around **state of the data structure** (such as the *state of an 'Order' with a set of properties*) which we save into the **database** so we could retrieve it on demand. It always represents the **last data structure state** (or **snapshot**) of an **object**.
+The way we think usually about **design** is around **state of the data structure** (such as the *state of an 'Order' with a set of properties*) which we save into the **database** so we could retrieve it on demand. It represents always the **last data structure state** (or **snapshot**) of an **object**.
 
 >> This approach is called sometimes **data driven approach**. 
 
