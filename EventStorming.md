@@ -619,7 +619,7 @@ There is a need to streamline not only mechnical consitencies but also address p
 
 We use **read models** to visualize **constraints** on the **data** that needs to be **available** to implement a **process**, but we use it also to **visualize** the **assumptions** behind the **decision-making process** and eventually **challenge** them. 
 
-**Read model** is a kind of **replaying events * (starting from last event) to build up a **state** of a **business object** (such as order, invoice, credit,...) and being able to **create** a **representative model** to **display** to the **user** so he can make a **decision**.
+**Read model** is a kind of **replaying events** (starting from last event) to build up a **state** of a **business object** (such as order, invoice, credit,...) and being able to **create** a **representative model** to **display** to the **user** so he can make a **decision**.
 
 > We should **listen** to the **voice** of a **user** to fetch the **data** that he needs to make a **decision**. It might be that everything he **needs** is just a *voice-activated service running*.
 
