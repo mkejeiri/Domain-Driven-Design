@@ -163,7 +163,9 @@ They can happen for different reasons :
 
 > **Write** the **events** in terms of **business language** rather than **technical language** :
 > *Order.xml submitted -> Customer order submitted*.
+>
 > *Order REST service called -> Order fulfilled*.
+>
 > *Command factory impl instantiated, Process manager terminated -> These are probably not even domain events, but more  infrastructure details. Overlook them*.
 
 
