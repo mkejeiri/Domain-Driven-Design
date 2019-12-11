@@ -21,7 +21,7 @@ According to [Alberto Brandolini: Introducing EventStorming eBook](https://leanp
 
 A small, but strongly semantically consistent model is called Bounded Context in Domain-Driven Design; a portion of the model which we must keep ambiguity free. Every word in the model has exactly a precise meaning.
 
-> Ideally, a bounded context should contain a model tailored around a specific purpose: the perfectly shaped tool for one specific job, no trade-offs.
+> Ideally, a bounded context should contain a [model tailored around a specific purpose](https://medium.com/@teivah/why-is-a-canonical-data-model-an-anti-pattern-441b5c4cbff8): the perfectly shaped tool for one specific job, no trade-offs.
 
 [more ...](./EventStorming.md)
 
