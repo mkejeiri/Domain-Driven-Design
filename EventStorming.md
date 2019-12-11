@@ -174,6 +174,8 @@ They can happen for different reasons :
 
 collect temperature information from an external system, a first **Domain Event** candidate might be **Temperature Raised**. A closer look, we might need to have a combination of **Temperature Registered** from an external source and a **Temperature increment measured** as a consequence, and realize that the initial writing, despite being correct, was actually not closer to system design but it fine because we don't need make it precise too early (*Embrace Fuzziness/incompleteness* to make the workshop less boring and more fruitful at this stage).
 
+> an **event** represents a fact, something that already happened (modeled with the past tense like CustomerUpdated)
+
 **Why Domain events ?**
 
 - **Domain Events** are easy enough to be grasped by everyone, No previous experience required.
@@ -193,6 +195,8 @@ collect temperature information from an external system, a first **Domain Event*
 ### Commands
 --------------------------------------------------------
 They are key ingredient for user interaction (**Commands** - Actions - Decisions) or the result of a **user decision** (which might have required some sophisticated thinking) and are the trigger of some computation on the other side. If we focus on **human behavior**, we might see them as some **action** that a **user is performing**, like *registering* on a *system* or *placing an order*. If we focus on **system implementation** instead, they can represent a **command** we've just **received**, and the **system has to fulfill**.
+
+ > A **command** represents an intention (modeled with the present tense like CreateCustomer) 
 
 ### Hotspots
 when getting sucked into a discussion that we're not able to finish, we use a Hotspot notation so we will come back to it in the next session.
