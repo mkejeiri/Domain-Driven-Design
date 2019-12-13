@@ -704,7 +704,6 @@ e.g. the *amount subtotal* of selected *items* should reflect the **current stat
 #### Discovering aggregates
 Looking at the **data to be contained** get us into **data and the static structure trap**. i.e. it drives software stakeholders into **misleading agreements**: everybody would **pretend** to **agree** we need a **container** for the **data**, and the **data** will need to be **used** (or **reused**) in **many places**.
 
-
 **Example of treacherous thinking process in action**: 
 ------------------------------------------------------
 From a **data** perspective a **ShoppingCart** must be associated with a **Customer** which is not usually the case, a ShoppingCart will need to be associated with a **WebSession** instead which might be **associated** to an **authenticated User** or **not**! We'll need a Customer in order to create a valid Order starting from the ShoppingCart, and this would force the current Users to log in if they started adding items in some anonymous session.
@@ -732,6 +731,7 @@ We are **looking for** **units** of **consistent behavior**, we should spot a ki
 - The **key content** of an **aggregate** is the **bit of information** triggering **behavior** by the **event**. 
 - Additional **content** as **redundant information** which get **propagated** through **events** from other **bounded context**.
 - The role of **Aggregate** in the flow is a litte local decision to **accept** or **reject** a **command** based on **its internal state**.
+- When modelling, the idea is to try to find out the change first i.e the result of the operation or the event produced and then to identify all the details we need to end up with that change.
 
 >> given all the corporate dysfunctions we might not expect **consistency** to scale much.
 
@@ -781,6 +781,8 @@ If needed we could always iterates back and forth from Big Picture, into Process
 
 ![pic](images/fromvisiontodetailandback.jpg)			
 			From vision to detail and back
+
+
 
 
 
