@@ -1,4 +1,4 @@
-This is merely my oversimplified takeaways/keynotes on the [Alberto Brandolini ebook on event storming ebook](https://leanpub.com/introducing_eventstorming), I stongly recommend reading the eBook.  
+This is merely my oversimplified takeaways/keynotes on the [Alberto Brandolini ebook on event storming ebook](https://leanpub.com/introducing_eventstorming), I stongly recommend reading the eBook!.  
 
 ## Introduction
 
